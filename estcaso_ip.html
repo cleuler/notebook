@@ -1,0 +1,3238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Estudo de Caso 1: Análise de Inquéritos Policiais em Goiás</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="estcaso_ip_files/libs/clipboard/clipboard.min.js"></script>
+<script src="estcaso_ip_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="estcaso_ip_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="estcaso_ip_files/libs/quarto-html/popper.min.js"></script>
+<script src="estcaso_ip_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="estcaso_ip_files/libs/quarto-html/anchor.min.js"></script>
+<link href="estcaso_ip_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="estcaso_ip_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="estcaso_ip_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="estcaso_ip_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="estcaso_ip_files/libs/bootstrap/bootstrap-215b371544c282197b31c8aa00ce3677.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Estudo de Caso 1: Análise de Inquéritos Policiais em Goiás</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introdução" class="level2">
+<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
+<p>Este estudo de caso explora dados amostrais sobre inquéritos policiais em 6 Comarcas do Estado de Goiás. O objetivo é aprender a criar e interpretar diferentes tipos de gráficos estatísticos para Análise Exploratória de Dados.</p>
+<section id="objetivos-de-aprendizagem" class="level3">
+<h3 class="anchored" data-anchor-id="objetivos-de-aprendizagem">Objetivos de Aprendizagem</h3>
+<p>Ao final deste estudo de caso, você será capaz de: 1. Criar gráficos de barras/colunas para variáveis categóricas 2. Criar dot plots, histogramas e boxplots para variáveis quantitativas 3. Comparar distribuições de variáveis quantitativas entre categorias/classes de uma variável categórica 4. Analisar associações entre variáveis categóricas usando gráficos mosaico (quiçá <em>Correspondence Analysis Plot</em>) 5. Explorar relações entre variáveis quantitativas usando diagramas de dispersão e retas de regressão</p>
+<hr>
+</section>
+</section>
+<section id="tipos-de-gráficos-uma-introdução-visual" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-gráficos-uma-introdução-visual">1. Tipos de Gráficos: Uma Introdução Visual</h2>
+<p>Antes de trabalhar com os dados, vamos entender os principais tipos de gráficos que utilizaremos.</p>
+<section id="gráficos-de-barrascolunas" class="level3">
+<h3 class="anchored" data-anchor-id="gráficos-de-barrascolunas">1.1 Gráficos de Barras/Colunas</h3>
+<p><strong>Quando usar:</strong> Para representar a distribuição de variáveis <strong>categóricas</strong> (nominais ou ordinais).</p>
+<p><strong>Como interpretar:</strong> - Cada barra representa uma categoria - A altura da barra mostra a frequência (contagem) ou proporção - Facilita a comparação entre categorias - Identifica a categoria mais/menos frequente</p>
+<p><strong>Exemplo:</strong> Distribuição de casos por comarca, tipo de crime, etc.</p>
+</section>
+<section id="dot-plot-gráfico-de-pontos" class="level3">
+<h3 class="anchored" data-anchor-id="dot-plot-gráfico-de-pontos">1.2 Dot Plot (Gráfico de Pontos)</h3>
+<p><strong>Quando usar:</strong> Para variáveis <strong>quantitativas</strong>, especialmente com amostras pequenas ou médias.</p>
+<p><strong>Como interpretar:</strong> - Cada ponto representa uma observação - Mostra a distribuição real dos dados sem agrupamento - Permite identificar valores repetidos (pontos empilhados) - Facilita a identificação de outliers (valores atípicos) - Mostra claramente lacunas nos dados</p>
+<p><strong>Exemplo:</strong> Duração de inquéritos em dias, número de testemunhas, etc.</p>
+</section>
+<section id="histograma" class="level3">
+<h3 class="anchored" data-anchor-id="histograma">1.3 Histograma</h3>
+<p><strong>Quando usar:</strong> Para variáveis <strong>quantitativas</strong>, especialmente com amostras grandes.</p>
+<p><strong>Como interpretar:</strong> - O eixo horizontal é dividido em intervalos (bins) - A altura de cada barra mostra quantas observações estão naquele intervalo - Permite visualizar: - <strong>Forma da distribuição:</strong> simétrica, assimétrica (skewed) - <strong>Centro:</strong> onde está a maioria dos dados - <strong>Dispersão:</strong> quão espalhados estão os dados - <strong>Outliers:</strong> valores muito distantes da maioria - <strong>Multimodalidade:</strong> presença de múltiplos picos</p>
+<p><strong>Dica:</strong> O número de intervalos pode mudar a interpretação. Experimente diferentes valores!</p>
+</section>
+<section id="boxplot-diagrama-de-caixa" class="level3">
+<h3 class="anchored" data-anchor-id="boxplot-diagrama-de-caixa">1.4 Boxplot (Diagrama de Caixa)</h3>
+<p><strong>Quando usar:</strong> Para variáveis <strong>quantitativas</strong>, especialmente para comparar grupos.</p>
+<p><strong>Como interpretar:</strong> - <strong>Linha central da caixa:</strong> mediana (Q2) - valor que divide os dados ao meio - <strong>Limites da caixa:</strong> - Inferior: primeiro quartil (Q1) - 25% dos dados estão abaixo - Superior: terceiro quartil (Q3) - 75% dos dados estão abaixo - <strong>Altura da caixa (IQR):</strong> amplitude interquartílica = Q3 - Q1 (mostra a dispersão dos 50% centrais) - <strong>Linhas (whiskers):</strong> geralmente se estendem até 1.5 × IQR - <strong>Pontos fora das linhas:</strong> possíveis outliers</p>
+<p><strong>Vantagens:</strong> - Resumo visual dos 5 números (mínimo, Q1, Q2, Q3, máximo) - Excelente para comparar múltiplos grupos lado a lado - Identifica outliers claramente - Mostra assimetria na distribuição</p>
+</section>
+<section id="gráfico-mosaico" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-mosaico">1.5 Gráfico Mosaico</h3>
+<p><strong>Quando usar:</strong> Para explorar a relação entre duas ou mais variáveis <strong>categóricas</strong>.</p>
+<p><strong>Como interpretar:</strong> - Cada retângulo representa uma combinação de categorias - A <strong>área</strong> do retângulo é proporcional à frequência da combinação - A <strong>largura</strong> representa a proporção da primeira variável - A <strong>altura</strong> dentro de cada coluna representa a distribuição condicional da segunda variável - Facilita identificar: - <strong>Associações:</strong> padrões diferentes do esperado se as variáveis fossem independentes - <strong>Proporções condicionais:</strong> como uma variável se distribui dentro de cada categoria da outra</p>
+<p><strong>Exemplo:</strong> Relação entre comarca e resultado do inquérito</p>
+</section>
+<section id="diagrama-de-dispersão-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="diagrama-de-dispersão-scatter-plot">1.6 Diagrama de Dispersão (Scatter Plot)</h3>
+<p><strong>Quando usar:</strong> Para explorar a relação entre duas variáveis <strong>quantitativas</strong>.</p>
+<p><strong>Como interpretar:</strong> - Cada ponto representa uma observação com seus valores em X e Y - <strong>Direção da relação:</strong> - Positiva: pontos sobem da esquerda para direita - Negativa: pontos descem da esquerda para direita - Sem relação: pontos espalhados aleatoriamente - <strong>Força da relação:</strong> quão próximos os pontos estão de um padrão linear - <strong>Forma:</strong> linear, curvilínea, ou sem padrão claro - <strong>Reta de regressão (mínimos quadrados):</strong> mostra a tendência linear média - <strong>Outliers:</strong> pontos muito distantes do padrão geral</p>
+<p><strong>Exemplo:</strong> Relação entre duração do inquérito e número de diligências</p>
+<hr>
+</section>
+</section>
+<section id="preparação-do-ambiente" class="level2">
+<h2 class="anchored" data-anchor-id="preparação-do-ambiente">2. Preparação do Ambiente</h2>
+<p>Vamos carregar as bibliotecas necessárias para nossa análise.</p>
+<div id="39c8bc75" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importar bibliotecas</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurações de visualização</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-darkgrid'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>sns.set_palette(<span class="st">"husl"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">6</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.size'</span>] <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"✓ Bibliotecas carregadas com sucesso!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>✓ Bibliotecas carregadas com sucesso!</code></pre>
+</div>
+</div>
+</section>
+<section id="carregamento-e-exploração-inicial-dos-dados" class="level2">
+<h2 class="anchored" data-anchor-id="carregamento-e-exploração-inicial-dos-dados">3. Carregamento e Exploração Inicial dos Dados</h2>
+<div id="b8328b8c" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar o dicionário de variáveis</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dicionario <span class="op">=</span> pd.read_excel(<span class="st">'dat/estcaso_ip/ApendiceA-QuadroVariaveis.xlsx'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DICIONÁRIO DE VARIÁVEIS"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>display(dicionario)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>================================================================================
+DICIONÁRIO DE VARIÁVEIS
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">N.</th>
+<th data-quarto-table-cell-role="th">Categoria</th>
+<th data-quarto-table-cell-role="th">Variável</th>
+<th data-quarto-table-cell-role="th">Descrição</th>
+<th data-quarto-table-cell-role="th">Tipo</th>
+<th data-quarto-table-cell-role="th">Método de coleta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>1 - Identificação</td>
+<td>N_ordem</td>
+<td>Número sequencial que identifica cada procedim...</td>
+<td>Numérico</td>
+<td>Registro automatizado na tabela.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>1 - Identificação</td>
+<td>Link_atena</td>
+<td>Link de acesso ao procedimento no sistema de g...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>1 - Identificação</td>
+<td>N_atena</td>
+<td>Número de identificação único atribuído a cada...</td>
+<td>Numérico</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>1 - Identificação</td>
+<td>Promotoria</td>
+<td>Nome da promotoria de justiça responsável pelo...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>1 - Identificação</td>
+<td>Comarca</td>
+<td>Nome da comarca relacionada à promotoria de ju...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>6</td>
+<td>1 - Identificação</td>
+<td>N_projudi</td>
+<td>Número de identificação único atribuído a cada...</td>
+<td>Numérico</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>7</td>
+<td>1 - Identificação</td>
+<td>Nome_delegacia</td>
+<td>Nome da delegacia de polícia responsável pela ...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>8</td>
+<td>1 - Identificação</td>
+<td>N_ip_ou_apf</td>
+<td>Número do inquérito policial ou do auto de pri...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>9</td>
+<td>1 - Identificação</td>
+<td>N_aleatorio</td>
+<td>Número de sorteio aleatório utilizado para a s...</td>
+<td>Numérico</td>
+<td>Gerado no aplicativo Microsoft Excel</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>10</td>
+<td>1 - Identificação</td>
+<td>Selecionado</td>
+<td>Identificação de procedimento selecionado para...</td>
+<td>Qualitativa nominal</td>
+<td>Registrado manualmente na tabela</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>11</td>
+<td>2 - Características do Caso</td>
+<td>Assunto</td>
+<td>Assunto atribuído ao procedimento, indicando o...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>12</td>
+<td>2 - Características do Caso</td>
+<td>Assunto_resumido</td>
+<td>Resumo do assunto atribuído ao procedimento, i...</td>
+<td>Qualitativa nominal</td>
+<td>Dado elaborado a partir dos dados extraídos do...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>13</td>
+<td>2 - Características do Caso</td>
+<td>Status_projudi</td>
+<td>Resultado final da fase pré-processual (ex: de...</td>
+<td>Qualitativa nominal</td>
+<td>Extração de dados do procedimento no Sistema P...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>14</td>
+<td>2 - Características do Caso</td>
+<td>N_indiciados</td>
+<td>Número total de pessoas indiciadas no inquérito.</td>
+<td>Numérica</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>15</td>
+<td>2 - Características do Caso</td>
+<td>N_vitimas</td>
+<td>Número total de vítimas no inquérito.</td>
+<td>Numérica</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>16</td>
+<td>2 - Características do Caso</td>
+<td>Reu_preso</td>
+<td>Condição do investigado: preso ou solto.</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>17</td>
+<td>2 - Características do Caso</td>
+<td>Tramitacao_direta</td>
+<td>Indica se o inquérito foi instruído sob a poss...</td>
+<td>Binária (Sim/Não)</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>18</td>
+<td>2 - Características do Caso</td>
+<td>Forma_instauracao</td>
+<td>Método pelo qual o inquérito policial foi inic...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>19</td>
+<td>2 - Características do Caso</td>
+<td>Nome_lei</td>
+<td>Número da lei citado no Inquérito Policial.</td>
+<td>Qualitativa nominal</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19</th>
+<td>20</td>
+<td>2 - Características do Caso</td>
+<td>Capitulacao</td>
+<td>Artigo de lei citado no Inquérito Policial, in...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">20</th>
+<td>21</td>
+<td>2 - Características do Caso</td>
+<td>Arma_de_fogo</td>
+<td>Verificação sobre a utilização de arma de fogo.</td>
+<td>Binária (Sim/Não)</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">21</th>
+<td>22</td>
+<td>2 - Características do Caso</td>
+<td>Validacao</td>
+<td>Validação tipológica referente à possível inci...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">22</th>
+<td>23</td>
+<td>2 - Características do Caso</td>
+<td>Quantidade_manifstacao_mp</td>
+<td>Quantidade de diligências complementares ou ma...</td>
+<td>Numérico</td>
+<td>Contagem a partir da coleta de dados das movim...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">23</th>
+<td>24</td>
+<td>2 - Características do Caso</td>
+<td>Tipo_manifestacao_mp</td>
+<td>Tipo de diligência complementar ou manifstação...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">24</th>
+<td>25</td>
+<td>2 - Características do Caso</td>
+<td>Total_movimentos</td>
+<td>Quantidade de movimentos registrados no sistem...</td>
+<td>Numérico</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">25</th>
+<td>26</td>
+<td>2 - Características do Caso</td>
+<td>Ultimo_movimento</td>
+<td>Último movimento registrado no sistema Atena d...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>27</td>
+<td>2 - Características do Caso</td>
+<td>Orgao_posse_atual</td>
+<td>Orgão com a posse atual do procedimento, confo...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Atena do MPGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">27</th>
+<td>28</td>
+<td>3 - Tempo</td>
+<td>Data_prescricao_projudi</td>
+<td>Data de prescrição do procedimento.</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">28</th>
+<td>29</td>
+<td>3 - Tempo</td>
+<td>1_data_fato</td>
+<td>Data da ocorrência do fato, constante da porta...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">29</th>
+<td>30</td>
+<td>3 - Tempo</td>
+<td>2_data_instauracao</td>
+<td>Data em que o Inquérito Policial foi oficialme...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">30</th>
+<td>31</td>
+<td>3 - Tempo</td>
+<td>3_data_recebimento_projudi</td>
+<td>Data em que o Inquérito Policial foi recebido ...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">31</th>
+<td>32</td>
+<td>3 - Tempo</td>
+<td>4_data_primeira_manifstação_mp</td>
+<td>Data da primeira diligência complementar ou ma...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">32</th>
+<td>33</td>
+<td>3 - Tempo</td>
+<td>5_data_ultima_manifestacao_mp</td>
+<td>Data da última diligência complementar ou mani...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do texto do Inquérito Policial consta...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">33</th>
+<td>34</td>
+<td>3 - Tempo</td>
+<td>6_data_conclusao_mp</td>
+<td>Data em que o Inquérito Policial foi concluído...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">34</th>
+<td>35</td>
+<td>3 - Tempo</td>
+<td>Prazo_conclusao_IP</td>
+<td>Prazo de conclusão do IP com base no tipo penal.</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">35</th>
+<td>36</td>
+<td>3 - Tempo</td>
+<td>Tempo_conclusao_ip</td>
+<td>Tempo decorrido desde a instauração do Inquéri...</td>
+<td>Numérico</td>
+<td>Cálculo baseado nas datas de início e conclusão.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">36</th>
+<td>37</td>
+<td>3 - Tempo</td>
+<td>Tempo_entre_manifestacoes_mp</td>
+<td>Tempo decorrido entre as diligências complemen...</td>
+<td>Qualitativa nominal</td>
+<td>Extração do sistema Projudi do TJGO.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">37</th>
+<td>38</td>
+<td>3 - Tempo</td>
+<td>Tempo_conclusao_mp</td>
+<td>Tempo decorrido desde o recebimento do procedi...</td>
+<td>Quantitativa nominal</td>
+<td>Cálculo baseado nas datas de recebimento e res...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="77795cd4" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar a base de dados</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> pd.read_excel(<span class="st">'dat/estcaso_ip/ApendiceB-BaseDados.xlsx'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"VISÃO GERAL DOS DADOS"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Dimensões: </span><span class="sc">{</span>dados<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> observações × </span><span class="sc">{</span>dados<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> variáveis</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Primeiras linhas:"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>display(dados.head(<span class="dv">10</span>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Informações sobre as variáveis:"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>dados.info()</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Estatísticas descritivas:"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>display(dados.describe(include<span class="op">=</span><span class="st">'all'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>================================================================================
+VISÃO GERAL DOS DADOS
+================================================================================
+
+Dimensões: 218 observações × 28 variáveis
+
+Primeiras linhas:</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">N_ordem</th>
+<th data-quarto-table-cell-role="th">Comarca</th>
+<th data-quarto-table-cell-role="th">Assunto_resumido</th>
+<th data-quarto-table-cell-role="th">Status_projudi</th>
+<th data-quarto-table-cell-role="th">Data_prescricao_projudi</th>
+<th data-quarto-table-cell-role="th">N_indiciados</th>
+<th data-quarto-table-cell-role="th">N_vitimas</th>
+<th data-quarto-table-cell-role="th">Reu_preso</th>
+<th data-quarto-table-cell-role="th">Tramitacao_direta</th>
+<th data-quarto-table-cell-role="th">1_data_fato</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Nome_lei</th>
+<th data-quarto-table-cell-role="th">Capitulacao</th>
+<th data-quarto-table-cell-role="th">Arma_de_fogo</th>
+<th data-quarto-table-cell-role="th">Validacao</th>
+<th data-quarto-table-cell-role="th">Prazo_conclusao_IP</th>
+<th data-quarto-table-cell-role="th">Tempo_conclusao_ip</th>
+<th data-quarto-table-cell-role="th">Quantidade_manifestacao_ip</th>
+<th data-quarto-table-cell-role="th">Tipo_manifestacao_mp</th>
+<th data-quarto-table-cell-role="th">Tempo_entre_manifestacoes_mp</th>
+<th data-quarto-table-cell-role="th">Tempo_conclusao_mp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - DEFERIMENTO DO PEDIDO</td>
+<td>2035-12-17 00:00:00</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>2015-12-17 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>CPB ART. 121 C/C ART. 18 INC. I: HOMICÍDIO DOLOSO</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>3021</td>
+<td>0</td>
+<td>Não se aplica</td>
+<td>Prejudicado</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>APARECIDA DE GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - EXT. DA PUNIB. POR FALTA DE JUSTA ...</td>
+<td>2042-08-29 00:00:00</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>2022-08-03 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>ART. 121, CAPUT DO CPA HOMICIDIO SIMPLES COHSU...</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>596</td>
+<td>4</td>
+<td>DILAÇÃO DE PRAZO; CONFECÇÃO DO RELATÓRIO FINAL...</td>
+<td>304</td>
+<td>494</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>APARECIDA DE GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - EXT. DA PUNIB. POR FALTA DE JUSTA ...</td>
+<td>2039-01-06 00:00:00</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>2019-01-07 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>ARTIGO(S) l2l do CP</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>1471</td>
+<td>1</td>
+<td>DILAÇÃO DE PRAZO;</td>
+<td>0</td>
+<td>329</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - EXT. DA PUNIB. POR FALTA DE JUSTA ...</td>
+<td>2042-03-08 00:00:00</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>2014-09-06 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>Artigo: 121, DO CPB</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>2863</td>
+<td>14</td>
+<td>DILAÇÃO DE PRAZO; oficio à Corregedoria da Pol...</td>
+<td>1133</td>
+<td>1220</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>SENADOR CANEDO</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - LITISPENDÊNCIA</td>
+<td>Não informada</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>2022-09-11 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>ART. 121. §2°. INC. II DO CPB HОMІСÍDIO QUALIF...</td>
+<td>0</td>
+<td>1</td>
+<td>30</td>
+<td>14</td>
+<td>1</td>
+<td>RELATÓRIO MÉDICO DA VÍTIMA</td>
+<td>0</td>
+<td>81</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>6</td>
+<td>GOIANIA</td>
+<td>Homicídio Qualificado</td>
+<td>Ativo</td>
+<td>2037-04-08 00:00:00</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>2017-04-08 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>ARTIGO 121, § 2º, INCISO IV DO CÓDIGO PENAL BR...</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>1789</td>
+<td>13</td>
+<td>CONCLUSÃO DO INQUÉRITO POLICIAL; DILAÇÃO DE PR...</td>
+<td>1429</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>7</td>
+<td>GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Ativo</td>
+<td>2040-05-05 00:00:00</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>2020-05-05 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>ARTIGO(S) 121, DO CPB</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>1230</td>
+<td>10</td>
+<td>HISTÓRICO CRIMINAL DA VÍTIMA; CONFIRMAÇÃO SOBR...</td>
+<td>757</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>8</td>
+<td>GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - EXTINÇÃO DA PUNIBILIDADE-RENUNCIA ...</td>
+<td>2044-12-10 00:00:00</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>2024-12-10 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>ART. 121 CAPUT DO CPB HOMICÍDIO SIMPLES TENTADO</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+<td>73</td>
+<td>12</td>
+<td>CONCLUSÃO DAS INVESTIGAÇÕES; OITIVA DA VÍTIMA;...</td>
+<td>300</td>
+<td>302</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>9</td>
+<td>APARECIDA DE GOIANIA</td>
+<td>Homicídio Qualificado</td>
+<td>Ativo</td>
+<td>2041-02-04 00:00:00</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>2021-02-05 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>ARTIGO(S) Art' 121 do CPB</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>1403</td>
+<td>1</td>
+<td>DILAÇÃO DE PRAZO;</td>
+<td>297</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>11</td>
+<td>GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - NÃO CONSTITUI CRIME (ATIPICIDADE)</td>
+<td>Não informada</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>2021-10-30 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>Art. 121 Caput do CPB Homicídio simples</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>85</td>
+<td>3</td>
+<td>Ofício à Corregedoria da Polícia Militar do Es...</td>
+<td>95</td>
+<td>132</td>
+</tr>
+</tbody>
+</table>
+
+<p>10 rows × 28 columns</p>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Informações sobre as variáveis:
+&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 218 entries, 0 to 217
+Data columns (total 28 columns):
+ #   Column                        Non-Null Count  Dtype         
+---  ------                        --------------  -----         
+ 0   N_ordem                       218 non-null    int64         
+ 1   Comarca                       218 non-null    str           
+ 2   Assunto_resumido              218 non-null    str           
+ 3   Status_projudi                218 non-null    str           
+ 4   Data_prescricao_projudi       218 non-null    object        
+ 5   N_indiciados                  218 non-null    int64         
+ 6   N_vitimas                     218 non-null    int64         
+ 7   Reu_preso                     218 non-null    int64         
+ 8   Tramitacao_direta             218 non-null    int64         
+ 9   1_data_fato                   218 non-null    object        
+ 10  2_data_instauracao            218 non-null    datetime64[us]
+ 11  3_data_recebimento_projudi    218 non-null    datetime64[us]
+ 12  4_data_primeira_manifstação   218 non-null    object        
+ 13  5_data_ultima_manifestacao    218 non-null    object        
+ 14  6_Data_conclusao_MP           218 non-null    object        
+ 15  Nome_delegacia                218 non-null    str           
+ 16  Forma_instauracao             218 non-null    str           
+ 17  N_ip_ou_apf                   218 non-null    str           
+ 18  Nome_lei                      218 non-null    str           
+ 19  Capitulacao                   218 non-null    str           
+ 20  Arma_de_fogo                  218 non-null    int64         
+ 21  Validacao                     218 non-null    int64         
+ 22  Prazo_conclusao_IP            218 non-null    int64         
+ 23  Tempo_conclusao_ip            218 non-null    int64         
+ 24  Quantidade_manifestacao_ip    218 non-null    int64         
+ 25  Tipo_manifestacao_mp          218 non-null    str           
+ 26  Tempo_entre_manifestacoes_mp  218 non-null    object        
+ 27  Tempo_conclusao_mp            218 non-null    int64         
+dtypes: datetime64[us](2), int64(11), object(6), str(9)
+memory usage: 107.9+ KB
+
+Estatísticas descritivas:</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">N_ordem</th>
+<th data-quarto-table-cell-role="th">Comarca</th>
+<th data-quarto-table-cell-role="th">Assunto_resumido</th>
+<th data-quarto-table-cell-role="th">Status_projudi</th>
+<th data-quarto-table-cell-role="th">Data_prescricao_projudi</th>
+<th data-quarto-table-cell-role="th">N_indiciados</th>
+<th data-quarto-table-cell-role="th">N_vitimas</th>
+<th data-quarto-table-cell-role="th">Reu_preso</th>
+<th data-quarto-table-cell-role="th">Tramitacao_direta</th>
+<th data-quarto-table-cell-role="th">1_data_fato</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Nome_lei</th>
+<th data-quarto-table-cell-role="th">Capitulacao</th>
+<th data-quarto-table-cell-role="th">Arma_de_fogo</th>
+<th data-quarto-table-cell-role="th">Validacao</th>
+<th data-quarto-table-cell-role="th">Prazo_conclusao_IP</th>
+<th data-quarto-table-cell-role="th">Tempo_conclusao_ip</th>
+<th data-quarto-table-cell-role="th">Quantidade_manifestacao_ip</th>
+<th data-quarto-table-cell-role="th">Tipo_manifestacao_mp</th>
+<th data-quarto-table-cell-role="th">Tempo_entre_manifestacoes_mp</th>
+<th data-quarto-table-cell-role="th">Tempo_conclusao_mp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">count</th>
+<td>218.000000</td>
+<td>218</td>
+<td>218</td>
+<td>218</td>
+<td>218</td>
+<td>218.000000</td>
+<td>218.000000</td>
+<td>218.000000</td>
+<td>218.000000</td>
+<td>218</td>
+<td>...</td>
+<td>218</td>
+<td>218</td>
+<td>218.000000</td>
+<td>218.0</td>
+<td>218.000000</td>
+<td>218.000000</td>
+<td>218.000000</td>
+<td>218</td>
+<td>218</td>
+<td>218.000000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">unique</th>
+<td>NaN</td>
+<td>6</td>
+<td>7</td>
+<td>15</td>
+<td>141</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>211</td>
+<td>...</td>
+<td>4</td>
+<td>82</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>127</td>
+<td>82</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">top</th>
+<td>NaN</td>
+<td>GOIANIA</td>
+<td>Homicídio Simples</td>
+<td>Arquivado - EXT. DA PUNIB. POR FALTA DE JUSTA ...</td>
+<td>Não informada</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2019-08-30 00:00:00</td>
+<td>...</td>
+<td>Código Penal</td>
+<td>Art. 121 do CPB</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Não se aplica</td>
+<td>Prejudicado</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">freq</th>
+<td>NaN</td>
+<td>101</td>
+<td>171</td>
+<td>90</td>
+<td>71</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2</td>
+<td>...</td>
+<td>215</td>
+<td>78</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>83</td>
+<td>95</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">mean</th>
+<td>130.931193</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.665138</td>
+<td>1.142202</td>
+<td>0.096330</td>
+<td>0.651376</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.697248</td>
+<td>1.0</td>
+<td>28.073394</td>
+<td>1623.321101</td>
+<td>2.775229</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>184.110092</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">min</th>
+<td>1.000000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>1.0</td>
+<td>10.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">25%</th>
+<td>66.250000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>1.0</td>
+<td>30.000000</td>
+<td>167.250000</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>4.000000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">50%</th>
+<td>125.500000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.000000</td>
+<td>1.0</td>
+<td>30.000000</td>
+<td>1107.500000</td>
+<td>1.000000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>50.500000</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">75%</th>
+<td>188.750000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.000000</td>
+<td>1.0</td>
+<td>30.000000</td>
+<td>2523.750000</td>
+<td>4.000000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>232.000000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">max</th>
+<td>335.000000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>5.000000</td>
+<td>7.000000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.000000</td>
+<td>1.0</td>
+<td>30.000000</td>
+<td>8914.000000</td>
+<td>17.000000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1335.000000</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">std</th>
+<td>79.851993</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.176880</td>
+<td>0.562220</td>
+<td>0.295723</td>
+<td>0.477631</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.460506</td>
+<td>0.0</td>
+<td>5.914454</td>
+<td>1815.251931</td>
+<td>3.946641</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>279.250225</td>
+</tr>
+</tbody>
+</table>
+
+<p>11 rows × 28 columns</p>
+</div>
+</div>
+</div>
+<section id="converter-variáveis-com-datas-em-datetime" class="level3">
+<h3 class="anchored" data-anchor-id="converter-variáveis-com-datas-em-datetime">3.1 Converter variáveis com datas em datetime</h3>
+<div id="0c3dd833" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Padronizar valores textuais e converter colunas object para datetime</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>valores_invalidos <span class="op">=</span> [<span class="st">'Não informada'</span>, <span class="st">'Nao_houve'</span>, <span class="st">'Nao_concluido'</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Identificar colunas do tipo object</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Mas  apenas colunas do tipo object e filtrar pelos nomes</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># que contenham a substring data </span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (sem diferenciar maiúsculas/minúsculas).</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>colunas_object <span class="op">=</span> [</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>col <span class="cf">for</span> col <span class="kw">in</span> dados.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>]).columns</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'data'</span> <span class="kw">in</span> col.lower()</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Substituir valores inválidos por NA e converter para datetime</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> colunas_object:</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    dados[col] <span class="op">=</span> dados[col].replace(valores_invalidos, pd.NA)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    dados[col] <span class="op">=</span> pd.to_datetime(dados[col], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Conversão concluída em </span><span class="sc">{</span><span class="bu">len</span>(colunas_object)<span class="sc">}</span><span class="ss"> colunas object.'</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Campos inválidos foram substituídos por NA e datas inválidas por NaT.'</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Informações sobre as variáveis:"</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>dados.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Conversão concluída em 5 colunas object.
+Campos inválidos foram substituídos por NA e datas inválidas por NaT.
+
+Informações sobre as variáveis:
+&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 218 entries, 0 to 217
+Data columns (total 28 columns):
+ #   Column                        Non-Null Count  Dtype         
+---  ------                        --------------  -----         
+ 0   N_ordem                       218 non-null    int64         
+ 1   Comarca                       218 non-null    str           
+ 2   Assunto_resumido              218 non-null    str           
+ 3   Status_projudi                218 non-null    str           
+ 4   Data_prescricao_projudi       145 non-null    datetime64[us]
+ 5   N_indiciados                  218 non-null    int64         
+ 6   N_vitimas                     218 non-null    int64         
+ 7   Reu_preso                     218 non-null    int64         
+ 8   Tramitacao_direta             218 non-null    int64         
+ 9   1_data_fato                   217 non-null    datetime64[us]
+ 10  2_data_instauracao            218 non-null    datetime64[us]
+ 11  3_data_recebimento_projudi    218 non-null    datetime64[us]
+ 12  4_data_primeira_manifstação   135 non-null    datetime64[us]
+ 13  5_data_ultima_manifestacao    123 non-null    datetime64[us]
+ 14  6_Data_conclusao_MP           192 non-null    datetime64[us]
+ 15  Nome_delegacia                218 non-null    str           
+ 16  Forma_instauracao             218 non-null    str           
+ 17  N_ip_ou_apf                   218 non-null    str           
+ 18  Nome_lei                      218 non-null    str           
+ 19  Capitulacao                   218 non-null    str           
+ 20  Arma_de_fogo                  218 non-null    int64         
+ 21  Validacao                     218 non-null    int64         
+ 22  Prazo_conclusao_IP            218 non-null    int64         
+ 23  Tempo_conclusao_ip            218 non-null    int64         
+ 24  Quantidade_manifestacao_ip    218 non-null    int64         
+ 25  Tipo_manifestacao_mp          218 non-null    str           
+ 26  Tempo_entre_manifestacoes_mp  218 non-null    object        
+ 27  Tempo_conclusao_mp            218 non-null    int64         
+dtypes: datetime64[us](7), int64(11), object(1), str(9)
+memory usage: 107.9+ KB</code></pre>
+</div>
+</div>
+</section>
+<section id="transformar-reu_preso-em-categórica-binária" class="level3">
+<h3 class="anchored" data-anchor-id="transformar-reu_preso-em-categórica-binária">3.2 Transformar Reu_preso em categórica binária</h3>
+<div id="48cbfd93" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformar Reu_preso em categórica binária</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A variável Reu_preso é int64 com valores 0 e 1</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 0 = não (réu não estava preso)</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 = sim (réu estava preso)</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar valores únicos antes da transformação</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valores únicos em Reu_preso:"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dados[<span class="st">'Reu_preso'</span>].value_counts())</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Tipo atual: </span><span class="sc">{</span>dados[<span class="st">'Reu_preso'</span>]<span class="sc">.</span>dtype<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar mapeamento de numérico para categórico</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>mapeamento <span class="op">=</span> {<span class="dv">0</span>: <span class="st">'não'</span>, <span class="dv">1</span>: <span class="st">'sim'</span>}</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicar transformação para categórica</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>dados[<span class="st">'Reu_preso'</span>] <span class="op">=</span> dados[<span class="st">'Reu_preso'</span>].<span class="bu">map</span>(mapeamento).astype(<span class="st">'category'</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar resultado</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Após transformação:"</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dados[<span class="st">'Reu_preso'</span>].value_counts())</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Tipo da variável: </span><span class="sc">{</span>dados[<span class="st">'Reu_preso'</span>]<span class="sc">.</span>dtype<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valores únicos em Reu_preso:
+Reu_preso
+0    197
+1     21
+Name: count, dtype: int64
+Tipo atual: int64
+
+Após transformação:
+Reu_preso
+não    197
+sim     21
+Name: count, dtype: int64
+Tipo da variável: category</code></pre>
+</div>
+</div>
+<p>Ainda há outras variáveis que provavelmente ainda precisam passar por uma transformação adequada de tipo. Descruba quais e promova esse tratamento nos dados brutos.</p>
+<hr>
+</section>
+</section>
+<section id="análise-de-variáveis-categóricas" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-variáveis-categóricas">4. Análise de Variáveis Categóricas</h2>
+<section id="objetivo" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo">Objetivo</h3>
+<p>Criar gráficos de barras/colunas para cada variável categórica (nominal ou ordinal), mostrando: - Contagem acima de cada barra - Proporção (%) abaixo de cada barra - Tabelas de frequências e proporções</p>
+<div id="df06135f" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identificar variáveis categóricas</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>vars_categoricas <span class="op">=</span> dados.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>, <span class="st">'category'</span>]).columns.tolist()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variáveis categóricas identificadas:"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, var <span class="kw">in</span> <span class="bu">enumerate</span>(vars_categoricas, <span class="dv">1</span>):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">. </span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Variáveis categóricas identificadas:
+1. Comarca
+2. Assunto_resumido
+3. Status_projudi
+4. Reu_preso
+5. Nome_delegacia
+6. Forma_instauracao
+7. N_ip_ou_apf
+8. Nome_lei
+9. Capitulacao
+10. Tipo_manifestacao_mp
+11. Tempo_entre_manifestacoes_mp</code></pre>
+</div>
+</div>
+<p>A variável ‘Tempo_entre_manifestacoes_mp’ deveria ser do tipo inteiro, se foi coletada em número de dias.</p>
+</section>
+<section id="função-auxiliar-para-criar-gráficos-de-barras-com-anotações" class="level3">
+<h3 class="anchored" data-anchor-id="função-auxiliar-para-criar-gráficos-de-barras-com-anotações">Função auxiliar para criar gráficos de barras com anotações</h3>
+<div id="93405db9" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grafico_barras_completo(dados, variavel, decresc<span class="op">=</span><span class="st">'não'</span>, titulo<span class="op">=</span><span class="va">None</span>, rotacao<span class="op">=</span><span class="dv">45</span>):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria um gráfico de barras com contagens, proporções e tabela de frequências.</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parâmetros:</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - dados: DataFrame</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - variavel: nome da variável categórica</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - decresc: 'sim' para ordem decrescente de frequência, 'não' para ordem alfabética/numérica</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - titulo: título do gráfico (opcional)</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">    - rotacao: ângulo de rotação dos rótulos do eixo x</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcular frequências conforme parâmetro decresc</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> decresc.lower() <span class="op">==</span> <span class="st">'sim'</span>:</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        freq <span class="op">=</span> dados[variavel].value_counts()  <span class="co"># Ordem decrescente</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        prop <span class="op">=</span> dados[variavel].value_counts(normalize<span class="op">=</span><span class="va">True</span>) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        freq <span class="op">=</span> dados[variavel].value_counts().sort_index()  <span class="co"># Ordem alfabética/numérica</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        prop <span class="op">=</span> dados[variavel].value_counts(normalize<span class="op">=</span><span class="va">True</span>).sort_index() <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar tabela</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    tabela <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Categoria'</span>: freq.index,</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Contagem'</span>: freq.values,</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Proporção (%)'</span>: prop.values.<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar figura</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar gráfico de barras</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>    bars <span class="op">=</span> ax.bar(<span class="bu">range</span>(<span class="bu">len</span>(freq)), freq.values, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adicionar contagens e proporções nas barras</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, (bar, count, percent) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(bars, freq.values, prop.values)):</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Contagem acima</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>        ax.text(</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>            bar.get_x() <span class="op">+</span> bar.get_width() <span class="op">/</span> <span class="dv">2</span>,</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>            bar.get_height() <span class="op">+</span> <span class="bu">max</span>(freq) <span class="op">*</span> <span class="fl">0.01</span>,</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f'</span><span class="sc">{</span><span class="bu">int</span>(count)<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>            ha<span class="op">=</span><span class="st">'center'</span>,</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>            va<span class="op">=</span><span class="st">'bottom'</span>,</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>            fontweight<span class="op">=</span><span class="st">'bold'</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Proporção no centro da barra</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>        ax.text(</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>            bar.get_x() <span class="op">+</span> bar.get_width() <span class="op">/</span> <span class="dv">2</span>,</span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>            bar.get_height() <span class="op">/</span> <span class="dv">2</span>,</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f'</span><span class="sc">{</span>percent<span class="sc">:.1f}</span><span class="ss">%'</span>,</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>            ha<span class="op">=</span><span class="st">'center'</span>,</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>            va<span class="op">=</span><span class="st">'center'</span>,</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">9</span>,</span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'white'</span>,</span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>            fontweight<span class="op">=</span><span class="st">'bold'</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Configurações do gráfico</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>    ax.set_xticks(<span class="bu">range</span>(<span class="bu">len</span>(freq)))</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>    ax.set_xticklabels(freq.index, rotation<span class="op">=</span>rotacao, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Frequência'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(variavel, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> titulo:</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>        ax.set_title(titulo, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>        ax.set_title(<span class="ss">f'Distribuição de </span><span class="sc">{</span>variavel<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, <span class="bu">max</span>(freq) <span class="op">*</span> <span class="fl">1.15</span>)</span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Exibir tabela</span></span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Tabela de Frequências: </span><span class="sc">{</span>variavel<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a>    <span class="co"># display(tabela)</span></span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total de observações: </span><span class="sc">{</span>freq<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tabela</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercício-1-crie-gráficos-de-barras-para-cada-variável-categórica" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1-crie-gráficos-de-barras-para-cada-variável-categórica">Exercício 1: Crie gráficos de barras para cada variável categórica</h3>
+<p><strong>Instruções:</strong> 1. Para cada variável categórica identificada acima, use a função <code>grafico_barras_completo()</code> 2. Observe os padrões: qual categoria é mais frequente? Há categorias raras? 3. As proporções estão equilibradas ou há uma categoria dominante?</p>
+<div id="062a0df6" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo: substitua 'NOME_DA_VARIAVEL' pela primeira variável categórica</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grafico_barras_completo(dados, 'NOME_DA_VARIAVEL')</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># SEU CÓDIGO AQUI</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>grafico_barras_completo(dados, <span class="st">'Comarca'</span>, decresc<span class="op">=</span><span class="st">'sim'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Tabela de Frequências: Comarca
+============================================================
+
+Total de observações: 218
+</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Categoria</th>
+<th data-quarto-table-cell-role="th">Contagem</th>
+<th data-quarto-table-cell-role="th">Proporção (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>GOIANIA</td>
+<td>101</td>
+<td>46.33</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>APARECIDA DE GOIANIA</td>
+<td>44</td>
+<td>20.18</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>ANAPOLIS</td>
+<td>34</td>
+<td>15.60</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>LUZIANIA</td>
+<td>18</td>
+<td>8.26</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>SENADOR CANEDO</td>
+<td>14</td>
+<td>6.42</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>AGUAS LINDAS DE GOIAS</td>
+<td>7</td>
+<td>3.21</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Desafio:</strong> alterar a função ‘grafico_barras_completo’ para acrescentar mais um parâmetro: pareto = ‘sim’ ou ‘não’ para, quando houver a opção pela ordem decrescente, então também exibir a curva com as frequências relativas acumuladas (num segundo eixo y à direita do gráfico) e a indicação do ponto de corte em 80% da frequência relativa.</p>
+<hr>
+</section>
+</section>
+<section id="análise-de-variáveis-quantitativas" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-variáveis-quantitativas">5. Análise de Variáveis Quantitativas</h2>
+<section id="objetivo-1" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-1">Objetivo</h3>
+<p>Criar dot plots, histogramas e boxplots para cada variável quantitativa, sempre indicando a unidade de medida.</p>
+<div id="0fe30737" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identificar variáveis quantitativas</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>vars_quantitativas <span class="op">=</span> dados.select_dtypes(include<span class="op">=</span>[<span class="st">'int64'</span>, <span class="st">'float64'</span>]).columns.tolist()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variáveis quantitativas identificadas:"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, var <span class="kw">in</span> <span class="bu">enumerate</span>(vars_quantitativas, <span class="dv">1</span>):</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">. </span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Variáveis quantitativas identificadas:
+1. N_ordem
+2. N_indiciados
+3. N_vitimas
+4. Tramitacao_direta
+5. Arma_de_fogo
+6. Validacao
+7. Prazo_conclusao_IP
+8. Tempo_conclusao_ip
+9. Quantidade_manifestacao_ip
+10. Tempo_conclusao_mp</code></pre>
+</div>
+</div>
+</section>
+<section id="função-auxiliar-para-análise-completa-de-variável-quantitativa" class="level3">
+<h3 class="anchored" data-anchor-id="função-auxiliar-para-análise-completa-de-variável-quantitativa">Função auxiliar para análise completa de variável quantitativa</h3>
+<div id="9bde662f" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise_var_quantitativa(dados, variavel, unidade<span class="op">=</span><span class="st">""</span>, bins<span class="op">=</span><span class="dv">20</span>):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria dot plot, histograma e boxplot para uma variável quantitativa.</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parâmetros:</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - dados: DataFrame</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - variavel: nome da variável quantitativa</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - unidade: unidade de medida (ex: 'dias', 'anos', 'quantidade')</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - bins: número de intervalos para o histograma</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remover valores nulos</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    serie <span class="op">=</span> dados[variavel].dropna()</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Estatísticas descritivas</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    stats_dict <span class="op">=</span> {</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Média'</span>: serie.mean(),</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Mediana'</span>: serie.median(),</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Desvio Padrão'</span>: serie.std(),</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Mínimo'</span>: serie.<span class="bu">min</span>(),</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Q1 (25%)'</span>: serie.quantile(<span class="fl">0.25</span>),</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Q3 (75%)'</span>: serie.quantile(<span class="fl">0.75</span>),</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Máximo'</span>: serie.<span class="bu">max</span>(),</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'IQR'</span>: serie.quantile(<span class="fl">0.75</span>) <span class="op">-</span> serie.quantile(<span class="fl">0.25</span>),</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'N (obs.)'</span>: <span class="bu">len</span>(serie)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar figura com 3 subplots verticalmente (3 x 1)</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">18</span>))</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Dot Plot</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].plot(serie.values, [<span class="dv">1</span>]<span class="op">*</span><span class="bu">len</span>(serie), <span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, markersize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].set_yticks([])</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].set_xlabel(<span class="ss">f'</span><span class="sc">{</span>variavel<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>unidade<span class="sc">}</span><span class="ss">)'</span> <span class="cf">if</span> unidade <span class="cf">else</span> variavel, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].set_title(<span class="st">'Dot Plot'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].grid(axis<span class="op">=</span><span class="st">'x'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Histograma</span></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].hist(serie, bins<span class="op">=</span>bins, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>, color<span class="op">=</span><span class="st">'steelblue'</span>)</span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].axvline(serie.mean(), color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'Média = </span><span class="sc">{</span>serie<span class="sc">.</span>mean()<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].axvline(serie.median(), color<span class="op">=</span><span class="st">'green'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'Mediana = </span><span class="sc">{</span>serie<span class="sc">.</span>median()<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].set_xlabel(<span class="ss">f'</span><span class="sc">{</span>variavel<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>unidade<span class="sc">}</span><span class="ss">)'</span> <span class="cf">if</span> unidade <span class="cf">else</span> variavel, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Frequência'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].set_title(<span class="st">'Histograma'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Boxplot</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>    bp <span class="op">=</span> axes[<span class="dv">2</span>].boxplot(serie, vert<span class="op">=</span><span class="va">False</span>, patch_artist<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>                         boxprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'lightblue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>),</span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>                         medianprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>),</span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>                         flierprops<span class="op">=</span><span class="bu">dict</span>(marker<span class="op">=</span><span class="st">'o'</span>, markerfacecolor<span class="op">=</span><span class="st">'red'</span>, markersize<span class="op">=</span><span class="dv">8</span>, alpha<span class="op">=</span><span class="fl">0.5</span>))</span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adicionar losango vermelho na posição da média</span></span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">2</span>].plot(serie.mean(), <span class="dv">1</span>, marker<span class="op">=</span><span class="st">'D'</span>, color<span class="op">=</span><span class="st">'red'</span>, markersize<span class="op">=</span><span class="dv">10</span>, </span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>                 markeredgecolor<span class="op">=</span><span class="st">'darkred'</span>, markeredgewidth<span class="op">=</span><span class="fl">1.5</span>, zorder<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">2</span>].set_xlabel(<span class="ss">f'</span><span class="sc">{</span>variavel<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>unidade<span class="sc">}</span><span class="ss">)'</span> <span class="cf">if</span> unidade <span class="cf">else</span> variavel, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">2</span>].set_title(<span class="st">'Boxplot'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">2</span>].set_yticklabels([<span class="st">''</span>])</span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">2</span>].spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">2</span>].spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">2</span>].grid(axis<span class="op">=</span><span class="st">'x'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a>    plt.suptitle(<span class="ss">f'Análise de </span><span class="sc">{</span>variavel<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, y<span class="op">=</span><span class="fl">0.995</span>)</span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Exibir estatísticas</span></span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Estatísticas Descritivas: </span><span class="sc">{</span>variavel<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> stats_dict.items():</span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> key <span class="op">==</span> <span class="st">'N (obs.)'</span>:</span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">:20s}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">int</span>(value)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">:20s}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">:.2f}</span><span class="ss"> </span><span class="sc">{</span>unidade<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercício-2-análise-individual-de-variáveis-quantitativas" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2-análise-individual-de-variáveis-quantitativas">Exercício 2: Análise individual de variáveis quantitativas</h3>
+<p><strong>Instruções:</strong> 1. Para cada variável quantitativa, use a função <code>analise_var_quantitativa()</code> 2. <strong>IMPORTANTE:</strong> Inclua a unidade de medida apropriada (dias, anos, quantidade, etc.) 3. Observe: - A distribuição é simétrica ou assimétrica? - Existem outliers? - Qual a variabilidade dos dados? - A média e mediana são próximas?</p>
+<div id="2eb2fd58" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo: substitua 'NOME_DA_VARIAVEL' e 'UNIDADE'</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># analise_var_quantitativa(dados, 'NOME_DA_VARIAVEL', unidade='dias')</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># SEU CÓDIGO AQUI</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>analise_var_quantitativa(dados, <span class="st">'Tempo_conclusao_ip'</span>, unidade<span class="op">=</span><span class="st">'dias'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Estatísticas Descritivas: Tempo_conclusao_ip
+============================================================
+Média               : 1623.32 dias
+Mediana             : 1107.50 dias
+Desvio Padrão       : 1815.25 dias
+Mínimo              : 0.00 dias
+Q1 (25%)            : 167.25 dias
+Q3 (75%)            : 2523.75 dias
+Máximo              : 8914.00 dias
+IQR                 : 2356.50 dias
+N (obs.)            : 218
+</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="comparação-de-variáveis-quantitativas-por-grupos" class="level2">
+<h2 class="anchored" data-anchor-id="comparação-de-variáveis-quantitativas-por-grupos">6. Comparação de Variáveis Quantitativas por Grupos</h2>
+<section id="objetivo-2" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-2">Objetivo</h3>
+<p>Criar gráficos lado a lado (dot plots, histogramas e boxplots) comparando a distribuição de variáveis quantitativas entre diferentes grupos categóricos.</p>
+</section>
+<section id="função-para-comparação-de-grupos-com-boxplots" class="level3">
+<h3 class="anchored" data-anchor-id="função-para-comparação-de-grupos-com-boxplots">Função para comparação de grupos com boxplots</h3>
+<div id="d85b8422" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> comparacao_grupos_boxplot(dados, var_quantitativa, var_categorica, unidade<span class="op">=</span><span class="st">""</span>):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria boxplots lado a lado para comparar uma variável quantitativa entre grupos.</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parâmetros:</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - dados: DataFrame</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - var_quantitativa: nome da variável quantitativa</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - var_categorica: nome da variável categórica (grupos)</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - unidade: unidade de medida</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Preparar dados</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    df_temp <span class="op">=</span> dados[[var_quantitativa, var_categorica]].dropna()</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcular estatísticas por grupo</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    stats_grupos <span class="op">=</span> df_temp.groupby(var_categorica)[var_quantitativa].describe()</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar figura</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>))</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar boxplot</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    bp <span class="op">=</span> df_temp.boxplot(column<span class="op">=</span>var_quantitativa, by<span class="op">=</span>var_categorica, ax<span class="op">=</span>ax,</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>                         patch_artist<span class="op">=</span><span class="va">True</span>, return_type<span class="op">=</span><span class="st">'dict'</span>,</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>                         boxprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'lightblue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>),</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>                         <span class="co"># Altera os bigodes para preto</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>                         whiskerprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>),</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>                         <span class="co"># Opcional: altera as linhas das pontas para preto</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>                         capprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'black'</span>),</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>                         medianprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>),</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>                         flierprops<span class="op">=</span><span class="bu">dict</span>(marker<span class="op">=</span><span class="st">'o'</span>, markerfacecolor<span class="op">=</span><span class="st">'red'</span>, markersize<span class="op">=</span><span class="dv">6</span>, alpha<span class="op">=</span><span class="fl">0.5</span>))</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(var_categorica, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="ss">f'</span><span class="sc">{</span>var_quantitativa<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>unidade<span class="sc">}</span><span class="ss">)'</span> <span class="cf">if</span> unidade <span class="cf">else</span> var_quantitativa, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'</span><span class="sc">{</span>var_quantitativa<span class="sc">}</span><span class="ss"> por </span><span class="sc">{</span>var_categorica<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>    plt.suptitle(<span class="st">''</span>)  <span class="co"># Remover título automático do pandas</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>    ax.grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>    plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Exibir estatísticas</span></span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Estatísticas de </span><span class="sc">{</span>var_quantitativa<span class="sc">}</span><span class="ss"> por </span><span class="sc">{</span>var_categorica<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>    display(stats_grupos.<span class="bu">round</span>(<span class="dv">2</span>))</span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="função-para-comparação-de-grupos-com-histogramas-sobrepostos" class="level3">
+<h3 class="anchored" data-anchor-id="função-para-comparação-de-grupos-com-histogramas-sobrepostos">Função para comparação de grupos com histogramas sobrepostos</h3>
+<div id="82300eba" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> comparacao_grupos_histograma(dados, var_quantitativa, var_categorica, unidade<span class="op">=</span><span class="st">""</span>, bins<span class="op">=</span><span class="dv">15</span>):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria histogramas sobrepostos para comparar uma variável quantitativa entre grupos.</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    df_temp <span class="op">=</span> dados[[var_quantitativa, var_categorica]].dropna()</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    grupos <span class="op">=</span> df_temp[var_categorica].unique()</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> grupo <span class="kw">in</span> grupos:</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        subset <span class="op">=</span> df_temp[df_temp[var_categorica] <span class="op">==</span> grupo][var_quantitativa]</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        ax.hist(subset, bins<span class="op">=</span>bins, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="bu">str</span>(grupo), edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="ss">f'</span><span class="sc">{</span>var_quantitativa<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>unidade<span class="sc">}</span><span class="ss">)'</span> <span class="cf">if</span> unidade <span class="cf">else</span> var_quantitativa, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Frequência'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'Distribuição de </span><span class="sc">{</span>var_quantitativa<span class="sc">}</span><span class="ss"> por </span><span class="sc">{</span>var_categorica<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    ax.legend(title<span class="op">=</span>var_categorica, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercício-3-compare-variáveis-quantitativas-entre-grupos" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3-compare-variáveis-quantitativas-entre-grupos">Exercício 3: Compare variáveis quantitativas entre grupos</h3>
+<p><strong>Instruções:</strong> 1. Identifique combinações interessantes de variáveis quantitativas e categóricas 2. Use as funções <code>comparacao_grupos_boxplot()</code> e <code>comparacao_grupos_histograma()</code> 3. Analise: - Qual grupo tem maior mediana? - Qual grupo é mais variável? - Existem diferenças notáveis entre os grupos? - Algum grupo tem mais outliers?</p>
+<div id="e2faeaaa" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo:</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># comparacao_grupos_boxplot(dados, 'VAR_QUANTITATIVA', 'VAR_CATEGORICA', unidade='dias')</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># comparacao_grupos_histograma(dados, 'VAR_QUANTITATIVA', 'VAR_CATEGORICA', unidade='dias')</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># SEU CÓDIGO AQUI</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot lado a lado</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>comparacao_grupos_boxplot(dados, <span class="st">'Tempo_conclusao_ip'</span>, <span class="st">'Comarca'</span>, unidade<span class="op">=</span><span class="st">'dias'</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograma lado a lado</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>comparacao_grupos_histograma(dados, <span class="st">'Tempo_conclusao_ip'</span>, <span class="st">'Comarca'</span>, unidade<span class="op">=</span><span class="st">'dias'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Estatísticas de Tempo_conclusao_ip por Comarca
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Comarca</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">AGUAS LINDAS DE GOIAS</th>
+<td>7.0</td>
+<td>1042.57</td>
+<td>1016.70</td>
+<td>45.0</td>
+<td>149.50</td>
+<td>1122.0</td>
+<td>1505.50</td>
+<td>2821.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">ANAPOLIS</th>
+<td>34.0</td>
+<td>2687.56</td>
+<td>2020.27</td>
+<td>0.0</td>
+<td>520.25</td>
+<td>3361.5</td>
+<td>4060.25</td>
+<td>7388.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">APARECIDA DE GOIANIA</th>
+<td>44.0</td>
+<td>1052.84</td>
+<td>1511.01</td>
+<td>0.0</td>
+<td>247.00</td>
+<td>533.5</td>
+<td>1397.75</td>
+<td>7396.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">GOIANIA</th>
+<td>101.0</td>
+<td>1410.11</td>
+<td>1430.71</td>
+<td>0.0</td>
+<td>135.00</td>
+<td>1392.0</td>
+<td>2244.00</td>
+<td>7672.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">LUZIANIA</th>
+<td>18.0</td>
+<td>2889.44</td>
+<td>2985.06</td>
+<td>0.0</td>
+<td>295.00</td>
+<td>1768.5</td>
+<td>5699.00</td>
+<td>8914.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">SENADOR CANEDO</th>
+<td>14.0</td>
+<td>1032.36</td>
+<td>1421.81</td>
+<td>0.0</td>
+<td>51.25</td>
+<td>394.5</td>
+<td>1140.75</td>
+<td>4210.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-15-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Nos dois gráficos acima: 1. Alterar a respectiva função para inserir um parâmetro decresc = ‘não’, para exibir os boxplots na ordem crescente de suas medianas, ou seja, da menor (Senador, Canedo com 394.5 dias) para a maior (Anápolis, com 3361.5 dias). 2. Alterar a respectiva função para inserir um parâmetro sobrepostos = ‘não’, para exibir os histogramas não sobrepostos, ou seja, em uma sequência vertical, um após o outro (6 x 1).</p>
+<p>Agora a comparação do Tempo_conclusao_ip segundo as duas categorias de Reu_preso (sim/não).</p>
+<div id="24118c2e" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparação do Tempo_conclusao_ip segundo as duas categorias de Reu_preso (sim/não)</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot lado a lado</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>comparacao_grupos_boxplot(dados, <span class="st">'Tempo_conclusao_ip'</span>, <span class="st">'Reu_preso'</span>, unidade<span class="op">=</span><span class="st">'dias'</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograma lado a lado</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>comparacao_grupos_histograma(dados, <span class="st">'Tempo_conclusao_ip'</span>, <span class="st">'Reu_preso'</span>, unidade<span class="op">=</span><span class="st">'dias'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Estatísticas de Tempo_conclusao_ip por Reu_preso
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Reu_preso</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">não</th>
+<td>197.0</td>
+<td>1759.22</td>
+<td>1836.24</td>
+<td>0.0</td>
+<td>253.0</td>
+<td>1320.0</td>
+<td>2720.0</td>
+<td>8914.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">sim</th>
+<td>21.0</td>
+<td>348.43</td>
+<td>905.64</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>22.0</td>
+<td>3662.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-16-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="análise-de-associações-entre-variáveis-categóricas" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-associações-entre-variáveis-categóricas">7. Análise de Associações entre Variáveis Categóricas</h2>
+<section id="objetivo-3" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-3">Objetivo</h3>
+<p>Criar gráficos mosaico para explorar associações entre variáveis categóricas e realizar testes de independência.</p>
+<div id="8e89ce67" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar biblioteca para gráficos mosaico (se necessário)</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install statsmodels</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="7f4500a9" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.graphics.mosaicplot <span class="im">import</span> mosaic</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2_contingency</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="função-para-gráfico-mosaico-com-teste-de-associação" class="level3">
+<h3 class="anchored" data-anchor-id="função-para-gráfico-mosaico-com-teste-de-associação">Função para gráfico mosaico com teste de associação</h3>
+<div id="25107cdb" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise_associacao_categoricas(dados, var1, var2):</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria gráfico mosaico e realiza teste qui-quadrado de independência.</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parâmetros:</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - dados: DataFrame</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - var1: primeira variável categórica</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - var2: segunda variável categórica</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remover valores nulos</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    df_temp <span class="op">=</span> dados[[var1, var2]].dropna()</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tabela de contingência</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>    tabela_cont <span class="op">=</span> pd.crosstab(df_temp[var1], df_temp[var2], margins<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tabela de proporções</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    tabela_prop <span class="op">=</span> pd.crosstab(df_temp[var1], df_temp[var2], normalize<span class="op">=</span><span class="st">'all'</span>) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Teste qui-quadrado</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>    chi2, p_valor, gl, freq_esperada <span class="op">=</span> chi2_contingency(pd.crosstab(df_temp[var1], df_temp[var2]))</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar gráfico mosaico</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>    mosaic_data <span class="op">=</span> df_temp.groupby([var1, var2]).size()</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>    mosaic(mosaic_data, ax<span class="op">=</span>ax, title<span class="op">=</span><span class="ss">f'Gráfico Mosaico: </span><span class="sc">{</span>var1<span class="sc">}</span><span class="ss"> vs </span><span class="sc">{</span>var2<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>           labelizer<span class="op">=</span><span class="kw">lambda</span> k: <span class="ss">f'</span><span class="sc">{</span>k[<span class="dv">0</span>]<span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span>k[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>           properties<span class="op">=</span><span class="kw">lambda</span> key: {<span class="st">'color'</span>: plt.cm.Set3(<span class="bu">hash</span>(key) <span class="op">%</span> <span class="dv">12</span>)})</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Exibir resultados</span></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Tabela de Contingência: </span><span class="sc">{</span>var1<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>var2<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>    display(tabela_cont)</span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Tabela de Proporções (%)"</span>)</span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>    display(tabela_prop.<span class="bu">round</span>(<span class="dv">2</span>))</span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Teste Qui-Quadrado de Independência"</span>)</span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Estatística χ² = </span><span class="sc">{</span>chi2<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Graus de liberdade = </span><span class="sc">{</span>gl<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"p-valor = </span><span class="sc">{</span>p_valor<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p_valor <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb32-49"><a href="#cb32-49" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">→ Conclusão: Existe evidência de associação significativa entre as variáveis (p &lt; 0.05)"</span>)</span>
+<span id="cb32-50"><a href="#cb32-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb32-51"><a href="#cb32-51" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">→ Conclusão: Não há evidência de associação significativa entre as variáveis (p ≥ 0.05)"</span>)</span>
+<span id="cb32-52"><a href="#cb32-52" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercício-4-explore-associações-entre-variáveis-categóricas" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4-explore-associações-entre-variáveis-categóricas">Exercício 4: Explore associações entre variáveis categóricas</h3>
+<p><strong>Instruções:</strong> 1. Identifique pares de variáveis categóricas que possam estar relacionadas 2. Use a função <code>analise_associacao_categoricas()</code> 3. Interprete: - O gráfico mosaico mostra padrões diferentes do esperado? - O teste qui-quadrado indica associação significativa? - Quais categorias se destacam na associação?</p>
+<div id="58bb6883" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo:</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># analise_associacao_categoricas(dados, 'VARIAVEL_CATEGORICA_1', 'VARIAVEL_CATEGORICA_2')</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># SEU CÓDIGO AQUI</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>analise_associacao_categoricas(dados, <span class="st">'Comarca'</span>, <span class="st">'Reu_preso'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Tabela de Contingência: Comarca × Reu_preso
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Reu_preso</th>
+<th data-quarto-table-cell-role="th">não</th>
+<th data-quarto-table-cell-role="th">sim</th>
+<th data-quarto-table-cell-role="th">All</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Comarca</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">AGUAS LINDAS DE GOIAS</th>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">ANAPOLIS</th>
+<td>32</td>
+<td>2</td>
+<td>34</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">APARECIDA DE GOIANIA</th>
+<td>38</td>
+<td>6</td>
+<td>44</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">GOIANIA</th>
+<td>92</td>
+<td>9</td>
+<td>101</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">LUZIANIA</th>
+<td>15</td>
+<td>3</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">SENADOR CANEDO</th>
+<td>13</td>
+<td>1</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">All</th>
+<td>197</td>
+<td>21</td>
+<td>218</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Tabela de Proporções (%)
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Reu_preso</th>
+<th data-quarto-table-cell-role="th">não</th>
+<th data-quarto-table-cell-role="th">sim</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Comarca</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">AGUAS LINDAS DE GOIAS</th>
+<td>3.21</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">ANAPOLIS</th>
+<td>14.68</td>
+<td>0.92</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">APARECIDA DE GOIANIA</th>
+<td>17.43</td>
+<td>2.75</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">GOIANIA</th>
+<td>42.20</td>
+<td>4.13</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">LUZIANIA</th>
+<td>6.88</td>
+<td>1.38</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">SENADOR CANEDO</th>
+<td>5.96</td>
+<td>0.46</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Teste Qui-Quadrado de Independência
+================================================================================
+Estatística χ² = 3.2889
+Graus de liberdade = 5
+p-valor = 0.6555
+
+→ Conclusão: Não há evidência de associação significativa entre as variáveis (p ≥ 0.05)
+</code></pre>
+</div>
+</div>
+<p>Agora a possível associação entre as variáveis categóricas: Assunto_resumido e Reu_preso</p>
+<div id="b779be95" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Possível associação entre as variáveis categóricas: Assunto_resumido e Reu_preso</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>analise_associacao_categoricas(dados, <span class="st">'Assunto_resumido'</span>, <span class="st">'Reu_preso'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Tabela de Contingência: Assunto_resumido × Reu_preso
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Reu_preso</th>
+<th data-quarto-table-cell-role="th">não</th>
+<th data-quarto-table-cell-role="th">sim</th>
+<th data-quarto-table-cell-role="th">All</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Assunto_resumido</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Feminicídio</th>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Homicídio</th>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Homicídio Privilegiado</th>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Homicídio Qualificado</th>
+<td>34</td>
+<td>3</td>
+<td>37</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Homicídio Simples</th>
+<td>153</td>
+<td>18</td>
+<td>171</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Latrocínio</th>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Seguida de Morte</th>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">All</th>
+<td>197</td>
+<td>21</td>
+<td>218</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Tabela de Proporções (%)
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Reu_preso</th>
+<th data-quarto-table-cell-role="th">não</th>
+<th data-quarto-table-cell-role="th">sim</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Assunto_resumido</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Feminicídio</th>
+<td>0.46</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Homicídio</th>
+<td>1.38</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Homicídio Privilegiado</th>
+<td>0.92</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Homicídio Qualificado</th>
+<td>15.60</td>
+<td>1.38</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Homicídio Simples</th>
+<td>70.18</td>
+<td>8.26</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Latrocínio</th>
+<td>1.38</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Seguida de Morte</th>
+<td>0.46</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Teste Qui-Quadrado de Independência
+================================================================================
+Estatística χ² = 1.3216
+Graus de liberdade = 6
+p-valor = 0.9705
+
+→ Conclusão: Não há evidência de associação significativa entre as variáveis (p ≥ 0.05)
+</code></pre>
+</div>
+</div>
+<p>Faça outra verificação de associação entre duas variáveis categóricas. Provavelmente será preciso, antes, tratar ou transformar variáveis com muitas categorias. Pense em abreviar os nomes das categorias muito longos, criando um dicionário de abreviaturas. Pense em diminuir o número total de categorias, ficando com as 6 de maior frequências e agrupando todas as demais em uma nova categoria ‘outras’.</p>
+<hr>
+</section>
+</section>
+<section id="análise-de-relações-entre-variáveis-quantitativas" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-relações-entre-variáveis-quantitativas">8. Análise de Relações entre Variáveis Quantitativas</h2>
+<section id="objetivo-4" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-4">Objetivo</h3>
+<p>Criar diagramas de dispersão com retas de regressão para explorar relações lineares entre variáveis quantitativas.</p>
+</section>
+<section id="função-para-diagrama-de-dispersão-com-análise-de-correlação" class="level3">
+<h3 class="anchored" data-anchor-id="função-para-diagrama-de-dispersão-com-análise-de-correlação">Função para diagrama de dispersão com análise de correlação</h3>
+<div id="39991359" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise_correlacao(dados, var_x, var_y, unidade_x<span class="op">=</span><span class="st">""</span>, unidade_y<span class="op">=</span><span class="st">""</span>):</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria diagrama de dispersão com reta de regressão e análise de correlação.</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parâmetros:</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - dados: DataFrame</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - var_x: variável para o eixo X</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - var_y: variável para o eixo Y</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - unidade_x: unidade de medida de X</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="co">    - unidade_y: unidade de medida de Y</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remover valores nulos</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    df_temp <span class="op">=</span> dados[[var_x, var_y]].dropna()</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcular correlação</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>    correlacao_pearson <span class="op">=</span> df_temp[var_x].corr(df_temp[var_y])</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>    correlacao_spearman <span class="op">=</span> df_temp[var_x].corr(df_temp[var_y], method<span class="op">=</span><span class="st">'spearman'</span>)</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Regressão linear</span></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>    slope, intercept, r_value, p_value, std_err <span class="op">=</span> stats.linregress(df_temp[var_x], df_temp[var_y])</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>    linha_regressao <span class="op">=</span> slope <span class="op">*</span> df_temp[var_x] <span class="op">+</span> intercept</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar figura</span></span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Scatter plot</span></span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>    ax.scatter(df_temp[var_x], df_temp[var_y], alpha<span class="op">=</span><span class="fl">0.6</span>, s<span class="op">=</span><span class="dv">80</span>, edgecolors<span class="op">=</span><span class="st">'black'</span>, linewidths<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reta de regressão</span></span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>    ax.plot(df_temp[var_x], linha_regressao, <span class="st">'r-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, </span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="ss">f'Reta: y = </span><span class="sc">{</span>slope<span class="sc">:.5f}</span><span class="ss">x + </span><span class="sc">{</span>intercept<span class="sc">:.3f}</span><span class="ss">'</span>)</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Configurações</span></span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="ss">f'</span><span class="sc">{</span>var_x<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>unidade_x<span class="sc">}</span><span class="ss">)'</span> <span class="cf">if</span> unidade_x <span class="cf">else</span> var_x, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="ss">f'</span><span class="sc">{</span>var_y<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>unidade_y<span class="sc">}</span><span class="ss">)'</span> <span class="cf">if</span> unidade_y <span class="cf">else</span> var_y, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'Relação entre </span><span class="sc">{</span>var_x<span class="sc">}</span><span class="ss"> e </span><span class="sc">{</span>var_y<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a>    ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adicionar informações de correlação</span></span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a>    texto_info <span class="op">=</span> <span class="ss">f"r de Pearson = </span><span class="sc">{</span>correlacao_pearson<span class="sc">:.3f}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a>    texto_info <span class="op">+=</span> <span class="ss">f"r de Spearman = </span><span class="sc">{</span>correlacao_spearman<span class="sc">:.3f}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a>    texto_info <span class="op">+=</span> <span class="ss">f"R² = </span><span class="sc">{</span>r_value<span class="op">**</span><span class="dv">2</span><span class="sc">:.3f}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a>    texto_info <span class="op">+=</span> <span class="ss">f"p-valor = </span><span class="sc">{</span>p_value<span class="sc">:.4f}</span><span class="ss">"</span></span>
+<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a>    ax.text(<span class="fl">0.05</span>, <span class="fl">0.95</span>, texto_info, transform<span class="op">=</span>ax.transAxes,</span>
+<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">10</span>, verticalalignment<span class="op">=</span><span class="st">'top'</span>,</span>
+<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round'</span>, facecolor<span class="op">=</span><span class="st">'wheat'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>))</span>
+<span id="cb41-51"><a href="#cb41-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-52"><a href="#cb41-52" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb41-53"><a href="#cb41-53" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb41-54"><a href="#cb41-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-55"><a href="#cb41-55" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Interpretação</span></span>
+<span id="cb41-56"><a href="#cb41-56" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Análise de Correlação: </span><span class="sc">{</span>var_x<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>var_y<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb41-57"><a href="#cb41-57" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb41-58"><a href="#cb41-58" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Correlação de Pearson (r):     </span><span class="sc">{</span>correlacao_pearson<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb41-59"><a href="#cb41-59" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Correlação de Spearman (ρ):    </span><span class="sc">{</span>correlacao_spearman<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb41-60"><a href="#cb41-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Coeficiente de determinação (R²): </span><span class="sc">{</span>r_value<span class="op">**</span><span class="dv">2</span><span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb41-61"><a href="#cb41-61" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"p-valor:                       </span><span class="sc">{</span>p_value<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb41-62"><a href="#cb41-62" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Equação da reta de Regressão: </span><span class="sc">{</span>var_y<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>slope<span class="sc">:.5f}</span><span class="ss"> × </span><span class="sc">{</span>var_x<span class="sc">}</span><span class="ss"> + </span><span class="sc">{</span>intercept<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb41-63"><a href="#cb41-63" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-64"><a href="#cb41-64" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Interpretação da força da correlação</span></span>
+<span id="cb41-65"><a href="#cb41-65" aria-hidden="true" tabindex="-1"></a>    abs_corr <span class="op">=</span> <span class="bu">abs</span>(correlacao_pearson)</span>
+<span id="cb41-66"><a href="#cb41-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> abs_corr <span class="op">&lt;</span> <span class="fl">0.3</span>:</span>
+<span id="cb41-67"><a href="#cb41-67" aria-hidden="true" tabindex="-1"></a>        forca <span class="op">=</span> <span class="st">"fraca"</span></span>
+<span id="cb41-68"><a href="#cb41-68" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> abs_corr <span class="op">&lt;</span> <span class="fl">0.7</span>:</span>
+<span id="cb41-69"><a href="#cb41-69" aria-hidden="true" tabindex="-1"></a>        forca <span class="op">=</span> <span class="st">"moderada"</span></span>
+<span id="cb41-70"><a href="#cb41-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb41-71"><a href="#cb41-71" aria-hidden="true" tabindex="-1"></a>        forca <span class="op">=</span> <span class="st">"forte"</span></span>
+<span id="cb41-72"><a href="#cb41-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-73"><a href="#cb41-73" aria-hidden="true" tabindex="-1"></a>    direcao <span class="op">=</span> <span class="st">"positiva"</span> <span class="cf">if</span> correlacao_pearson <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"negativa"</span></span>
+<span id="cb41-74"><a href="#cb41-74" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-75"><a href="#cb41-75" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">→ Interpretação: Correlação linear </span><span class="sc">{</span>forca<span class="sc">}</span><span class="ss"> e </span><span class="sc">{</span>direcao<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb41-76"><a href="#cb41-76" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-77"><a href="#cb41-77" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p_value <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb41-78"><a href="#cb41-78" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"→ A correlação é estatisticamente significativa (p &lt; 0.05)"</span>)</span>
+<span id="cb41-79"><a href="#cb41-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb41-80"><a href="#cb41-80" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"→ A correlação não é estatisticamente significativa (p ≥ 0.05)"</span>)</span>
+<span id="cb41-81"><a href="#cb41-81" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-82"><a href="#cb41-82" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"→ R² indica que </span><span class="sc">{</span>r_value<span class="op">**</span><span class="dv">2</span><span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">% da variação em </span><span class="sc">{</span>var_y<span class="sc">}</span><span class="ss"> é explicada por </span><span class="sc">{</span>var_x<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="matriz-de-correlação-para-visão-geral" class="level3">
+<h3 class="anchored" data-anchor-id="matriz-de-correlação-para-visão-geral">Matriz de correlação para visão geral</h3>
+<div id="e27c5516" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matriz_correlacao(dados, variaveis<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria uma matriz de correlação visual (heatmap).</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parâmetros:</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - dados: DataFrame</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - variaveis: lista de variáveis a incluir (se None, usa todas as quantitativas)</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> variaveis <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>        df_corr <span class="op">=</span> dados.select_dtypes(include<span class="op">=</span>[<span class="st">'int64'</span>, <span class="st">'float64'</span>])</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>        df_corr <span class="op">=</span> dados[variaveis]</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcular matriz de correlação</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>    corr_matrix <span class="op">=</span> df_corr.corr()</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Criar figura</span></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Heatmap</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>    sns.heatmap(corr_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, center<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>                square<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="dv">1</span>, cbar_kws<span class="op">=</span>{<span class="st">"shrink"</span>: <span class="fl">0.8</span>},</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>                fmt<span class="op">=</span><span class="st">'.2f'</span>, vmin<span class="op">=-</span><span class="dv">1</span>, vmax<span class="op">=</span><span class="dv">1</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="st">'Matriz de Correlação (Pearson)'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz de Correlação"</span>)</span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>    display(corr_matrix.<span class="bu">round</span>(<span class="dv">3</span>))</span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Identificar correlações fortes</span></span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Correlações mais fortes (|r| &gt; 0.5, excluindo diagonal):"</span>)</span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(corr_matrix.columns)):</span>
+<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i<span class="op">+</span><span class="dv">1</span>, <span class="bu">len</span>(corr_matrix.columns)):</span>
+<span id="cb42-38"><a href="#cb42-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">abs</span>(corr_matrix.iloc[i, j]) <span class="op">&gt;</span> <span class="fl">0.5</span>:</span>
+<span id="cb42-39"><a href="#cb42-39" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>corr_matrix<span class="sc">.</span>columns[i]<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>corr_matrix<span class="sc">.</span>columns[j]<span class="sc">}</span><span class="ss">: r = </span><span class="sc">{</span>corr_matrix<span class="sc">.</span>iloc[i, j]<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb42-40"><a href="#cb42-40" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercício-5-explore-relações-entre-variáveis-quantitativas" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-5-explore-relações-entre-variáveis-quantitativas">Exercício 5: Explore relações entre variáveis quantitativas</h3>
+<p><strong>Instruções:</strong> 1. Primeiro, crie a matriz de correlação para ter uma visão geral 2. Identifique pares de variáveis com correlações interessantes 3. Para cada par relevante, use a função <code>analise_correlacao()</code> 4. Analise: - A relação é linear? - É positiva ou negativa? - Qual a força da correlação? - Existem outliers que influenciam a relação? - A relação faz sentido teoricamente?</p>
+<div id="01c2552a" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Primeiro, visualize a matriz de correlação</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># matriz_correlacao(dados)</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># SEU CÓDIGO AQUI</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>matriz_correlacao(dados)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Matriz de Correlação
+================================================================================</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">N_ordem</th>
+<th data-quarto-table-cell-role="th">N_indiciados</th>
+<th data-quarto-table-cell-role="th">N_vitimas</th>
+<th data-quarto-table-cell-role="th">Tramitacao_direta</th>
+<th data-quarto-table-cell-role="th">Arma_de_fogo</th>
+<th data-quarto-table-cell-role="th">Validacao</th>
+<th data-quarto-table-cell-role="th">Prazo_conclusao_IP</th>
+<th data-quarto-table-cell-role="th">Tempo_conclusao_ip</th>
+<th data-quarto-table-cell-role="th">Quantidade_manifestacao_ip</th>
+<th data-quarto-table-cell-role="th">Tempo_conclusao_mp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">N_ordem</th>
+<td>1.000</td>
+<td>0.115</td>
+<td>-0.019</td>
+<td>0.073</td>
+<td>-0.093</td>
+<td>NaN</td>
+<td>0.042</td>
+<td>0.030</td>
+<td>-0.056</td>
+<td>-0.057</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">N_indiciados</th>
+<td>0.115</td>
+<td>1.000</td>
+<td>0.037</td>
+<td>-0.053</td>
+<td>0.059</td>
+<td>NaN</td>
+<td>-0.226</td>
+<td>-0.262</td>
+<td>0.041</td>
+<td>-0.032</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">N_vitimas</th>
+<td>-0.019</td>
+<td>0.037</td>
+<td>1.000</td>
+<td>-0.141</td>
+<td>0.078</td>
+<td>NaN</td>
+<td>-0.028</td>
+<td>0.012</td>
+<td>0.106</td>
+<td>0.005</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Tramitacao_direta</th>
+<td>0.073</td>
+<td>-0.053</td>
+<td>-0.141</td>
+<td>1.000</td>
+<td>0.167</td>
+<td>NaN</td>
+<td>0.414</td>
+<td>0.063</td>
+<td>-0.052</td>
+<td>-0.034</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Arma_de_fogo</th>
+<td>-0.093</td>
+<td>0.059</td>
+<td>0.078</td>
+<td>0.167</td>
+<td>1.000</td>
+<td>NaN</td>
+<td>0.326</td>
+<td>0.242</td>
+<td>0.104</td>
+<td>0.080</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Validacao</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Prazo_conclusao_IP</th>
+<td>0.042</td>
+<td>-0.226</td>
+<td>-0.028</td>
+<td>0.414</td>
+<td>0.326</td>
+<td>NaN</td>
+<td>1.000</td>
+<td>0.230</td>
+<td>-0.204</td>
+<td>0.043</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Tempo_conclusao_ip</th>
+<td>0.030</td>
+<td>-0.262</td>
+<td>0.012</td>
+<td>0.063</td>
+<td>0.242</td>
+<td>NaN</td>
+<td>0.230</td>
+<td>1.000</td>
+<td>-0.110</td>
+<td>-0.055</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Quantidade_manifestacao_ip</th>
+<td>-0.056</td>
+<td>0.041</td>
+<td>0.106</td>
+<td>-0.052</td>
+<td>0.104</td>
+<td>NaN</td>
+<td>-0.204</td>
+<td>-0.110</td>
+<td>1.000</td>
+<td>0.431</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Tempo_conclusao_mp</th>
+<td>-0.057</td>
+<td>-0.032</td>
+<td>0.005</td>
+<td>-0.034</td>
+<td>0.080</td>
+<td>NaN</td>
+<td>0.043</td>
+<td>-0.055</td>
+<td>0.431</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Correlações mais fortes (|r| &gt; 0.5, excluindo diagonal):
+================================================================================
+</code></pre>
+</div>
+</div>
+<div id="ff3b0cca" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Depois, analise pares específicos</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo:</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"># analise_correlacao(dados, 'VAR_X', 'VAR_Y', unidade_x='dias', unidade_y='quantidade')</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="co"># SEU CÓDIGO AQUI</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>analise_correlacao(dados, <span class="st">'Tempo_conclusao_ip'</span>, <span class="st">'N_indiciados'</span>, unidade_x<span class="op">=</span><span class="st">'dias'</span>, unidade_y<span class="op">=</span><span class="st">'quantidade'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estcaso_ip_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Análise de Correlação: Tempo_conclusao_ip × N_indiciados
+================================================================================
+Correlação de Pearson (r):     -0.2622
+Correlação de Spearman (ρ):    -0.4199
+Coeficiente de determinação (R²): 0.0688
+p-valor:                       0.0001
+
+Equação da reta de Regressão: N_indiciados = -0.00017 × Tempo_conclusao_ip + 0.941
+
+→ Interpretação: Correlação linear fraca e negativa
+→ A correlação é estatisticamente significativa (p &lt; 0.05)
+→ R² indica que 6.9% da variação em N_indiciados é explicada por Tempo_conclusao_ip
+</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="síntese-e-conclusões" class="level2">
+<h2 class="anchored" data-anchor-id="síntese-e-conclusões">9. Síntese e Conclusões</h2>
+<section id="exercício-final-reporte-analítico" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-final-reporte-analítico">Exercício Final: Reporte Analítico</h3>
+<p>Com base em todas as análises realizadas, responda às seguintes questões:</p>
+<p><strong>1. Perfil dos Inquéritos Policiais</strong></p>
+<ul>
+<li>Quais são as características mais comuns dos inquéritos analisados?</li>
+<li>Existem padrões claros em relação às comarcas ou outros fatores categóricos?</li>
+</ul>
+<p><em>Sua resposta aqui:</em></p>
+<p><strong>2. Variabilidade e Outliers</strong></p>
+<ul>
+<li>Quais variáveis quantitativas apresentam maior variabilidade?</li>
+<li>Foram identificados outliers? Como eles podem ser explicados?</li>
+</ul>
+<p><em>Sua resposta aqui:</em></p>
+<p><strong>3. Diferenças entre Grupos</strong></p>
+<ul>
+<li>Existem diferenças importantes nas variáveis quantitativas quando comparamos diferentes grupos categóricos?</li>
+<li>Quais comparações foram mais reveladoras?</li>
+</ul>
+<p><em>Sua resposta aqui:</em></p>
+<p><strong>4. Associações entre Variáveis</strong></p>
+<ul>
+<li>Quais variáveis categóricas mostraram associação significativa?</li>
+<li>Quais variáveis quantitativas apresentaram correlação forte?</li>
+<li>As associações encontradas fazem sentido do ponto de vista teórico?</li>
+</ul>
+<p><em>Sua resposta aqui:</em></p>
+<p><strong>5. Aprendizados sobre Visualização de Dados</strong></p>
+<ul>
+<li>Qual tipo de gráfico você achou mais útil para entender os dados? Por quê?</li>
+<li>Houve alguma descoberta surpreendente ao visualizar os dados?</li>
+</ul>
+<p><em>Sua resposta aqui:</em></p>
+<hr>
+</section>
+</section>
+<section id="referências-e-recursos-adicionais" class="level2">
+<h2 class="anchored" data-anchor-id="referências-e-recursos-adicionais">Referências e Recursos Adicionais</h2>
+<section id="bibliotecas-python-utilizadas" class="level3">
+<h3 class="anchored" data-anchor-id="bibliotecas-python-utilizadas">Bibliotecas Python Utilizadas</h3>
+<ul>
+<li><strong>pandas:</strong> Manipulação e análise de dados</li>
+<li><strong>matplotlib:</strong> Criação de gráficos</li>
+<li><strong>seaborn:</strong> Visualizações estatísticas</li>
+<li><strong>scipy.stats:</strong> Testes estatísticos</li>
+<li><strong>statsmodels:</strong> Modelos estatísticos e gráficos mosaico</li>
+</ul>
+</section>
+<section id="para-aprender-mais" class="level3">
+<h3 class="anchored" data-anchor-id="para-aprender-mais">Para Aprender Mais</h3>
+<ul>
+<li><a href="https://matplotlib.org/">Documentação do Matplotlib</a></li>
+<li><a href="https://seaborn.pydata.org/">Documentação do Seaborn</a></li>
+<li><a href="https://pandas.pydata.org/">Documentação do Pandas</a></li>
+<li><a href="https://www.statsmodels.org/">Statsmodels Documentation</a></li>
+</ul>
+</section>
+<section id="conceitos-estatísticos" class="level3">
+<h3 class="anchored" data-anchor-id="conceitos-estatísticos">Conceitos Estatísticos</h3>
+<ul>
+<li>Medidas de tendência central e dispersão</li>
+<li>Correlação vs.&nbsp;Causalidade</li>
+<li>Teste Qui-quadrado de independência</li>
+<li>Regressão linear simples</li>
+<li>Interpretação de boxplots e detecção de outliers</li>
+</ul>
+</section>
+<section id="leituras-obrigatórias" class="level3">
+<h3 class="anchored" data-anchor-id="leituras-obrigatórias">Leituras Obrigatórias</h3>
+<ul>
+<li>Barbetta; Reis; Bornia, 2025, cap. 3 - Análise Exploratória de Dados, p.&nbsp;23-63 [41 p.]</li>
+<li>Moore; Notz; Fligner, 2023, cap. 1 - Como retratar distribuições por meio de gráficos, p.&nbsp;10-37 [28 p.]</li>
+<li>Moore; Notz; Fligner, 2023, cap. 2 - Como descrever distribuições por meio de números, p.&nbsp;38-58 [21 p.] Total = 90 p.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="notas-finais" class="level2">
+<h2 class="anchored" data-anchor-id="notas-finais">Notas Finais</h2>
+<p>Este notebook apresentou técnicas fundamentais de Análise Exploratória de Dados - AED. Lembre-se:</p>
+<ol type="1">
+<li><strong>Sempre visualize antes de modelar</strong> - gráficos revelam padrões que estatísticas resumidas podem esconder;</li>
+<li><strong>Contexto é essencial</strong> - números e gráficos só fazem sentido quando interpretados no contexto do problema;</li>
+<li><strong>Correlação ≠ Causalidade</strong> - uma relação estatística não implica necessariamente causa e efeito;</li>
+<li><strong>Outliers merecem atenção</strong> - podem ser erros, casos especiais ou os dados mais interessantes;</li>
+<li><strong>Comunique claramente</strong> - bons gráficos contam uma história que qualquer pessoa pode entender.</li>
+</ol>
+<p>Bom trabalho! 📊📈</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
