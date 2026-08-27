@@ -89,6 +89,56 @@ conflito de arquivos. Ainda assim, dois cuidados evitam confusão em sala:
   pasta, inclusive venvs antigas. Confirme que o kernel escolhido é o que
   aparece como `Python 3.12.8 ('.venv')`, e não `venv` ou `env`.
 
+## 2.1 Atualizar um clone antigo (sem perder o que você já criou)
+
+Se você já clonou o repositório antes e quer apenas receber a versão nova do
+ambiente, **não clone de novo**. Atualize no lugar:
+
+```powershell
+cd cdedpp
+git status
+```
+
+O `git status` separa duas coisas:
+
+- **`modified`** — arquivos do repositório que você alterou (tipicamente
+  `Disciplina_CDEDPP.ipynb`, se você executou e salvou o notebook em aula);
+- **`untracked`** — seus próprios arquivos e pastas. **O Git nunca os toca**:
+  seus notebooks, dados e resultados continuam exatamente onde estão.
+
+Se houver algum `modified`, guarde primeiro uma cópia pessoal dele — o `git
+pull` se recusa a sobrescrever alterações locais e aborta sem fazer nada:
+
+```powershell
+# 1. Preserve sua versão com outro nome (repita para cada arquivo modificado)
+Copy-Item Disciplina_CDEDPP.ipynb Disciplina_CDEDPP_meu.ipynb
+
+# 2. Descarte as alterações nos arquivos que pertencem ao repositório
+git restore .
+
+# 3. Traga a versão nova
+git pull origin main
+
+# 4. Atualize o ambiente para as dependências novas
+uv sync --frozen
+
+# 5. Confirme que está tudo funcionando
+uv run pytest
+```
+
+Detalhes esperados depois da atualização:
+
+- O arquivo `main.py`, que existia na versão anterior, é removido: era um resto
+  de template, sem uso.
+- Alguns dos seus arquivos podem **desaparecer da lista do `git status`** (por
+  exemplo, um `.csv` ou `.xlsx` seu). Eles continuam no disco: o `.gitignore`
+  novo apenas deixou de listá-los, para que dados não sejam enviados ao
+  repositório por engano.
+
+Se o clone estiver muito bagunçado e você preferir recomeçar do zero, clone em
+uma pasta nova e copie seus arquivos para dentro dela — mas, no caso comum, os
+cinco passos acima bastam.
+
 ## 3. A pilha analítica instalada
 
 As bibliotecas foram escolhidas em função do conjunto de dados do projeto
