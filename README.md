@@ -56,8 +56,7 @@ uv sync --frozen
 ### Se já existir uma `.venv` dentro da pasta
 
 `uv sync` é idempotente: se a `.venv` já estiver correta, ele não faz nada; se
-estiver desatualizada, ele mesmo corrige. Em caso de dúvida ou de um ambiente
-bagunçado por instalações manuais anteriores, force a recriação do zero:
+estiver desatualizada, ele mesmo corrige. Em caso de dúvida ou de um ambiente bagunçado por instalações manuais anteriores, force a recriação do zero:
 
 ```powershell
 Remove-Item -Recurse -Force .venv
@@ -74,14 +73,12 @@ errado seria usado.
 
 ### Se já existir uma venv com outro nome (`venv/`, `env/`, etc.)
 
-O `uv` só reconhece e gerencia a pasta `.venv`. Uma venv com nome diferente é
-totalmente ignorada por `uv sync`/`uv run` — não há risco de sobrescrita ou
+O `uv` só reconhece e gerencia a pasta `.venv`. Uma venv com nome diferente é totalmente ignorada por `uv sync`/`uv run` — não há risco de sobrescrita ou
 conflito de arquivos. Ainda assim, dois cuidados evitam confusão em sala:
 
 - Se essa venv antiga estiver **ativada** no terminal (prompt mostrando
   `(venv)` ou similar), o `uv` pode exibir um aviso sobre `VIRTUAL_ENV`
-  divergente, mas continua usando a `.venv` do projeto normalmente. Se quiser
-  eliminar o aviso, apenas desative antes:
+  divergente, mas continua usando a `.venv` do projeto normalmente. Se quiser eliminar o aviso, apenas desative antes:
   ```powershell
   deactivate
   ```
@@ -106,8 +103,7 @@ O `git status` separa duas coisas:
 - **`untracked`** — seus próprios arquivos e pastas. **O Git nunca os toca**:
   seus notebooks, dados e resultados continuam exatamente onde estão.
 
-Se houver algum `modified`, guarde primeiro uma cópia pessoal dele — o `git
-pull` se recusa a sobrescrever alterações locais e aborta sem fazer nada:
+Se houver algum `modified`, guarde primeiro uma cópia pessoal dele — o `git pull` se recusa a sobrescrever alterações locais e aborta sem fazer nada:
 
 ```powershell
 # 1. Preserve sua versão com outro nome (repita para cada arquivo modificado)
@@ -128,16 +124,13 @@ uv run pytest
 
 Detalhes esperados depois da atualização:
 
-- O arquivo `main.py`, que existia na versão anterior, é removido: era um resto
-  de template, sem uso.
+- O arquivo `main.py`, que existia na versão anterior, é removido: era um resto de template, sem uso.
 - Alguns dos seus arquivos podem **desaparecer da lista do `git status`** (por
   exemplo, um `.csv` ou `.xlsx` seu). Eles continuam no disco: o `.gitignore`
   novo apenas deixou de listá-los, para que dados não sejam enviados ao
   repositório por engano.
 
-Se o clone estiver muito bagunçado e você preferir recomeçar do zero, clone em
-uma pasta nova e copie seus arquivos para dentro dela — mas, no caso comum, os
-cinco passos acima bastam.
+Se o clone estiver muito bagunçado e você preferir recomeçar do zero, clone em uma pasta nova e copie seus arquivos para dentro dela — mas, no caso comum, os cinco passos acima bastam.
 
 ## 3. A pilha analítica instalada
 
@@ -149,32 +142,32 @@ colunas de **duração** entre marcos.
 
 ### Núcleo numérico e de dados
 
-| Biblioteca | Para quê |
-| --- | --- |
-| `numpy`, `pandas` | estruturas de dados e operações vetorizadas |
-| `scipy` | distribuições, testes e otimização |
-| `pyarrow` | leitura/escrita de Parquet e dtypes preservados |
+| Biblioteca            | Para quê                                       |
+| --------------------- | ----------------------------------------------- |
+| `numpy`, `pandas` | estruturas de dados e operações vetorizadas   |
+| `scipy`             | distribuições, testes e otimização          |
+| `pyarrow`           | leitura/escrita de Parquet e dtypes preservados |
 
 ### Entrada e saída de arquivos
 
-| Biblioteca | Para quê |
-| --- | --- |
-| `openpyxl` | ler e escrever `.xlsx` (exigido por `pd.read_excel`) |
-| `xlsxwriter` | gerar `.xlsx` formatados (múltiplas abas, estilos) |
-| `odfpy` | ler `.ods` (LibreOffice) |
-| `python-docx` | extrair as tabelas de dicionário de variáveis dos `.docx` |
-| `pdfplumber` | extrair texto e tabelas de peças processuais em PDF |
-| `charset-normalizer` | detectar a codificação de CSVs de origem duvidosa |
+| Biblioteca             | Para quê                                                    |
+| ---------------------- | ------------------------------------------------------------ |
+| `openpyxl`           | ler e escrever`.xlsx` (exigido por `pd.read_excel`)      |
+| `xlsxwriter`         | gerar`.xlsx` formatados (múltiplas abas, estilos)         |
+| `odfpy`              | ler`.ods` (LibreOffice)                                    |
+| `python-docx`        | extrair as tabelas de dicionário de variáveis dos`.docx` |
+| `pdfplumber`         | extrair texto e tabelas de peças processuais em PDF         |
+| `charset-normalizer` | detectar a codificação de CSVs de origem duvidosa          |
 
 ### Estatística e inferência
 
-| Biblioteca | Para quê |
-| --- | --- |
-| `statsmodels` | regressão (OLS, logit, probit, Poisson, GLM), ANOVA, séries temporais (ARIMA, STL, testes de estacionariedade), análise fatorial, tabelas de contingência |
-| `pingouin` | testes com **tamanho de efeito, IC e poder** no mesmo resultado; correlações parciais e correções para comparações múltiplas |
-| `scikit-posthocs` | testes post-hoc não paramétricos (Dunn, Conover) com ajuste de p |
-| `lifelines` | **análise de sobrevivência**: Kaplan-Meier e regressão de Cox |
-| `prince` | **MCA/CA/FAMD** — o análogo da PCA para variáveis categóricas |
+| Biblioteca          | Para quê                                                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `statsmodels`     | regressão (OLS, logit, probit, Poisson, GLM), ANOVA, séries temporais (ARIMA, STL, testes de estacionariedade), análise fatorial, tabelas de contingência |
+| `pingouin`        | testes com**tamanho de efeito, IC e poder** no mesmo resultado; correlações parciais e correções para comparações múltiplas                      |
+| `scikit-posthocs` | testes post-hoc não paramétricos (Dunn, Conover) com ajuste de p                                                                                            |
+| `lifelines`       | **análise de sobrevivência**: Kaplan-Meier e regressão de Cox                                                                                        |
+| `prince`          | **MCA/CA/FAMD** — o análogo da PCA para variáveis categóricas                                                                                       |
 
 Duas escolhas merecem justificativa explícita:
 
@@ -183,32 +176,30 @@ Duas escolhas merecem justificativa explícita:
   como concluídos enviesa qualquer média de duração. Kaplan-Meier e Cox
   incorporam a censura no cálculo.
 - **`prince` (MCA)** existe porque a base é quase toda categórica. PCA sobre
-  códigos numerados trataria rótulos como quantidades e produziria resultado
-  sem sentido.
+  códigos numerados trataria rótulos como quantidades e produziria resultado sem sentido.
 
 Para análise fatorial exploratória use `statsmodels.multivariate.factor.Factor`
-(com rotação varimax/oblimin). A biblioteca `factor-analyzer` foi deliberadamente
-**não incluída**: sua versão atual é incompatível com o `scikit-learn` 1.9.
+(com rotação varimax/oblimin). A biblioteca `factor-analyzer` foi deliberadamente **não incluída**: sua versão atual é incompatível com o `scikit-learn` 1.9.
 
 ### Machine learning
 
-| Biblioteca | Para quê |
-| --- | --- |
-| `scikit-learn` | pipelines, validação cruzada, métricas, modelos clássicos |
-| `lightgbm` | gradient boosting para dados tabulares, com suporte nativo a categóricas |
-| `shap` | interpretação das contribuições de cada variável |
-| `imbalanced-learn` | reamostragem para desfechos raros (ex.: condenação) |
+| Biblioteca           | Para quê                                                                 |
+| -------------------- | ------------------------------------------------------------------------- |
+| `scikit-learn`     | pipelines, validação cruzada, métricas, modelos clássicos             |
+| `lightgbm`         | gradient boosting para dados tabulares, com suporte nativo a categóricas |
+| `shap`             | interpretação das contribuições de cada variável                     |
+| `imbalanced-learn` | reamostragem para desfechos raros (ex.: condenação)                     |
 
 `xgboost` foi omitido de propósito: sobrepõe-se ao `lightgbm` e arrasta
 dependências CUDA de centenas de MB no `uv sync` dos alunos.
 
 ### Texto em português
 
-| Biblioteca | Para quê |
-| --- | --- |
-| `spacy` + `pt_core_news_sm` | tokenização, lematização, POS e entidades nomeadas em português |
-| `rapidfuzz` | pareamento aproximado (unir grafias divergentes de municípios/partes entre planilhas) |
-| `unidecode` | normalizar acentuação antes de comparar textos |
+| Biblioteca                      | Para quê                                                                              |
+| ------------------------------- | -------------------------------------------------------------------------------------- |
+| `spacy` + `pt_core_news_sm` | tokenização, lematização, POS e entidades nomeadas em português                   |
+| `rapidfuzz`                   | pareamento aproximado (unir grafias divergentes de municípios/partes entre planilhas) |
+| `unidecode`                   | normalizar acentuação antes de comparar textos                                       |
 
 O modelo `pt_core_news_sm` está **declarado no `pyproject.toml`** (via
 `[tool.uv.sources]`), portanto vem junto no `uv sync` — não é preciso rodar
@@ -217,12 +208,12 @@ troque pelo `pt_core_news_lg` (~500 MB).
 
 ### Visualização e qualidade dos dados
 
-| Biblioteca | Para quê |
-| --- | --- |
-| `matplotlib`, `seaborn` | gráficos estáticos para publicação |
-| `plotly` | gráficos interativos para exploração |
-| `missingno` | visualizar o padrão de valores ausentes |
-| `pandera` | declarar e validar o **esquema** dos dados (tipos, domínios, nulos) |
+| Biblioteca                  | Para quê                                                                 |
+| --------------------------- | ------------------------------------------------------------------------- |
+| `matplotlib`, `seaborn` | gráficos estáticos para publicação                                    |
+| `plotly`                  | gráficos interativos para exploração                                   |
+| `missingno`               | visualizar o padrão de valores ausentes                                  |
+| `pandera`                 | declarar e validar o**esquema** dos dados (tipos, domínios, nulos) |
 
 ### Extra opcional: inferência bayesiana
 
@@ -258,8 +249,7 @@ Os dois são **autossuficientes**: geram seus próprios dados de exemplo e não
 dependem de nenhum arquivo externo. Funcionam imediatamente após o
 `uv sync --frozen`.
 
-Rode `uv run pytest` sempre que atualizar dependências: uma incompatibilidade
-entre versões aparece ali, e não no meio de uma análise.
+Rode `uv run pytest` sempre que atualizar dependências: uma incompatibilidade entre versões aparece ali, e não no meio de uma análise.
 
 ## 3.2 O que este repositório contém (e o que não contém)
 
