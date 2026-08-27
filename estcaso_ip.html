@@ -114,6 +114,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="objetivos-de-aprendizagem">Objetivos de Aprendizagem</h3>
 <p>Ao final deste estudo de caso, você será capaz de: 1. Criar gráficos de barras/colunas para variáveis categóricas 2. Criar dot plots, histogramas e boxplots para variáveis quantitativas 3. Comparar distribuições de variáveis quantitativas entre categorias/classes de uma variável categórica 4. Analisar associações entre variáveis categóricas usando gráficos mosaico (quiçá <em>Correspondence Analysis Plot</em>) 5. Explorar relações entre variáveis quantitativas usando diagramas de dispersão e retas de regressão</p>
 <hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig\tab-01-CO-CVI-Pronasci.png" class="img-fluid figure-img"></p>
+<figcaption>Municípios do pronasci II no CO</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="tipos-de-gráficos-uma-introdução-visual" class="level2">
@@ -1889,7 +1895,7 @@ Estatísticas de Tempo_conclusao_ip por Comarca
 </div>
 </div>
 </div>
-<p>Nos dois gráficos acima: 1. Alterar a respectiva função para inserir um parâmetro decresc = ‘não’, para exibir os boxplots na ordem crescente de suas medianas, ou seja, da menor (Senador, Canedo com 394.5 dias) para a maior (Anápolis, com 3361.5 dias). 2. Alterar a respectiva função para inserir um parâmetro sobrepostos = ‘não’, para exibir os histogramas não sobrepostos, ou seja, em uma sequência vertical, um após o outro (6 x 1).</p>
+<p><strong>Desafio:</strong> Nos dois gráficos acima… 1. Alterar a respectiva função para inserir um parâmetro decresc = ‘não’, para exibir os boxplots na ordem crescente de suas medianas, ou seja, da menor (Senador, Canedo com 394.5 dias) para a maior (Anápolis, com 3361.5 dias). 2. Alterar a respectiva função para inserir um parâmetro sobrepostos = ‘não’, para exibir os histogramas não sobrepostos, ou seja, em uma sequência vertical, um após o outro (6 x 1).</p>
 <p>Agora a comparação do Tempo_conclusao_ip segundo as duas categorias de Reu_preso (sim/não).</p>
 <div id="24118c2e" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparação do Tempo_conclusao_ip segundo as duas categorias de Reu_preso (sim/não)</span></span>
@@ -1987,6 +1993,12 @@ Estatísticas de Tempo_conclusao_ip por Reu_preso
 <section id="objetivo-3" class="level3">
 <h3 class="anchored" data-anchor-id="objetivo-3">Objetivo</h3>
 <p>Criar gráficos mosaico para explorar associações entre variáveis categóricas e realizar testes de independência.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig\inf.jpg" class="img-fluid figure-img"></p>
+<figcaption>Inferência da amostra para População</figcaption>
+</figure>
+</div>
 <div id="8e89ce67" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar biblioteca para gráficos mosaico (se necessário)</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install statsmodels</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2375,7 +2387,16 @@ p-valor = 0.9705
 </code></pre>
 </div>
 </div>
-<p>Faça outra verificação de associação entre duas variáveis categóricas. Provavelmente será preciso, antes, tratar ou transformar variáveis com muitas categorias. Pense em abreviar os nomes das categorias muito longos, criando um dicionário de abreviaturas. Pense em diminuir o número total de categorias, ficando com as 6 de maior frequências e agrupando todas as demais em uma nova categoria ‘outras’.</p>
+<p><strong>Desafio:</strong> Procure, antes, enunciar as Hipóteses que foram testadas nos dois Testes de Significância contra a Hipóese Nulas dos dois exercícios anteriores. 1. Faça outra verificação de associação entre duas variáveis categóricas.<br>
+2. Provavelmente será preciso, antes, tratar ou transformar variáveis com muitas categorias.<br>
+3. Pense em abreviar os nomes das categorias muito longos, criando um dicionário de abreviaturas.<br>
+4. Pense em diminuir o número total de categorias, ficando com as 6 de maior frequências e agrupando todas as demais em uma nova categoria ‘outras’.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig\DiamondShape-Donovan.jpg" class="img-fluid figure-img"></p>
+<figcaption>Ciclo da Ciência</figcaption>
+</figure>
+</div>
 <hr>
 </section>
 </section>
