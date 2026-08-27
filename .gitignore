@@ -1,0 +1,40 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+*_executado.ipynb
+
+# Caches locais gerados ao rodar notebooks e ferramentas
+.ipython/
+.jupyter/
+.matplotlib/
+.tmp/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.uv/
+
+# Editores / IDEs
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ambiente / segredos
+.env
+.env.*

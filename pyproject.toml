@@ -1,0 +1,20 @@
+[project]
+name = "cdedpp"
+version = "0.1.0"
+description = "Ambiente de Ciencia de Dados e Estatistica para a disciplina CDEDPP, gerenciado com uv"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+    "pandas>=3.0.5",
+    "scikit-learn>=1.9.0",
+    "seaborn>=0.13.2",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "jupyterlab>=4.6.3",
+    "nbconvert>=7.17.1",
+]
