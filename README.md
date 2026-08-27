@@ -72,6 +72,23 @@ externamente e usam sempre o Python da `.venv` do projeto. Evite rodar
 `python` ou `jupyter` "soltos" sem `uv run`, pois aí sim o ambiente ativo
 errado seria usado.
 
+### Se já existir uma venv com outro nome (`venv/`, `env/`, etc.)
+
+O `uv` só reconhece e gerencia a pasta `.venv`. Uma venv com nome diferente é
+totalmente ignorada por `uv sync`/`uv run` — não há risco de sobrescrita ou
+conflito de arquivos. Ainda assim, dois cuidados evitam confusão em sala:
+
+- Se essa venv antiga estiver **ativada** no terminal (prompt mostrando
+  `(venv)` ou similar), o `uv` pode exibir um aviso sobre `VIRTUAL_ENV`
+  divergente, mas continua usando a `.venv` do projeto normalmente. Se quiser
+  eliminar o aviso, apenas desative antes:
+  ```powershell
+  deactivate
+  ```
+- No VS Code, o seletor de kernel lista **todos** os ambientes encontrados na
+  pasta, inclusive venvs antigas. Confirme que o kernel escolhido é o que
+  aparece como `Python 3.12.8 ('.venv')`, e não `venv` ou `env`.
+
 ## 3. Como esta configuração foi criada
 
 Estes são os comandos usados para adicionar a pilha de ciência de dados:
