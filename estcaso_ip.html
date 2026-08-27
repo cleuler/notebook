@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="preparação-do-ambiente" class="level2">
 <h2 class="anchored" data-anchor-id="preparação-do-ambiente">2. Preparação do Ambiente</h2>
 <p>Vamos carregar as bibliotecas necessárias para nossa análise.</p>
-<div id="39c8bc75" class="cell" data-execution_count="4">
+<div id="39c8bc75" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importar bibliotecas</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="carregamento-e-exploração-inicial-dos-dados" class="level2">
 <h2 class="anchored" data-anchor-id="carregamento-e-exploração-inicial-dos-dados">3. Carregamento e Exploração Inicial dos Dados</h2>
-<div id="b8328b8c" class="cell" data-execution_count="5">
+<div id="b8328b8c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar o dicionário de variáveis</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dicionario <span class="op">=</span> pd.read_excel(<span class="st">'dat/estcaso_ip/ApendiceA-QuadroVariaveis.xlsx'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">80</span>)</span>
@@ -567,7 +567,7 @@ DICIONÁRIO DE VARIÁVEIS
 </div>
 </div>
 </div>
-<div id="77795cd4" class="cell" data-execution_count="6">
+<div id="77795cd4" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar a base de dados</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> pd.read_excel(<span class="st">'dat/estcaso_ip/ApendiceB-BaseDados.xlsx'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1241,7 +1241,7 @@ Estatísticas descritivas:</code></pre>
 <span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Informações sobre as variáveis:"</span>)</span>
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>dados.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Conversão concluída em 5 colunas object.
+<pre><code>Conversão concluída em 0 colunas object.
 Campos inválidos foram substituídos por NA e datas inválidas por NaT.
 
 Informações sobre as variáveis:
@@ -1679,7 +1679,7 @@ N (obs.)            : 218
 </section>
 <section id="função-para-comparação-de-grupos-com-boxplots" class="level3">
 <h3 class="anchored" data-anchor-id="função-para-comparação-de-grupos-com-boxplots">Função para comparação de grupos com boxplots</h3>
-<div id="d85b8422" class="cell" data-execution_count="20">
+<div id="d85b8422" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> comparacao_grupos_boxplot(dados, var_quantitativa, var_categorica, unidade<span class="op">=</span><span class="st">""</span>):</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria boxplots lado a lado para comparar uma variável quantitativa entre grupos.</span></span>
@@ -1759,7 +1759,7 @@ N (obs.)            : 218
 <section id="exercício-3-compare-variáveis-quantitativas-entre-grupos" class="level3">
 <h3 class="anchored" data-anchor-id="exercício-3-compare-variáveis-quantitativas-entre-grupos">Exercício 3: Compare variáveis quantitativas entre grupos</h3>
 <p><strong>Instruções:</strong> 1. Identifique combinações interessantes de variáveis quantitativas e categóricas 2. Use as funções <code>comparacao_grupos_boxplot()</code> e <code>comparacao_grupos_histograma()</code> 3. Analise: - Qual grupo tem maior mediana? - Qual grupo é mais variável? - Existem diferenças notáveis entre os grupos? - Algum grupo tem mais outliers?</p>
-<div id="e2faeaaa" class="cell" data-execution_count="21">
+<div id="e2faeaaa" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo:</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># comparacao_grupos_boxplot(dados, 'VAR_QUANTITATIVA', 'VAR_CATEGORICA', unidade='dias')</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># comparacao_grupos_histograma(dados, 'VAR_QUANTITATIVA', 'VAR_CATEGORICA', unidade='dias')</span></span>
@@ -1897,7 +1897,7 @@ Estatísticas de Tempo_conclusao_ip por Comarca
 </div>
 <p><strong>Desafio:</strong> Nos dois gráficos acima… 1. Alterar a respectiva função para inserir um parâmetro decresc = ‘não’, para exibir os boxplots na ordem crescente de suas medianas, ou seja, da menor (Senador, Canedo com 394.5 dias) para a maior (Anápolis, com 3361.5 dias). 2. Alterar a respectiva função para inserir um parâmetro sobrepostos = ‘não’, para exibir os histogramas não sobrepostos, ou seja, em uma sequência vertical, um após o outro (6 x 1).</p>
 <p>Agora a comparação do Tempo_conclusao_ip segundo as duas categorias de Reu_preso (sim/não).</p>
-<div id="24118c2e" class="cell" data-execution_count="22">
+<div id="24118c2e" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparação do Tempo_conclusao_ip segundo as duas categorias de Reu_preso (sim/não)</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot lado a lado</span></span>
@@ -1999,18 +1999,18 @@ Estatísticas de Tempo_conclusao_ip por Reu_preso
 <figcaption>Inferência da amostra para População</figcaption>
 </figure>
 </div>
-<div id="8e89ce67" class="cell">
+<div id="8e89ce67" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar biblioteca para gráficos mosaico (se necessário)</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install statsmodels</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7f4500a9" class="cell" data-execution_count="23">
+<div id="7f4500a9" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.graphics.mosaicplot <span class="im">import</span> mosaic</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2_contingency</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="função-para-gráfico-mosaico-com-teste-de-associação" class="level3">
 <h3 class="anchored" data-anchor-id="função-para-gráfico-mosaico-com-teste-de-associação">Função para gráfico mosaico com teste de associação</h3>
-<div id="25107cdb" class="cell" data-execution_count="25">
+<div id="25107cdb" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise_associacao_categoricas(dados, var1, var2):</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria gráfico mosaico e realiza teste qui-quadrado de independência.</span></span>
@@ -2068,7 +2068,7 @@ Estatísticas de Tempo_conclusao_ip por Reu_preso
 <section id="exercício-4-explore-associações-entre-variáveis-categóricas" class="level3">
 <h3 class="anchored" data-anchor-id="exercício-4-explore-associações-entre-variáveis-categóricas">Exercício 4: Explore associações entre variáveis categóricas</h3>
 <p><strong>Instruções:</strong> 1. Identifique pares de variáveis categóricas que possam estar relacionadas 2. Use a função <code>analise_associacao_categoricas()</code> 3. Interprete: - O gráfico mosaico mostra padrões diferentes do esperado? - O teste qui-quadrado indica associação significativa? - Quais categorias se destacam na associação?</p>
-<div id="58bb6883" class="cell" data-execution_count="26">
+<div id="58bb6883" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo:</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># analise_associacao_categoricas(dados, 'VARIAVEL_CATEGORICA_1', 'VARIAVEL_CATEGORICA_2')</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2224,7 +2224,7 @@ p-valor = 0.6555
 </div>
 </div>
 <p>Agora a possível associação entre as variáveis categóricas: Assunto_resumido e Reu_preso</p>
-<div id="b779be95" class="cell" data-execution_count="28">
+<div id="b779be95" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Possível associação entre as variáveis categóricas: Assunto_resumido e Reu_preso</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>analise_associacao_categoricas(dados, <span class="st">'Assunto_resumido'</span>, <span class="st">'Reu_preso'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -2408,7 +2408,7 @@ p-valor = 0.9705
 </section>
 <section id="função-para-diagrama-de-dispersão-com-análise-de-correlação" class="level3">
 <h3 class="anchored" data-anchor-id="função-para-diagrama-de-dispersão-com-análise-de-correlação">Função para diagrama de dispersão com análise de correlação</h3>
-<div id="39991359" class="cell" data-execution_count="36">
+<div id="39991359" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise_correlacao(dados, var_x, var_y, unidade_x<span class="op">=</span><span class="st">""</span>, unidade_y<span class="op">=</span><span class="st">""</span>):</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria diagrama de dispersão com reta de regressão e análise de correlação.</span></span>
@@ -2495,7 +2495,7 @@ p-valor = 0.9705
 </section>
 <section id="matriz-de-correlação-para-visão-geral" class="level3">
 <h3 class="anchored" data-anchor-id="matriz-de-correlação-para-visão-geral">Matriz de correlação para visão geral</h3>
-<div id="e27c5516" class="cell" data-execution_count="30">
+<div id="e27c5516" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matriz_correlacao(dados, variaveis<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Cria uma matriz de correlação visual (heatmap).</span></span>
@@ -2541,7 +2541,7 @@ p-valor = 0.9705
 <section id="exercício-5-explore-relações-entre-variáveis-quantitativas" class="level3">
 <h3 class="anchored" data-anchor-id="exercício-5-explore-relações-entre-variáveis-quantitativas">Exercício 5: Explore relações entre variáveis quantitativas</h3>
 <p><strong>Instruções:</strong> 1. Primeiro, crie a matriz de correlação para ter uma visão geral 2. Identifique pares de variáveis com correlações interessantes 3. Para cada par relevante, use a função <code>analise_correlacao()</code> 4. Analise: - A relação é linear? - É positiva ou negativa? - Qual a força da correlação? - Existem outliers que influenciam a relação? - A relação faz sentido teoricamente?</p>
-<div id="01c2552a" class="cell" data-execution_count="31">
+<div id="01c2552a" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Primeiro, visualize a matriz de correlação</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># matriz_correlacao(dados)</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2722,7 +2722,7 @@ Correlações mais fortes (|r| &gt; 0.5, excluindo diagonal):
 </code></pre>
 </div>
 </div>
-<div id="ff3b0cca" class="cell" data-execution_count="37">
+<div id="ff3b0cca" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Depois, analise pares específicos</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo:</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"># analise_correlacao(dados, 'VAR_X', 'VAR_Y', unidade_x='dias', unidade_y='quantidade')</span></span>
