@@ -24,7 +24,7 @@ pelo projeto automaticamente.
 ## 1. Clonar o repositório
 
 ```powershell
-git clone https://github.com/rafaelcostaf4/cdedpp.git
+git clone https://github.com/rafaelcostaf4-afk/cdedpp.git
 cd cdedpp
 ```
 
@@ -144,7 +144,7 @@ internet para baixar Python e pacotes; depois o cache do `uv` pode ser reutiliza
 Resumo para rodar em qualquer PC (aluno ou outro professor):
 
 ```powershell
-git clone https://github.com/rafaelcostaf4/cdedpp.git
+git clone https://github.com/rafaelcostaf4-afk/cdedpp.git
 cd cdedpp
 uv sync --frozen
 uv run jupyter lab
