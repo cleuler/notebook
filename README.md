@@ -41,6 +41,37 @@ uv sync --frozen
 Use `--frozen` para garantir que o ambiente fique idêntico ao usado em aula,
 sem recalcular versões novas de bibliotecas.
 
+### Se já existir uma pasta `cdedpp` (clone anterior)
+
+O `git clone` falha se a pasta já existir e não estiver vazia. Apague a pasta
+antiga antes de clonar de novo:
+
+```powershell
+Remove-Item -Recurse -Force cdedpp
+git clone https://github.com/rafaelcostaf4-afk/cdedpp.git
+cd cdedpp
+uv sync --frozen
+```
+
+### Se já existir uma `.venv` dentro da pasta
+
+`uv sync` é idempotente: se a `.venv` já estiver correta, ele não faz nada; se
+estiver desatualizada, ele mesmo corrige. Em caso de dúvida ou de um ambiente
+bagunçado por instalações manuais anteriores, force a recriação do zero:
+
+```powershell
+Remove-Item -Recurse -Force .venv
+uv sync --frozen
+```
+
+### Se houver outro ambiente Python ativo no terminal (Conda, venv de outra aula, etc.)
+
+Não é necessário desativá-lo. Sempre use os comandos com o prefixo `uv run`
+(por exemplo, `uv run jupyter lab`): eles ignoram qualquer ambiente ativado
+externamente e usam sempre o Python da `.venv` do projeto. Evite rodar
+`python` ou `jupyter` "soltos" sem `uv run`, pois aí sim o ambiente ativo
+errado seria usado.
+
 ## 3. Como esta configuração foi criada
 
 Estes são os comandos usados para adicionar a pilha de ciência de dados:
@@ -78,11 +109,15 @@ Abra `Disciplina_CDEDPP.ipynb` e selecione `Python 3 (ipykernel)` se a
 interface pedir uma escolha.
 
 No VS Code, abra esta pasta, abra o `.ipynb` e use o seletor de kernel no canto
-superior direito. Escolha o interpretador:
+superior direito. Escolha o interpretador local do projeto, dentro da pasta
+clonada:
 
 ```text
-C:\Users\MPGO\AulaCleuler\.venv\Scripts\python.exe
+<caminho-do-projeto>\.venv\Scripts\python.exe
 ```
+
+Ele normalmente aparece na lista já identificado como `Python 3.12.8 ('.venv')`
+— não é necessário digitar o caminho manualmente na maioria dos casos.
 
 Não é preciso ativar a `.venv` quando os comandos começam com `uv run`.
 
