@@ -1,4 +1,49 @@
-# Python-generated files
+# ---------------------------------------------------------------------------
+# Este repositorio e a BASE do ambiente de estudo: pyproject.toml, uv.lock,
+# .python-version, notebooks-modelo e a suite de verificacao. Tudo que for
+# dado de pesquisa, resultado de analise ou artefato local fica de fora.
+# ---------------------------------------------------------------------------
+
+# Dados de pesquisa e material de analise (nao versionar: podem conter dados
+# de processos judiciais e nao fazem parte do ambiente-base)
+DadosMestrado/
+dados/
+dados_brutos/
+dados_processados/
+*.xlsx
+*.xls
+*.xlsm
+*.ods
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.dta
+*.sav
+*.docx
+*.doc
+*.pdf
+*.db
+*.sqlite3
+!exemplos/**
+
+# Saidas geradas por analise (reproduziveis a partir do codigo)
+outputs/
+figuras/
+tabelas/
+resultados/
+modelos/
+*.joblib
+*.pkl
+*.pickle
+
+# Notebooks pessoais e execucoes
+*_executado.ipynb
+*_scratch.ipynb
+rascunho*.ipynb
+.ipynb_checkpoints/
+
+# Python
 __pycache__/
 *.py[oc]
 build/
@@ -7,16 +52,13 @@ wheels/
 *.egg-info/
 *.egg
 
-# Virtual environments
+# Ambientes virtuais
 .venv/
 venv/
 env/
+ENV/
 
-# Jupyter / notebooks
-.ipynb_checkpoints/
-*_executado.ipynb
-
-# Caches locais gerados ao rodar notebooks e ferramentas
+# Caches de ferramentas
 .ipython/
 .jupyter/
 .matplotlib/
@@ -30,10 +72,12 @@ env/
 # Editores / IDEs
 .vscode/
 .idea/
+*.code-workspace
 
 # Sistema operacional
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Ambiente / segredos
 .env

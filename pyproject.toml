@@ -5,16 +5,75 @@ description = "Ambiente de Ciencia de Dados e Estatistica para a disciplina CDED
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "charset-normalizer>=3.5.1",
+    "imbalanced-learn>=0.14.2",
+    "lifelines>=0.30.0",
+    "lightgbm>=4.7.0",
     "matplotlib>=3.11.1",
+    "missingno>=0.5.2",
     "numpy>=2.5.2",
+    "odfpy>=1.4.1",
+    "openpyxl>=3.1.5",
     "pandas>=3.0.5",
+    "pandera[pandas]>=0.32.1",
+    "pdfplumber>=0.11.10",
+    "pingouin>=0.6.1",
+    "plotly>=6.9.0",
+    "prince>=0.20.1",
+    "pt-core-news-sm",
+    "pyarrow>=25.0.1",
+    "python-docx>=1.2.0",
+    "rapidfuzz>=3.14.5",
     "scikit-learn>=1.9.0",
+    "scikit-posthocs>=0.14.0",
+    "scipy>=1.18.0",
     "seaborn>=0.13.2",
+    "shap>=0.52.0",
+    "spacy>=3.8.15",
+    "statsmodels>=0.14.6",
+    "unidecode>=1.4.0",
+    "xlsxwriter>=3.2.9",
+]
+
+[project.optional-dependencies]
+bayes = [
+    "arviz>=0.23.4",
+    "pymc>=5.26.1",
 ]
 
 [dependency-groups]
 dev = [
     "ipykernel>=7.3.0",
+    "ipywidgets>=8.1.9",
     "jupyterlab>=4.6.3",
+    "jupyterlab-code-formatter>=3.1.0",
     "nbconvert>=7.17.1",
+    "nbstripout>=0.9.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.4",
+    "watermark>=2.6.0",
 ]
+
+[tool.uv.sources]
+pt-core-news-sm = { url = "https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.8.0/pt_core_news_sm-3.8.0-py3-none-any.whl" }
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/W: estilo, F: erros logicos, I: ordenacao de imports, UP: sintaxe moderna,
+# B: armadilhas comuns, NPY/PD: praticas corretas de NumPy e pandas.
+select = ["E", "W", "F", "I", "UP", "B", "NPY", "PD"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"*.ipynb" = ["E402", "F401"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["default"]
