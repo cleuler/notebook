@@ -25,6 +25,8 @@ dados_processados/
 *.pdf
 *.db
 *.sqlite3
+*.txt
+*.RData
 !exemplos/**
 
 # Saidas geradas por analise (reproduziveis a partir do codigo)
