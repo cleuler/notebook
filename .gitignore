@@ -22,6 +22,7 @@ dados_processados/
 *.sav
 *.docx
 *.doc
+*.odt
 *.pdf
 *.db
 *.sqlite3
