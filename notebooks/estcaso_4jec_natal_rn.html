@@ -921,7 +921,7 @@ datas → <code>datetime</code>, durações → <code>int64</code>/<code>float64
 <blockquote class="blockquote">
 <p><strong>Atenção:</strong> após esta etapa, confirme que <code>dados.dtypes</code> mostra os tipos esperados antes de prosseguir.</p>
 </blockquote>
-<div id="cod-tipagem" class="cell" data-execution_count="7">
+<div id="cod-tipagem" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Converter colunas de data para datetime.</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Converter colunas de duração para numérico.</span></span>
@@ -1171,7 +1171,7 @@ Estatísticas descritivas das variáveis de duração:</code></pre>
 <blockquote class="blockquote">
 <p><strong>Atenção:</strong> priorize qualquer inconsistência de data/duração ou chave duplicada antes de prosseguir com as análises.</p>
 </blockquote>
-<div id="cod-auditoria" class="cell" data-execution_count="8">
+<div id="cod-auditoria" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Verificar duplicatas na chave primária (número do processo).</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Contar faltantes nas variáveis analíticas principais.</span></span>
@@ -1277,7 +1277,7 @@ Estatísticas descritivas das variáveis de duração:</code></pre>
 <blockquote class="blockquote">
 <p><strong>Atenção:</strong> confirme o caminho do arquivo salvo; ele será a base reprodutível de todas as análises seguintes.</p>
 </blockquote>
-<div id="cod-exportacao-1" class="cell" data-execution_count="9">
+<div id="cod-exportacao-1" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Salvar dataset limpo em XLSX (para inspeção humana).</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Salvar em CSV UTF-8 (para interoperabilidade).</span></span>
@@ -1313,7 +1313,7 @@ Ignorar a censura subestima artificialmente a duração média dos processos.</p
 <blockquote class="blockquote">
 <p><strong>Atenção:</strong> verifique a proporção de processos censurados e o balanceamento entre os grupos experimentais.</p>
 </blockquote>
-<div id="cod-censura" class="cell" data-execution_count="10">
+<div id="cod-censura" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Calcular proporção de processos ativos (censurados).</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Verificar balanceamento dos grupos experimentais.</span></span>
@@ -1423,7 +1423,7 @@ Distribuição por grupo experimental:</code></pre>
 <blockquote class="blockquote">
 <p><strong>Como interpretar:</strong> qual categoria concentra mais casos? A distribuição é equilibrada ou há categorias dominantes? A curva acumulada mostra cauda longa?</p>
 </blockquote>
-<div id="cod-func-barras" class="cell" data-execution_count="11">
+<div id="cod-func-barras" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Função auxiliar: gráfico de barras + Pareto ────────────────────────────</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_barras_pareto(df: pd.DataFrame, coluna: <span class="bu">str</span>, titulo: <span class="bu">str</span> <span class="op">=</span> <span class="va">None</span>,</span>
@@ -1500,7 +1500,7 @@ Distribuição por grupo experimental:</code></pre>
 <pre><code>Função plot_barras_pareto() definida com sucesso.</code></pre>
 </div>
 </div>
-<div id="cod-graficos-categoricas" class="cell" data-execution_count="12">
+<div id="cod-graficos-categoricas" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Gráficos para todas as variáveis categóricas de interesse ─────────────</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dicionário: variável → título descritivo</span></span>
@@ -1975,7 +1975,7 @@ Distribuição por grupo experimental:</code></pre>
 <blockquote class="blockquote">
 <p><strong>Como interpretar:</strong> a distribuição é simétrica ou assimétrica? Existem outliers? Média e mediana são próximas?</p>
 </blockquote>
-<div id="cod-func-quant" class="cell" data-execution_count="13">
+<div id="cod-func-quant" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Função auxiliar: análise completa de variável quantitativa ─────────────</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise_quantitativa(df: pd.DataFrame, variavel: <span class="bu">str</span>,</span>
@@ -2076,7 +2076,7 @@ Distribuição por grupo experimental:</code></pre>
 <pre><code>Função analise_quantitativa() definida.</code></pre>
 </div>
 </div>
-<div id="cod-graficos-quant" class="cell" data-execution_count="14">
+<div id="cod-graficos-quant" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Aplicar análise individual para cada variável de duração ──────────────</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>VARS_QUANT <span class="op">=</span> {</span>
@@ -2214,7 +2214,7 @@ Estatísticas descritivas — duracao_proc
 <blockquote class="blockquote">
 <p><strong>Como interpretar:</strong> qual grupo tem maior mediana? Qual tem mais variabilidade? Há outliers concentrados em algum grupo?</p>
 </blockquote>
-<div id="cod-func-grupos" class="cell" data-execution_count="15">
+<div id="cod-func-grupos" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Função auxiliar: boxplots por grupo (ordenados pela mediana) ───────────</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> comparacao_grupos_boxplot(df: pd.DataFrame, var_quant: <span class="bu">str</span>, var_cat: <span class="bu">str</span>,</span>
@@ -2312,7 +2312,7 @@ Estatísticas descritivas — duracao_proc
 <pre><code>Funções de comparação por grupos definidas.</code></pre>
 </div>
 </div>
-<div id="cod-grupos-exp" class="cell" data-execution_count="16">
+<div id="cod-grupos-exp" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Comparação entre grupos experimentais ────────────────────────────────</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> {<span class="st">'grupo'</span>, <span class="st">'duracao_proc'</span>}.issubset(dados.columns):</span>
@@ -2463,7 +2463,7 @@ TESTE DE KRUSKAL-WALLIS
     diferença significativa entre as medianas dos grupos.</code></pre>
 </div>
 </div>
-<div id="cod-grupos-status" class="cell" data-execution_count="17">
+<div id="cod-grupos-status" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Comparação entre processos Encerrados vs. Ativos ──────────────────────</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> {<span class="st">'status_norm'</span>, <span class="st">'duracao_proc'</span>}.issubset(dados.columns):</span>
@@ -2575,7 +2575,7 @@ TESTE DE MANN-WHITNEY — Encerrado vs. Ativo
 <blockquote class="blockquote">
 <p><strong>Como interpretar:</strong> o gráfico mosaico mostra padrões que desviam do esperado sob independência? O p-valor indica associação significativa?</p>
 </blockquote>
-<div id="cod-func-associacao" class="cell" data-execution_count="18">
+<div id="cod-func-associacao" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Função auxiliar: análise de associação entre categóricas ──────────────</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise_associacao(df: pd.DataFrame, var1: <span class="bu">str</span>, var2: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
@@ -2639,7 +2639,7 @@ TESTE DE MANN-WHITNEY — Encerrado vs. Ativo
 <pre><code>Função analise_associacao() definida.</code></pre>
 </div>
 </div>
-<div id="cod-assoc-grupos" class="cell" data-execution_count="19">
+<div id="cod-assoc-grupos" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Par 1: grupo × status_norm ────────────────────────────────────────────</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Pergunta: o grupo experimental influencia a probabilidade de encerramento?</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2758,7 +2758,7 @@ Teste Qui-Quadrado de Independência
 </div>
 </div>
 </div>
-<div id="cod-assoc-acordo" class="cell" data-execution_count="20">
+<div id="cod-assoc-acordo" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Par 2: grupo × teve_acordo_na_ac ─────────────────────────────────────</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Pergunta: a conciliação obrigatória (presencial ou remota) gera mais acordos?</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2877,7 +2877,7 @@ Teste Qui-Quadrado de Independência
 </div>
 </div>
 </div>
-<div id="cod-assoc-sentenca" class="cell" data-execution_count="21">
+<div id="cod-assoc-sentenca" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Par 3: sentenca_std × grupo ───────────────────────────────────────────</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Pergunta: o tipo de sentença proferida difere entre os grupos experimentais?</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3027,7 +3027,7 @@ Teste Qui-Quadrado de Independência
 <blockquote class="blockquote">
 <p><strong>Importante:</strong> correlação ≠ causalidade. Uma relação estatística não implica causa e efeito.</p>
 </blockquote>
-<div id="cod-func-correlacao" class="cell" data-execution_count="22">
+<div id="cod-func-correlacao" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Função auxiliar: matriz de correlação ─────────────────────────────────</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matriz_correlacao(df: pd.DataFrame, variaveis: <span class="bu">list</span> <span class="op">=</span> <span class="va">None</span>,</span>
@@ -3142,7 +3142,7 @@ Teste Qui-Quadrado de Independência
 <pre><code>Funções de correlação/dispersão definidas.</code></pre>
 </div>
 </div>
-<div id="cod-correlacao" class="cell" data-execution_count="23">
+<div id="cod-correlacao" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Matriz de correlação de Spearman ─────────────────────────────────────</span></span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>COLS_CORR <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> [<span class="st">'duracao_sent2'</span>, <span class="st">'duracao_tecn'</span>, <span class="st">'duracao_sort'</span>, <span class="st">'duracao_proc'</span>]</span>
@@ -3172,7 +3172,7 @@ Correlações mais fortes (|r| &gt; 0,5, excluindo diagonal):
   duracao_sort              × duracao_proc             : r = 1.000</code></pre>
 </div>
 </div>
-<div id="cod-dispersao" class="cell" data-execution_count="24">
+<div id="cod-dispersao" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Dispersão: duracao_sort × duracao_proc (colorido por grupo) ───────────</span></span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> {<span class="st">'duracao_sort'</span>, <span class="st">'duracao_proc'</span>}.issubset(dados.columns):</span>
@@ -3227,7 +3227,7 @@ A escolha entre testes <strong>paramétricos</strong> (t, ANOVA) e <strong>não 
 <blockquote class="blockquote">
 <p><strong>Atenção (do ODT):</strong> o ODT de limitações alerta que distribuições de tempo processual são tipicamente <em>right-skewed</em> (assimétricas à direita), o que viola a premissa de normalidade. Por isso, os testes não paramétricos são preferidos neste estudo.</p>
 </blockquote>
-<div id="cod-normalidade" class="cell" data-execution_count="30">
+<div id="cod-normalidade" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Amostrar até 500 obs. para evitar o problema de amostras grandes</span></span>
 <span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    (onde qualquer pequena assimetria rejeita a normalidade).</span></span>
@@ -3317,7 +3317,7 @@ A escolha entre testes <strong>paramétricos</strong> (t, ANOVA) e <strong>não 
 <li><strong>Mann-Whitney</strong> — o tempo de tramitação difere entre processos com e sem acordo?</li>
 <li><strong>Kruskal-Wallis</strong> — o tempo difere entre os três grupos experimentais? <em>(já realizado na seção 13)</em></li>
 </ol>
-<div id="cod-hipoteses" class="cell" data-execution_count="31">
+<div id="cod-hipoteses" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Teste binomial (z): proporção de encerrados vs. H₀: p = 0,5.</span></span>
 <span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Mann-Whitney: acordo na AC → tempo de tramitação.</span></span>
@@ -3394,7 +3394,7 @@ TESTE MANN-WHITNEY — Tempo por Resultado do Acordo na AC
 <blockquote class="blockquote">
 <p><strong>Como interpretar:</strong> menor AIC → melhor ajuste relativo (penalizado pelo número de parâmetros).</p>
 </blockquote>
-<div id="cod-distribuicoes" class="cell" data-execution_count="32">
+<div id="cod-distribuicoes" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Extrair valores positivos finitos de duracao_proc.</span></span>
 <span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Ajustar cada distribuição candidata (MLE).</span></span>
@@ -3525,7 +3525,7 @@ TESTE MANN-WHITNEY — Tempo por Resultado do Acordo na AC
 <blockquote class="blockquote">
 <p><strong>Atenção:</strong> interprete coeficientes e significância sempre com leitura substantiva do contexto jurídico.</p>
 </blockquote>
-<div id="cod-regressao" class="cell" data-execution_count="35">
+<div id="cod-regressao" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Preparar variáveis preditoras e codificar dummies.</span></span>
 <span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Ajustar OLS (variável resposta: duracao_proc).</span></span>
@@ -3582,7 +3582,7 @@ Dep. Variable:           duracao_proc   R-squared:                       0.001
 Model:                            OLS   Adj. R-squared:                 -0.001
 Method:                 Least Squares   F-statistic:                    0.5310
 Date:                Thu, 08 Oct 2026   Prob (F-statistic):              0.588
-Time:                        00:41:33   Log-Likelihood:                -5048.5
+Time:                        02:34:01   Log-Likelihood:                -5048.5
 No. Observations:                 943   AIC:                         1.010e+04
 Df Residuals:                     940   BIC:                         1.012e+04
 Df Model:                           2                                         
@@ -3610,7 +3610,7 @@ Dep. Variable:                 evento   No. Observations:                  943
 Model:                          Logit   Df Residuals:                      940
 Method:                           MLE   Df Model:                            2
 Date:                Thu, 08 Oct 2026   Pseudo R-squ.:                 0.01822
-Time:                        00:41:33   Log-Likelihood:                -489.73
+Time:                        02:34:01   Log-Likelihood:                -489.73
 converged:                       True   LL-Null:                       -498.82
 Covariance Type:            nonrobust   LLR p-value:                 0.0001131
 ===============================================================================================
@@ -3631,7 +3631,7 @@ grupo_Tratamento_remoto        -0.8349      0.203     -4.116      0.000      -1.
 <blockquote class="blockquote">
 <p><strong>Contexto (do ODT):</strong> a janela de 218 dias e a presença de ~22% de processos censurados tornam o Kaplan-Meier imprescindível — a média simples subestima o tempo real dos processos ativos.</p>
 </blockquote>
-<div id="cod-sobrevivencia" class="cell" data-execution_count="36">
+<div id="cod-sobrevivencia" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Passo a passo desta célula ─────────────────────────────────────────────</span></span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Verificar disponibilidade da biblioteca lifelines.</span></span>
 <span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Ajustar KaplanMeierFitter para cada grupo.</span></span>
@@ -3703,29 +3703,31 @@ grupo_Tratamento_remoto        -0.8349      0.203     -4.116      0.000      -1.
 <span id="cb90-69"><a href="#cb90-69" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f'    p-valor = </span><span class="sc">{</span>resultado<span class="sc">.</span>p_value<span class="sc">:.4g}</span><span class="ss">  </span><span class="sc">{</span>sig<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb90-70"><a href="#cb90-70" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb90-71"><a href="#cb90-71" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Biblioteca lifelines não disponível.'</span>)</span>
-<span id="cb90-72"><a href="#cb90-72" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Instale com: pip install lifelines'</span>)</span>
-<span id="cb90-73"><a href="#cb90-73" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
-<span id="cb90-74"><a href="#cb90-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-75"><a href="#cb90-75" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fallback: ECDF simples por grupo</span></span>
-<span id="cb90-76"><a href="#cb90-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> {<span class="st">'duracao_proc'</span>, <span class="st">'grupo'</span>, <span class="st">'evento'</span>}.issubset(dados.columns):</span>
-<span id="cb90-77"><a href="#cb90-77" aria-hidden="true" tabindex="-1"></a>        fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb90-78"><a href="#cb90-78" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> grupo, sub <span class="kw">in</span> dados.dropna(subset<span class="op">=</span>[<span class="st">'grupo'</span>, <span class="st">'duracao_proc'</span>]).groupby(<span class="st">'grupo'</span>, observed<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb90-79"><a href="#cb90-79" aria-hidden="true" tabindex="-1"></a>            encerrados <span class="op">=</span> sub.loc[sub[<span class="st">'evento'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'duracao_proc'</span>].sort_values()</span>
-<span id="cb90-80"><a href="#cb90-80" aria-hidden="true" tabindex="-1"></a>            ecdf <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="bu">len</span>(encerrados) <span class="op">+</span> <span class="dv">1</span>) <span class="op">/</span> <span class="bu">len</span>(sub)  <span class="co"># proporção de encerrados</span></span>
-<span id="cb90-81"><a href="#cb90-81" aria-hidden="true" tabindex="-1"></a>            ax.step(encerrados.values, ecdf, where<span class="op">=</span><span class="st">'post'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="bu">str</span>(grupo))</span>
-<span id="cb90-82"><a href="#cb90-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-83"><a href="#cb90-83" aria-hidden="true" tabindex="-1"></a>        ax.set_xlabel(<span class="st">'Dias desde a distribuição'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb90-84"><a href="#cb90-84" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">'Proporção de processos encerrados'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb90-85"><a href="#cb90-85" aria-hidden="true" tabindex="-1"></a>        ax.set_title(<span class="st">'ECDF de Encerramento por Grupo Experimental</span><span class="ch">\n</span><span class="st">'</span></span>
-<span id="cb90-86"><a href="#cb90-86" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'(substituto do Kaplan-Meier, sem IC)'</span>, fontsize<span class="op">=</span><span class="dv">13</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
-<span id="cb90-87"><a href="#cb90-87" aria-hidden="true" tabindex="-1"></a>        ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb90-88"><a href="#cb90-88" aria-hidden="true" tabindex="-1"></a>        ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
-<span id="cb90-89"><a href="#cb90-89" aria-hidden="true" tabindex="-1"></a>        ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
-<span id="cb90-90"><a href="#cb90-90" aria-hidden="true" tabindex="-1"></a>        plt.tight_layout()</span>
-<span id="cb90-91"><a href="#cb90-91" aria-hidden="true" tabindex="-1"></a>        plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb90-72"><a href="#cb90-72" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Instale no terminal com: uv add lifelines'</span>)</span>
+<span id="cb90-73"><a href="#cb90-73" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Leia o README para mais informações.'</span>)</span>
+<span id="cb90-74"><a href="#cb90-74" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb90-75"><a href="#cb90-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-76"><a href="#cb90-76" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fallback: ECDF simples por grupo</span></span>
+<span id="cb90-77"><a href="#cb90-77" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> {<span class="st">'duracao_proc'</span>, <span class="st">'grupo'</span>, <span class="st">'evento'</span>}.issubset(dados.columns):</span>
+<span id="cb90-78"><a href="#cb90-78" aria-hidden="true" tabindex="-1"></a>        fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb90-79"><a href="#cb90-79" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> grupo, sub <span class="kw">in</span> dados.dropna(subset<span class="op">=</span>[<span class="st">'grupo'</span>, <span class="st">'duracao_proc'</span>]).groupby(<span class="st">'grupo'</span>, observed<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb90-80"><a href="#cb90-80" aria-hidden="true" tabindex="-1"></a>            encerrados <span class="op">=</span> sub.loc[sub[<span class="st">'evento'</span>] <span class="op">==</span> <span class="dv">1</span>, <span class="st">'duracao_proc'</span>].sort_values()</span>
+<span id="cb90-81"><a href="#cb90-81" aria-hidden="true" tabindex="-1"></a>            ecdf <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="bu">len</span>(encerrados) <span class="op">+</span> <span class="dv">1</span>) <span class="op">/</span> <span class="bu">len</span>(sub)  <span class="co"># proporção de encerrados</span></span>
+<span id="cb90-82"><a href="#cb90-82" aria-hidden="true" tabindex="-1"></a>            ax.step(encerrados.values, ecdf, where<span class="op">=</span><span class="st">'post'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="bu">str</span>(grupo))</span>
+<span id="cb90-83"><a href="#cb90-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-84"><a href="#cb90-84" aria-hidden="true" tabindex="-1"></a>        ax.set_xlabel(<span class="st">'Dias desde a distribuição'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb90-85"><a href="#cb90-85" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">'Proporção de processos encerrados'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb90-86"><a href="#cb90-86" aria-hidden="true" tabindex="-1"></a>        ax.set_title(<span class="st">'ECDF de Encerramento por Grupo Experimental</span><span class="ch">\n</span><span class="st">'</span></span>
+<span id="cb90-87"><a href="#cb90-87" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'(substituto do Kaplan-Meier, sem IC)'</span>, fontsize<span class="op">=</span><span class="dv">13</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb90-88"><a href="#cb90-88" aria-hidden="true" tabindex="-1"></a>        ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb90-89"><a href="#cb90-89" aria-hidden="true" tabindex="-1"></a>        ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb90-90"><a href="#cb90-90" aria-hidden="true" tabindex="-1"></a>        ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb90-91"><a href="#cb90-91" aria-hidden="true" tabindex="-1"></a>        plt.tight_layout()</span>
+<span id="cb90-92"><a href="#cb90-92" aria-hidden="true" tabindex="-1"></a>        plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Biblioteca lifelines não disponível.
-Instale com: pip install lifelines
+Instale no terminal com: uv add lifelines
+Leia o README para mais informações.
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
