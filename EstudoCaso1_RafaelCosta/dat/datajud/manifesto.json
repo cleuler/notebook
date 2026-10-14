@@ -1,0 +1,71 @@
+{
+  "fonte": "https://api-publica.datajud.cnj.jus.br/api_publica_tjgo/_search",
+  "inicio_coleta_utc": "2026-10-01T17:50:33.834148+00:00",
+  "fim_coleta_utc": "2026-10-01T19:43:26.550396+00:00",
+  "escopo": "TJGO — todo o Estado",
+  "segmentos": {
+    "ip_apf": {
+      "classes": [
+        279,
+        280
+      ],
+      "movimento_obrigatorio": null
+    },
+    "acao_penal_evoluida": {
+      "classes": [
+        282,
+        283
+      ],
+      "movimento_obrigatorio": [
+        14739
+      ]
+    },
+    "acao_penal_retificada": {
+      "classes": [
+        282,
+        283
+      ],
+      "movimento_obrigatorio": [
+        14738
+      ],
+      "movimento_excluido": [
+        14739
+      ]
+    }
+  },
+  "classes": {
+    "279": "Inquérito Policial",
+    "280": "Auto de Prisão em Flagrante",
+    "282": "Ação Penal de Competência do Júri",
+    "283": "Ação Penal - Procedimento Ordinário"
+  },
+  "assuntos": {
+    "3370": "Homicídio Simples",
+    "9636": "Homicídio Simples",
+    "3372": "Homicídio Qualificado",
+    "9638": "Homicídio Qualificado",
+    "3371": "Homicídio Privilegiado",
+    "9637": "Homicídio Privilegiado",
+    "11243": "Homicídio",
+    "12091": "Feminicídio",
+    "5567": "Latrocínio",
+    "11159": "Latrocínio",
+    "3387": "Seguida de Morte",
+    "9643": "Seguida de Morte"
+  },
+  "processos": {
+    "ip_apf": 22189,
+    "acao_penal_evoluida": 13062,
+    "acao_penal_retificada": 1297
+  },
+  "total_api_fatias": {
+    "ip_apf": 22189,
+    "acao_penal_evoluida": 13062,
+    "acao_penal_retificada": 1297
+  },
+  "total_api_sem_fatiar": {
+    "ip_apf": 22189,
+    "acao_penal_evoluida": 13062,
+    "acao_penal_retificada": 1297
+  }
+}

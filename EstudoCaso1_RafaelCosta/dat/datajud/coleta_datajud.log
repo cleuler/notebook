@@ -1,0 +1,992 @@
+ip_apf__ate_2013: retomando com 0 processos
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__ate_2013: 100 / 1277
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 30s
+ip_apf__2014_1: retomando com 0 processos
+ip_apf__2014_2: retomando com 0 processos
+ip_apf__2015_1: retomando com 0 processos
+ip_apf__2015_2: retomando com 0 processos
+ip_apf__2016_1: retomando com 0 processos
+ip_apf__ate_2013: retomando com 100 processos
+    ip_apf__2015_1: 100 / 464
+    ip_apf__ate_2013: 200 / 1277
+    ip_apf__2015_2: 100 / 355
+    ip_apf__2014_1: 100 / 359
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2015_1: 200 / 464
+    ip_apf__ate_2013: 300 / 1277
+    ip_apf__2014_1: 200 / 359
+    ip_apf__2015_2: 200 / 355
+    ip_apf__2014_2: 100 / 576
+    ip_apf__2016_1: 100 / 860
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2014_2: 200 / 576
+    ip_apf__2015_1: 300 / 464
+    ip_apf__ate_2013: 400 / 1277
+    ip_apf__2014_1: 300 / 359
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2016_1: 200 / 860
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    ip_apf__2014_1: 359 / 359
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+ip_apf__2014_1: 359 processos (API: 359)
+ip_apf__2016_2: retomando com 0 processos
+    tentativa 4 falhou (HTTP 429; shards com falha: None); nova tentativa em 20s
+    ip_apf__2014_2: 300 / 576
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    ip_apf__2015_1: 400 / 464
+    ip_apf__2016_2: 100 / 1070
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 5 falhou (HTTP 200; shards com falha: 2); nova tentativa em 25s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2015_2: 300 / 355
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    ip_apf__2015_2: 355 / 355
+    ip_apf__2014_2: 400 / 576
+    ip_apf__2015_1: 464 / 464
+    ip_apf__2016_2: 200 / 1070
+    ip_apf__2016_1: 300 / 860
+ip_apf__2015_2: 355 processos (API: 355)
+ip_apf__2017_1: retomando com 0 processos
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+ip_apf__2015_1: 464 processos (API: 464)
+ip_apf__2017_2: retomando com 0 processos
+    ip_apf__ate_2013: 500 / 1277
+    ip_apf__2014_2: 500 / 576
+    ip_apf__2016_1: 400 / 860
+    ip_apf__2016_2: 300 / 1070
+    ip_apf__2017_1: 100 / 1347
+    ip_apf__ate_2013: 600 / 1277
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2016_2: 400 / 1070
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__ate_2013: 700 / 1277
+    ip_apf__2016_2: 500 / 1070
+    ip_apf__2017_2: 100 / 472
+    ip_apf__2016_1: 500 / 860
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2016_2: 600 / 1070
+    ip_apf__2017_2: 200 / 472
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2016_1: 600 / 860
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    ip_apf__2017_2: 300 / 472
+    ip_apf__2016_2: 700 / 1070
+    ip_apf__2014_2: 576 / 576
+    ip_apf__ate_2013: 800 / 1277
+    ip_apf__2016_1: 700 / 860
+    ip_apf__2017_2: 400 / 472
+    ip_apf__2016_2: 800 / 1070
+ip_apf__2014_2: 576 processos (API: 576)
+ip_apf__2018_1: retomando com 0 processos
+    ip_apf__2017_1: 200 / 1347
+    ip_apf__2016_1: 800 / 860
+    ip_apf__ate_2013: 900 / 1277
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2016_2: 900 / 1070
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2018_1: 100 / 308
+    ip_apf__2017_1: 300 / 1347
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    ip_apf__ate_2013: 1000 / 1277
+    ip_apf__2016_1: 860 / 860
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    ip_apf__2016_2: 1000 / 1070
+    ip_apf__2017_1: 400 / 1347
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 4 falhou (HTTP 200; shards com falha: 2); nova tentativa em 20s
+ip_apf__desde_2027: retomando com 0 processos
+acao_penal_evoluida__desde_2027: retomando com 0 processos
+ip_apf__2026_2: retomando com 0 processosacao_penal_evoluida__2026_2: retomando com 0 processos
+ip_apf__2026_1: retomando com 0 processos
+
+acao_penal_evoluida__2026_1: retomando com 0 processos
+ip_apf__desde_2027: 0 processos (API: 0)
+ip_apf__2025_2: retomando com 0 processos
+acao_penal_evoluida__desde_2027: 0 processos (API: 0)
+acao_penal_evoluida__2025_2: retomando com 0 processos
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2026_2: 97 / 97
+    acao_penal_evoluida__2026_1: 100 / 621
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+acao_penal_evoluida__2026_2: 97 processos (API: 97)
+ip_apf__2025_1: retomando com 0 processos
+    ip_apf__2025_2: 100 / 762
+    acao_penal_evoluida__2025_2: 100 / 694
+    acao_penal_evoluida__2026_1: 200 / 621
+    ip_apf__2026_1: 100 / 829
+    ip_apf__2025_2: 200 / 762
+    ip_apf__2025_1: 100 / 907
+    ip_apf__2026_2: 100 / 378
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2026_1: 200 / 829
+    ip_apf__2025_1: 200 / 907
+    ip_apf__2025_2: 300 / 762
+    ip_apf__2026_2: 200 / 378
+    acao_penal_evoluida__2026_1: 300 / 621
+    tentativa 1 falhou (HTTP 200; shards com falha: 3); nova tentativa em 5s
+    ip_apf__2026_1: 300 / 829
+    ip_apf__2025_2: 400 / 762
+    acao_penal_evoluida__2025_2: 200 / 694
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2025_2: 300 / 694
+    ip_apf__2025_2: 500 / 762
+    ip_apf__2025_1: 300 / 907
+    ip_apf__2026_2: 300 / 378
+    ip_apf__2026_1: 400 / 829
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    acao_penal_evoluida__2025_2: 400 / 694
+    ip_apf__2025_2: 600 / 762
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2026_1: 500 / 829
+    acao_penal_evoluida__2025_2: 500 / 694
+    acao_penal_evoluida__2026_1: 400 / 621
+    ip_apf__2025_2: 700 / 762
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2026_1: 600 / 829
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    ip_apf__2025_2: 762 / 762
+    ip_apf__2026_1: 700 / 829
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2025_1: 400 / 907
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 200; shards com falha: 2); nova tentativa em 15s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2026_1: 800 / 829
+    tentativa 3 falhou (HTTP 200; shards com falha: 2); nova tentativa em 15s
+ip_apf__2025_2: 762 processos (API: 762)
+acao_penal_evoluida__2025_1: retomando com 0 processos
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    tentativa 4 falhou (HTTP 200; shards com falha: 2); nova tentativa em 20s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2026_1: 829 / 829
+    acao_penal_evoluida__2026_1: 500 / 621
+ip_apf__2026_1: 829 processos (API: 829)
+ip_apf__2024_2: retomando com 0 processos
+    acao_penal_evoluida__2025_1: 100 / 614
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    tentativa 5 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 25s
+    tentativa 5 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 25s
+    acao_penal_evoluida__2026_1: 600 / 621
+    tentativa 6 falhou (HTTP 429; shards com falha: None); nova tentativa em 30s
+    ip_apf__2024_2: 100 / 754
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 4 falhou (HTTP 200; shards com falha: 3); nova tentativa em 20s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 6 falhou (HTTP 200; shards com falha: 1); nova tentativa em 30s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2026_1: 621 / 621
+    ip_apf__2026_2: 378 / 378
+acao_penal_evoluida__2026_1: 621 processos (API: 621)
+acao_penal_evoluida__2024_2: retomando com 0 processos
+    acao_penal_evoluida__2025_1: 200 / 614
+    ip_apf__2024_2: 200 / 754
+    ip_apf__2025_1: 500 / 907
+ip_apf__2026_2: 378 processos (API: 378)
+ip_apf__2024_1: retomando com 0 processos
+    tentativa 7 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 30s
+    acao_penal_evoluida__2025_1: 300 / 614
+    acao_penal_evoluida__2024_2: 100 / 631
+    ip_apf__2025_1: 600 / 907
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2024_1: 100 / 745
+    ip_apf__2025_1: 700 / 907
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2024_2: 300 / 754
+    ip_apf__2024_1: 200 / 745
+    acao_penal_evoluida__2025_2: 600 / 694
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    acao_penal_evoluida__2024_2: 200 / 631
+    ip_apf__2025_1: 800 / 907
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    acao_penal_evoluida__2025_2: 694 / 694
+    ip_apf__2024_1: 300 / 745
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+acao_penal_evoluida__2025_2: 694 processos (API: 694)
+acao_penal_evoluida__2024_1: retomando com 0 processos
+    ip_apf__2025_1: 900 / 907
+    acao_penal_evoluida__2024_2: 300 / 631
+    acao_penal_evoluida__2025_1: 400 / 614
+    ip_apf__2024_1: 400 / 745
+    ip_apf__2024_2: 400 / 754
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__2024_1: 100 / 619
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2025_1: 907 / 907
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    acao_penal_evoluida__2025_1: 500 / 614
+    tentativa 1 falhou (HTTP 200; shards com falha: 3); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+ip_apf__2025_1: 907 processos (API: 907)
+ip_apf__2023_2: retomando com 0 processos
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    ip_apf__2024_1: 500 / 745
+    ip_apf__2024_2: 500 / 754
+    acao_penal_evoluida__2025_1: 600 / 614
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+    ip_apf__2023_2: 100 / 1120
+    acao_penal_evoluida__2024_1: 200 / 619
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2025_1: 614 / 614
+    ip_apf__2023_2: 200 / 1120
+    acao_penal_evoluida__2024_1: 300 / 619
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2024_1: 600 / 745
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2024_2: 600 / 754
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2024_1: 400 / 619
+acao_penal_evoluida__2025_1: 614 processos (API: 614)
+acao_penal_evoluida__2023_2: retomando com 0 processos
+    acao_penal_evoluida__2024_2: 400 / 631
+    ip_apf__2024_1: 700 / 745
+    ip_apf__2024_2: 700 / 754
+    ip_apf__2023_2: 300 / 1120
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    ip_apf__2023_2: 400 / 1120
+    ip_apf__2024_2: 754 / 754
+    acao_penal_evoluida__2024_2: 500 / 631
+    acao_penal_evoluida__2023_2: 100 / 559
+    ip_apf__2024_1: 745 / 745
+ip_apf__2024_2: 754 processos (API: 754)
+ip_apf__2023_1: retomando com 0 processos
+    acao_penal_evoluida__2024_1: 500 / 619
+    ip_apf__2023_2: 500 / 1120
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+ip_apf__2024_1: 745 processos (API: 745)
+acao_penal_evoluida__2023_1: retomando com 0 processos
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2023_1: 100 / 717
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2023_1: 200 / 717
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    acao_penal_evoluida__2024_1: 600 / 619
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    acao_penal_evoluida__2023_2: 200 / 559
+    ip_apf__2023_2: 600 / 1120
+    acao_penal_evoluida__2023_1: 100 / 539
+    acao_penal_evoluida__2024_1: 619 / 619
+    ip_apf__2023_1: 300 / 717
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+acao_penal_evoluida__2024_1: 619 processos (API: 619)
+ip_apf__2022_2: retomando com 0 processos
+    acao_penal_evoluida__2024_2: 600 / 631
+    acao_penal_evoluida__2023_2: 300 / 559
+    acao_penal_evoluida__2023_1: 200 / 539
+    ip_apf__2023_1: 400 / 717
+    acao_penal_evoluida__2024_2: 631 / 631
+    ip_apf__2023_2: 700 / 1120
+    acao_penal_evoluida__2023_2: 400 / 559
+    ip_apf__2022_2: 100 / 880
+acao_penal_evoluida__2024_2: 631 processos (API: 631)
+acao_penal_evoluida__2022_2: retomando com 0 processos
+    acao_penal_evoluida__2023_1: 300 / 539
+    ip_apf__2023_1: 500 / 717
+    acao_penal_evoluida__2023_2: 500 / 559
+    ip_apf__2022_2: 200 / 880
+    ip_apf__2023_2: 800 / 1120
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2023_1: 600 / 717
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    acao_penal_evoluida__2023_2: 559 / 559
+    ip_apf__2022_2: 300 / 880
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2023_2: 900 / 1120
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__2022_2: 100 / 598
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    acao_penal_evoluida__2023_1: 400 / 539
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+acao_penal_evoluida__2023_2: 559 processos (API: 559)
+ip_apf__2022_1: retomando com 0 processos
+    acao_penal_evoluida__2022_2: 200 / 598
+    ip_apf__2023_2: 1000 / 1120
+    ip_apf__2023_1: 700 / 717
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2023_1: 500 / 539
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2022_2: 300 / 598
+    ip_apf__2023_1: 717 / 717
+    acao_penal_evoluida__2023_1: 539 / 539
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    ip_apf__2022_1: 100 / 926
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+ip_apf__2023_1: 717 processos (API: 717)
+acao_penal_evoluida__2022_1: retomando com 0 processos
+acao_penal_evoluida__2023_1: 539 processos (API: 539)
+ip_apf__2021_2: retomando com 0 processos
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 4 falhou (HTTP 200; shards com falha: 2); nova tentativa em 20s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    ip_apf__2022_1: 200 / 926
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+    tentativa 5 falhou (HTTP 429; shards com falha: None); nova tentativa em 25s
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    ip_apf__2022_1: 300 / 926
+    acao_penal_evoluida__2022_2: 400 / 598
+    ip_apf__2021_2: 100 / 1129
+    acao_penal_evoluida__2022_1: 100 / 522
+    ip_apf__2022_2: 400 / 880
+    ip_apf__2023_2: 1100 / 1120
+    ip_apf__2021_2: 200 / 1129
+    acao_penal_evoluida__2022_2: 500 / 598
+    ip_apf__2022_1: 400 / 926
+    acao_penal_evoluida__2022_1: 200 / 522
+    ip_apf__2022_2: 500 / 880
+    ip_apf__2023_2: 1120 / 1120
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2022_2: 598 / 598
+    ip_apf__2021_2: 300 / 1129
+    ip_apf__2022_2: 600 / 880
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+acao_penal_evoluida__2022_2: 598 processos (API: 598)
+acao_penal_evoluida__2021_2: retomando com 0 processos
+    acao_penal_evoluida__2022_1: 300 / 522
+ip_apf__2023_2: 1120 processos (API: 1120)
+ip_apf__2021_1: retomando com 0 processos
+    ip_apf__2022_2: 700 / 880
+    ip_apf__2021_2: 400 / 1129
+    ip_apf__2022_1: 500 / 926
+    acao_penal_evoluida__2021_2: 100 / 531
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2022_1: 400 / 522
+    ip_apf__2021_1: 100 / 871
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2021_2: 500 / 1129
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2021_1: 200 / 871
+    acao_penal_evoluida__2022_1: 500 / 522
+    ip_apf__2022_2: 800 / 880
+    acao_penal_evoluida__2021_2: 200 / 531
+    ip_apf__2022_1: 600 / 926
+    ip_apf__2021_2: 600 / 1129
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__2022_1: 522 / 522
+    ip_apf__2021_1: 300 / 871
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2021_2: 700 / 1129
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2021_1: 400 / 871
+acao_penal_evoluida__2022_1: 522 processos (API: 522)
+acao_penal_evoluida__2021_1: retomando com 0 processos
+    ip_apf__2021_2: 800 / 1129
+    ip_apf__2022_1: 700 / 926
+    acao_penal_evoluida__2021_2: 300 / 531
+    tentativa 4 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 20s
+    ip_apf__2021_1: 500 / 871
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2021_2: 900 / 1129
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2021_1: 600 / 871
+    ip_apf__2022_2: 880 / 880
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2021_2: 400 / 531
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+ip_apf__2022_2: 880 processos (API: 880)
+ip_apf__2020_2: retomando com 0 processos
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2021_1: 100 / 605
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 3 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+    ip_apf__2020_2: 100 / 586
+    acao_penal_evoluida__2021_1: 200 / 605
+    ip_apf__2021_1: 700 / 871
+    acao_penal_evoluida__2021_2: 500 / 531
+    ip_apf__2022_1: 800 / 926
+    ip_apf__2020_2: 200 / 586
+    acao_penal_evoluida__2021_1: 300 / 605
+    acao_penal_evoluida__2021_2: 531 / 531
+    tentativa 4 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 20s
+    ip_apf__2021_1: 800 / 871
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__2021_1: 400 / 605
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 5 falhou (HTTP 200; shards com falha: 1); nova tentativa em 25s
+    ip_apf__2022_1: 900 / 926
+acao_penal_evoluida__2021_2: 531 processos (API: 531)
+acao_penal_evoluida__2020_2: retomando com 0 processos
+    acao_penal_evoluida__2021_1: 500 / 605
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2021_1: 871 / 871
+    ip_apf__2022_1: 926 / 926
+ip_apf__2022_1: 926 processos (API: 926)
+ip_apf__2020_1: retomando com 0 processos
+    acao_penal_evoluida__2021_1: 600 / 605
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2021_2: 1000 / 1129
+ip_apf__2021_1: 871 processos (API: 871)
+acao_penal_evoluida__2020_1: retomando com 0 processos
+    ip_apf__2020_2: 300 / 586
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2020_1: 100 / 368
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2021_2: 1100 / 1129
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    acao_penal_evoluida__2020_2: 100 / 567
+    ip_apf__2020_1: 100 / 486
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    acao_penal_evoluida__2020_1: 200 / 368
+    ip_apf__2021_2: 1129 / 1129
+    ip_apf__2020_2: 400 / 586
+    acao_penal_evoluida__2020_2: 200 / 567
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2020_1: 200 / 486
+    acao_penal_evoluida__2020_1: 300 / 368
+    acao_penal_evoluida__2020_2: 300 / 567
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+ip_apf__2021_2: 1129 processos (API: 1129)
+ip_apf__2019_2: retomando com 0 processos
+    ip_apf__2020_1: 300 / 486
+    acao_penal_evoluida__2020_1: 368 / 368
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    acao_penal_evoluida__2020_2: 400 / 567
+    ip_apf__2019_2: 100 / 1574
+    ip_apf__2020_1: 400 / 486
+    acao_penal_evoluida__2021_1: 605 / 605
+acao_penal_evoluida__2020_1: 368 processos (API: 368)
+acao_penal_evoluida__2019_2: retomando com 0 processos
+acao_penal_evoluida__2021_1: 605 processos (API: 605)
+ip_apf__2019_1: retomando com 0 processos
+    ip_apf__2020_2: 500 / 586
+    acao_penal_evoluida__2020_2: 500 / 567
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__2019_2: 100 / 420
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    ip_apf__2020_1: 486 / 486
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2019_1: 100 / 1412
+    acao_penal_evoluida__2020_2: 567 / 567
+    acao_penal_evoluida__2019_2: 200 / 420
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+ip_apf__2020_1: 486 processos (API: 486)
+acao_penal_evoluida__2019_1: retomando com 0 processos
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 200; shards com falha: 2); nova tentativa em 15s
+acao_penal_evoluida__2020_2: 567 processos (API: 567)
+ip_apf__2018_2: retomando com 0 processos
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    ip_apf__2019_1: 200 / 1412
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    ip_apf__2018_2: 100 / 1025
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    ip_apf__2019_1: 300 / 1412
+    acao_penal_evoluida__2019_2: 300 / 420
+    ip_apf__2018_2: 200 / 1025
+    acao_penal_evoluida__2019_1: 100 / 399
+    ip_apf__2020_2: 586 / 586
+    ip_apf__2019_2: 200 / 1574
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    acao_penal_evoluida__2019_2: 400 / 420
+    acao_penal_evoluida__2019_1: 200 / 399
+    ip_apf__2018_2: 300 / 1025
+    ip_apf__2019_2: 300 / 1574
+ip_apf__2020_2: 586 processos (API: 586)
+acao_penal_evoluida__2018_2: retomando com 0 processos
+    ip_apf__2019_1: 400 / 1412
+    acao_penal_evoluida__2019_1: 300 / 399
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2018_2: 400 / 1025
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2019_1: 500 / 1412
+    acao_penal_evoluida__2018_2: 100 / 344
+    acao_penal_evoluida__2019_2: 420 / 420
+    acao_penal_evoluida__2019_1: 399 / 399
+    ip_apf__2019_1: 600 / 1412
+    ip_apf__2018_2: 500 / 1025
+    acao_penal_evoluida__2018_2: 200 / 344
+acao_penal_evoluida__2019_1: 399 processos (API: 399)
+ip_apf__2018_1: retomando com 100 processos
+    ip_apf__2019_2: 400 / 1574
+acao_penal_evoluida__2019_2: 420 processos (API: 420)
+acao_penal_evoluida__2018_1: retomando com 0 processos
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    ip_apf__2019_1: 700 / 1412
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    ip_apf__2018_1: 200 / 308
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2019_2: 500 / 1574
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    ip_apf__2019_2: 600 / 1574
+    acao_penal_evoluida__2018_2: 300 / 344
+    ip_apf__2019_1: 800 / 1412
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 2 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 200; shards com falha: 2); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    ip_apf__2018_2: 600 / 1025
+    ip_apf__2019_2: 700 / 1574
+    ip_apf__2019_1: 900 / 1412
+    ip_apf__2018_1: 300 / 308
+    acao_penal_evoluida__2018_1: 100 / 232
+    acao_penal_evoluida__2018_2: 344 / 344
+    ip_apf__2018_1: 308 / 308
+acao_penal_evoluida__2018_2: 344 processos (API: 344)
+ip_apf__2017_2: retomando com 400 processos
+    ip_apf__2019_1: 1000 / 1412
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2018_1: 200 / 232
+    ip_apf__2017_2: 472 / 472
+    ip_apf__2019_2: 800 / 1574
+ip_apf__2018_1: 308 processos (API: 308)
+acao_penal_evoluida__2017_2: retomando com 0 processos
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    ip_apf__2019_1: 1100 / 1412
+    ip_apf__2018_2: 700 / 1025
+ip_apf__2017_2: 472 processos (API: 472)
+ip_apf__2017_1: retomando com 400 processos
+    acao_penal_evoluida__2018_1: 232 / 232
+    acao_penal_evoluida__2017_2: 100 / 255
+    ip_apf__2019_2: 900 / 1574
+    ip_apf__2019_1: 1200 / 1412
+acao_penal_evoluida__2018_1: 232 processos (API: 232)
+acao_penal_evoluida__2017_1: retomando com 0 processos
+    ip_apf__2017_1: 500 / 1347
+    ip_apf__2018_2: 800 / 1025
+    acao_penal_evoluida__2017_2: 200 / 255
+    ip_apf__2019_2: 1000 / 1574
+    acao_penal_evoluida__2017_1: 100 / 270
+    ip_apf__2018_2: 900 / 1025
+    ip_apf__2017_1: 600 / 1347
+    acao_penal_evoluida__2017_2: 255 / 255
+    ip_apf__2019_2: 1100 / 1574
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    ip_apf__2018_2: 1000 / 1025
+    acao_penal_evoluida__2017_1: 200 / 270
+acao_penal_evoluida__2017_2: 255 processos (API: 255)
+ip_apf__2016_2: retomando com 1000 processos
+    ip_apf__2019_2: 1200 / 1574
+    ip_apf__2017_1: 700 / 1347
+    acao_penal_evoluida__2017_1: 270 / 270
+    ip_apf__2018_2: 1025 / 1025
+    ip_apf__2019_1: 1300 / 1412
+acao_penal_evoluida__2017_1: 270 processos (API: 270)
+acao_penal_evoluida__2016_2: retomando com 0 processos
+    ip_apf__2016_2: 1070 / 1070
+    ip_apf__2019_2: 1300 / 1574
+    ip_apf__2017_1: 800 / 1347
+ip_apf__2018_2: 1025 processos (API: 1025)
+ip_apf__2016_1: retomando com 860 processos
+ip_apf__2016_2: 1070 processos (API: 1070)
+acao_penal_evoluida__2016_1: retomando com 0 processos
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    ip_apf__2019_1: 1400 / 1412
+ip_apf__2016_1: 860 processos (API: 860)
+ip_apf__2015_2: já coletada (355 processos)
+acao_penal_evoluida__2015_2: retomando com 0 processos
+    ip_apf__2019_2: 1400 / 1574
+    ip_apf__2017_1: 900 / 1347
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2016_2: 100 / 256
+    acao_penal_evoluida__2016_1: 100 / 281
+    ip_apf__2019_2: 1500 / 1574
+    ip_apf__2017_1: 1000 / 1347
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2015_2: 100 / 263
+    acao_penal_evoluida__2016_2: 200 / 256
+    acao_penal_evoluida__2016_1: 200 / 281
+    ip_apf__2019_1: 1412 / 1412
+    acao_penal_evoluida__2016_2: 256 / 256
+    ip_apf__2017_1: 1100 / 1347
+ip_apf__2019_1: 1412 processos (API: 1412)
+ip_apf__2015_1: já coletada (464 processos)
+acao_penal_evoluida__2015_1: retomando com 0 processos
+    acao_penal_evoluida__2016_1: 281 / 281
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+acao_penal_evoluida__2016_2: 256 processos (API: 256)
+ip_apf__2014_2: já coletada (576 processos)
+acao_penal_evoluida__2014_2: retomando com 0 processos
+    ip_apf__2019_2: 1574 / 1574
+    acao_penal_evoluida__2015_2: 200 / 263
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+ip_apf__2019_2: 1574 processos (API: 1574)
+ip_apf__2014_1: já coletada (359 processos)
+acao_penal_evoluida__2014_1: retomando com 0 processos
+    tentativa 2 falhou (HTTP 200; shards com falha: 2); nova tentativa em 10s
+acao_penal_evoluida__2016_1: 281 processos (API: 281)
+ip_apf__ate_2013: retomando com 1000 processos
+    ip_apf__2017_1: 1200 / 1347
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2015_2: 263 / 263
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    ip_apf__ate_2013: 1100 / 1277
+    acao_penal_evoluida__2015_1: 100 / 246
+acao_penal_evoluida__2015_2: 263 processos (API: 263)
+acao_penal_evoluida__ate_2013: retomando com 0 processos
+    acao_penal_evoluida__2014_2: 100 / 217
+    acao_penal_evoluida__2014_1: 100 / 225
+    ip_apf__ate_2013: 1200 / 1277
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__2015_1: 200 / 246
+    acao_penal_evoluida__2014_1: 200 / 225
+    ip_apf__2017_1: 1300 / 1347
+    acao_penal_evoluida__ate_2013: 100 / 2089
+    acao_penal_evoluida__2015_1: 246 / 246
+    acao_penal_evoluida__2014_2: 200 / 217
+    ip_apf__2017_1: 1347 / 1347
+    ip_apf__ate_2013: 1277 / 1277
+acao_penal_evoluida__2015_1: 246 processos (API: 246)
+    acao_penal_evoluida__2014_1: 225 / 225
+    acao_penal_evoluida__2014_2: 217 / 217
+    acao_penal_evoluida__ate_2013: 200 / 2089
+ip_apf__2017_1: 1347 processos (API: 1347)
+acao_penal_evoluida__2014_1: 225 processos (API: 225)
+ip_apf__ate_2013: 1277 processos (API: 1277)
+acao_penal_evoluida__2014_2: 217 processos (API: 217)
+    acao_penal_evoluida__ate_2013: 300 / 2089
+    acao_penal_evoluida__ate_2013: 400 / 2089
+    acao_penal_evoluida__ate_2013: 500 / 2089
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__ate_2013: 600 / 2089
+    acao_penal_evoluida__ate_2013: 700 / 2089
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    acao_penal_evoluida__ate_2013: 800 / 2089
+    acao_penal_evoluida__ate_2013: 900 / 2089
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__ate_2013: 1000 / 2089
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 200; shards com falha: 2); nova tentativa em 15s
+    acao_penal_evoluida__ate_2013: 1100 / 2089
+    acao_penal_evoluida__ate_2013: 1200 / 2089
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_evoluida__ate_2013: 1300 / 2089
+    acao_penal_evoluida__ate_2013: 1400 / 2089
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    acao_penal_evoluida__ate_2013: 1500 / 2089
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    acao_penal_evoluida__ate_2013: 1600 / 2089
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__ate_2013: 1700 / 2089
+    acao_penal_evoluida__ate_2013: 1800 / 2089
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_evoluida__ate_2013: 1900 / 2089
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 3 falhou (HTTP 200; shards com falha: 2); nova tentativa em 15s
+    tentativa 4 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 20s
+    tentativa 5 falhou (HTTP 429; shards com falha: None); nova tentativa em 25s
+    tentativa 6 falhou (HTTP 429; shards com falha: None); nova tentativa em 30s
+    tentativa 7 falhou (HTTP 429; shards com falha: None); nova tentativa em 30s
+    acao_penal_evoluida__ate_2013: 2000 / 2089
+    acao_penal_evoluida__ate_2013: 2089 / 2089
+acao_penal_evoluida__ate_2013: 2089 processos (API: 2089)
+== ip_apf: 22189 processos (API: 22189)
+== acao_penal_evoluida: 13062 processos (API: 13062)
+Conferência ip_apf: coletados 22189 | soma das fatias na API 22189 | total sem fatiar 22189
+Conferência acao_penal_evoluida: coletados 13062 | soma das fatias na API 13062 | total sem fatiar 13062
+Manifesto gravado em C:\Users\MPGO\AulaCleuler\EstudodeCaso1\dat\datajud\manifesto.json
+acao_penal_retificada__desde_2027: retomando com 0 processosip_apf__desde_2027: já coletada (0 processos)
+
+acao_penal_evoluida__desde_2027: já coletada (0 processos)
+acao_penal_retificada__2026_2: retomando com 0 processosip_apf__2026_2: já coletada (378 processos)
+
+acao_penal_evoluida__2026_2: já coletada (97 processos)
+ip_apf__2026_1: já coletada (829 processos)
+acao_penal_retificada__2026_1: retomando com 0 processosacao_penal_evoluida__2026_1: já coletada (621 processos)
+
+acao_penal_retificada__2025_2: retomando com 0 processos
+acao_penal_evoluida__2025_2: já coletada (694 processos)
+ip_apf__2025_2: já coletada (762 processos)
+acao_penal_evoluida__2025_1: já coletada (614 processos)
+ip_apf__2025_1: já coletada (907 processos)
+acao_penal_retificada__2025_1: retomando com 0 processos
+ip_apf__2024_2: já coletada (754 processos)
+acao_penal_evoluida__2024_2: já coletada (631 processos)
+acao_penal_retificada__2024_2: retomando com 0 processos
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    acao_penal_retificada__2025_2: 11 / 11
+acao_penal_retificada__desde_2027: 0 processos (API: 0)
+ip_apf__2024_1: já coletada (745 processos)
+acao_penal_evoluida__2024_1: já coletada (619 processos)
+acao_penal_retificada__2024_1: retomando com 0 processos
+    acao_penal_retificada__2026_2: 2 / 2
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+acao_penal_retificada__2025_2: 11 processos (API: 11)
+ip_apf__2023_2: já coletada (1120 processos)
+acao_penal_evoluida__2023_2: já coletada (559 processos)
+acao_penal_retificada__2023_2: retomando com 0 processos
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    acao_penal_retificada__2024_2: 15 / 15
+acao_penal_retificada__2026_2: 2 processos (API: 2)
+ip_apf__2023_1: já coletada (717 processos)
+acao_penal_evoluida__2023_1: já coletada (539 processos)
+acao_penal_retificada__2023_1: retomando com 0 processos
+    acao_penal_retificada__2024_1: 9 / 9
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_retificada__2023_2: 11 / 11
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+acao_penal_retificada__2024_2: 15 processos (API: 15)
+ip_apf__2022_2: já coletada (880 processos)
+acao_penal_evoluida__2022_2: já coletada (598 processos)
+acao_penal_retificada__2022_2: retomando com 0 processos
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+acao_penal_retificada__2023_2: 11 processos (API: 11)
+ip_apf__2022_1: já coletada (926 processos)
+acao_penal_evoluida__2022_1: já coletada (522 processos)
+acao_penal_retificada__2022_1: retomando com 0 processos
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 4 falhou (HTTP 200; shards com falha: 1); nova tentativa em 20s
+    acao_penal_retificada__2022_2: 13 / 13
+    tentativa 3 falhou (HTTP 200; shards com falha: 1); nova tentativa em 15s
+acao_penal_retificada__2024_1: 9 processos (API: 9)
+ip_apf__2021_2: já coletada (1129 processos)
+acao_penal_evoluida__2021_2: já coletada (531 processos)
+acao_penal_retificada__2021_2: retomando com 0 processos
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 4 falhou (HTTP 200; shards com falha: 3); nova tentativa em 20s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    acao_penal_retificada__2022_1: 30 / 30
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 5 falhou (HTTP 200; shards com falha: 1); nova tentativa em 25s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 5 falhou (HTTP 200; shards com falha: 1); nova tentativa em 25s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+acao_penal_retificada__2022_2: 13 processos (API: 13)
+ip_apf__2021_1: já coletada (871 processos)
+acao_penal_evoluida__2021_1: já coletada (605 processos)
+acao_penal_retificada__2021_1: retomando com 0 processos
+    acao_penal_retificada__2023_1: 13 / 13
+acao_penal_retificada__2022_1: 30 processos (API: 30)
+ip_apf__2020_2: já coletada (586 processos)
+acao_penal_evoluida__2020_2: já coletada (567 processos)
+acao_penal_retificada__2020_2: retomando com 0 processos
+acao_penal_retificada__2023_1: 13 processos (API: 13)
+ip_apf__2020_1: já coletada (486 processos)
+acao_penal_evoluida__2020_1: já coletada (368 processos)
+acao_penal_retificada__2020_1: retomando com 0 processos
+    acao_penal_retificada__2021_2: 76 / 76
+    acao_penal_retificada__2021_1: 75 / 75
+    acao_penal_retificada__2026_1: 5 / 5
+    acao_penal_retificada__2025_1: 14 / 14
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_retificada__2020_2: 67 / 67
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+acao_penal_retificada__2021_1: 75 processos (API: 75)
+ip_apf__2019_2: já coletada (1574 processos)
+acao_penal_evoluida__2019_2: já coletada (420 processos)
+acao_penal_retificada__2019_2: retomando com 0 processos
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+acao_penal_retificada__2025_1: 14 processos (API: 14)
+ip_apf__2019_1: já coletada (1412 processos)
+acao_penal_evoluida__2019_1: já coletada (399 processos)
+acao_penal_retificada__2019_1: retomando com 0 processos
+acao_penal_retificada__2020_2: 67 processos (API: 67)
+ip_apf__2018_2: já coletada (1025 processos)
+acao_penal_evoluida__2018_2: já coletada (344 processos)
+acao_penal_retificada__2018_2: retomando com 0 processos
+acao_penal_retificada__2026_1: 5 processos (API: 5)
+ip_apf__2018_1: já coletada (308 processos)
+acao_penal_evoluida__2018_1: já coletada (232 processos)
+acao_penal_retificada__2018_1: retomando com 0 processos
+acao_penal_retificada__2021_2: 76 processos (API: 76)
+ip_apf__2017_2: já coletada (472 processos)
+acao_penal_evoluida__2017_2: já coletada (255 processos)
+acao_penal_retificada__2017_2: retomando com 0 processos
+    acao_penal_retificada__2020_1: 78 / 78
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_retificada__2018_2: 64 / 64
+acao_penal_retificada__2020_1: 78 processos (API: 78)
+ip_apf__2017_1: já coletada (1347 processos)
+acao_penal_evoluida__2017_1: já coletada (270 processos)
+acao_penal_retificada__2017_1: retomando com 0 processos
+    acao_penal_retificada__2019_2: 70 / 70
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_retificada__2017_2: 46 / 46
+acao_penal_retificada__2019_2: 70 processos (API: 70)
+ip_apf__2016_2: já coletada (1070 processos)
+acao_penal_evoluida__2016_2: já coletada (256 processos)
+acao_penal_retificada__2016_2: retomando com 0 processos
+    acao_penal_retificada__2017_1: 55 / 55
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+acao_penal_retificada__2017_2: 46 processos (API: 46)
+ip_apf__2016_1: já coletada (860 processos)
+acao_penal_evoluida__2016_1: já coletada (281 processos)
+acao_penal_retificada__2016_1: retomando com 0 processos
+acao_penal_retificada__2018_2: 64 processos (API: 64)
+ip_apf__2015_2: já coletada (355 processos)
+acao_penal_evoluida__2015_2: já coletada (263 processos)
+acao_penal_retificada__2015_2: retomando com 0 processos
+    acao_penal_retificada__2019_1: 78 / 78
+    acao_penal_retificada__2016_2: 34 / 34
+acao_penal_retificada__2017_1: 55 processos (API: 55)
+ip_apf__2015_1: já coletada (464 processos)
+acao_penal_evoluida__2015_1: já coletada (246 processos)
+acao_penal_retificada__2015_1: retomando com 0 processos
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_retificada__2018_1: 53 / 53
+acao_penal_retificada__2016_2: 34 processos (API: 34)
+ip_apf__2014_2: já coletada (576 processos)
+acao_penal_evoluida__2014_2: já coletada (217 processos)
+acao_penal_retificada__2014_2: retomando com 0 processos
+acao_penal_retificada__2019_1: 78 processos (API: 78)
+ip_apf__2014_1: já coletada (359 processos)
+acao_penal_evoluida__2014_1: já coletada (225 processos)
+acao_penal_retificada__2014_1: retomando com 0 processos
+acao_penal_retificada__2018_1: 53 processos (API: 53)
+ip_apf__ate_2013: já coletada (1277 processos)
+acao_penal_evoluida__ate_2013: já coletada (2089 processos)
+acao_penal_retificada__ate_2013: retomando com 0 processos
+    acao_penal_retificada__2015_2: 43 / 43
+    acao_penal_retificada__2016_1: 39 / 39
+    acao_penal_retificada__2015_1: 38 / 38
+acao_penal_retificada__2015_2: 43 processos (API: 43)
+    acao_penal_retificada__ate_2013: 100 / 298
+    acao_penal_retificada__2014_1: 30 / 30
+    acao_penal_retificada__2014_2: 30 / 30
+acao_penal_retificada__2016_1: 39 processos (API: 39)
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+acao_penal_retificada__2014_1: 30 processos (API: 30)
+acao_penal_retificada__2014_2: 30 processos (API: 30)
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+    tentativa 1 falhou (JSONDecodeError('Expecting value: line 1 column 1 (char 0)')); nova tentativa em 5s
+    tentativa 3 falhou (HTTP 429; shards com falha: None); nova tentativa em 15s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+acao_penal_retificada__2015_1: 38 processos (API: 38)
+    acao_penal_retificada__ate_2013: 200 / 298
+    tentativa 1 falhou (HTTP 200; shards com falha: 1); nova tentativa em 5s
+    acao_penal_retificada__ate_2013: 298 / 298
+    tentativa 1 falhou (HTTP 429; shards com falha: None); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 200; shards com falha: 1); nova tentativa em 10s
+acao_penal_retificada__ate_2013: 298 processos (API: 298)
+== ip_apf: 22189 processos (API: 22189)
+== acao_penal_evoluida: 13062 processos (API: 13062)
+== acao_penal_retificada: 1297 processos (API: 1297)
+Conferência ip_apf: coletados 22189 | soma das fatias na API 22189 | total sem fatiar 22189
+Conferência acao_penal_evoluida: coletados 13062 | soma das fatias na API 13062 | total sem fatiar 13062
+    tentativa 1 falhou (HTTP 200; shards com falha: 2); nova tentativa em 5s
+    tentativa 2 falhou (HTTP 429; shards com falha: None); nova tentativa em 10s
+Conferência acao_penal_retificada: coletados 1297 | soma das fatias na API 1297 | total sem fatiar 1297
+Manifesto gravado em C:\Users\MPGO\AulaCleuler\EstudodeCaso1\dat\datajud\manifesto.json
