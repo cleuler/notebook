@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PLANO_estcaso_lide_pred.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*
+
+Arduino® Light Theme - Stefania Mellai <s.mellai@arduino.cc>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #FFFFFF;
+}
+
+.hljs,
+.hljs-subst {
+  color: #434f54;
+}
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-doctag,
+.hljs-name {
+  color: #00979D;
+}
+
+.hljs-built_in,
+.hljs-literal,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #D35400;
+}
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #00979D;
+}
+
+.hljs-type,
+.hljs-string,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #005C5F;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold;
+}
+
+.hljs-comment {
+  color: rgba(149,165,166,.8);
+}
+
+.hljs-meta-keyword {
+  color: #728E00;
+}
+
+.hljs-meta {
+  color: #434f54;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-function {
+  color: #728E00;
+}
+
+.hljs-number {
+  color: #8A7B52;  
+}
+
+</style>
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family:   "HelveticaNeue-Light", sans-serif, "宋体","Segoe WPC", "Segoe UI", "SFUIText-Light","Droid Sans Fallback";
+	font-size: 18px;
+	padding: 0 12px;
+	line-height: 1.6;
+	word-wrap: break-word;
+	color: #333333;
+}
+
+.content-wrapper{
+	max-width: 860px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom: 1px solid #eee;
+}
+
+
+h2{
+	padding-bottom: .3em;
+    font-size: 2em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+h3{
+	font-size: 1.75em;
+    line-height: 1.225;
+}
+
+h1, h2, h3 {
+	font-weight: bold;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Obsidian syntax defaults for legacy export (PDF / HTML / DOCX) */
+
+.callout {
+	--callout-accent: #0969da;
+	margin: 12px 0;
+	border-radius: 6px;
+	border-left: 4px solid var(--callout-accent);
+	background: rgba(9, 105, 218, 0.08);
+	color: #333333;
+	overflow: hidden;
+}
+
+.callout[data-callout="note"],
+.callout[data-callout="abstract"],
+.callout[data-callout="info"],
+.callout[data-callout="todo"],
+.callout[data-subtype="note"],
+.callout[data-subtype="abstract"],
+.callout[data-subtype="info"],
+.callout[data-subtype="todo"],
+.callout[data-callout="note" i],
+.callout[data-callout="abstract" i],
+.callout[data-callout="info" i],
+.callout[data-callout="todo" i],
+.callout[data-subtype="note" i],
+.callout[data-subtype="abstract" i],
+.callout[data-subtype="info" i],
+.callout[data-subtype="todo" i] {
+	--callout-accent: #0969da;
+	border-left-color: #0969da;
+	background: rgba(9, 105, 218, 0.08);
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-subtype="tip"],
+.callout[data-subtype="hint"],
+.callout[data-callout="tip" i],
+.callout[data-callout="hint" i],
+.callout[data-subtype="tip" i],
+.callout[data-subtype="hint" i] {
+	--callout-accent: #116329;
+	border-left-color: #116329;
+	background: rgba(17, 99, 41, 0.08);
+}
+
+.callout[data-callout="important"],
+.callout[data-subtype="important"],
+.callout[data-callout="important" i],
+.callout[data-subtype="important" i] {
+	--callout-accent: #8250df;
+	border-left-color: #8250df;
+	background: rgba(130, 80, 223, 0.08);
+}
+
+.callout[data-callout="warning"],
+.callout[data-subtype="warning"],
+.callout[data-callout="warning" i],
+.callout[data-subtype="warning" i] {
+	--callout-accent: #bc4c00;
+	border-left-color: #bc4c00;
+	background: rgba(188, 76, 0, 0.08);
+}
+
+.callout[data-callout="caution"],
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"],
+.callout[data-callout="fail"],
+.callout[data-subtype="caution"],
+.callout[data-subtype="danger"],
+.callout[data-subtype="error"],
+.callout[data-subtype="bug"],
+.callout[data-subtype="fail"],
+.callout[data-callout="caution" i],
+.callout[data-callout="danger" i],
+.callout[data-callout="error" i],
+.callout[data-callout="bug" i],
+.callout[data-callout="fail" i],
+.callout[data-subtype="caution" i],
+.callout[data-subtype="danger" i],
+.callout[data-subtype="error" i],
+.callout[data-subtype="bug" i],
+.callout[data-subtype="fail" i] {
+	--callout-accent: #cf222e;
+	border-left-color: #cf222e;
+	background: rgba(207, 34, 46, 0.08);
+}
+
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"],
+.callout[data-subtype="question"],
+.callout[data-subtype="help"],
+.callout[data-subtype="faq"],
+.callout[data-callout="question" i],
+.callout[data-callout="help" i],
+.callout[data-callout="faq" i],
+.callout[data-subtype="question" i],
+.callout[data-subtype="help" i],
+.callout[data-subtype="faq" i] {
+	--callout-accent: #9a6700;
+	border-left-color: #9a6700;
+	background: rgba(154, 103, 0, 0.08);
+}
+
+.callout .callout-title,
+.callout .callout-info {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 14px 0;
+	margin-bottom: 10px;
+	color: var(--callout-accent);
+}
+
+.callout .callout-title-icon,
+.callout .callout-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+	color: var(--callout-accent);
+}
+
+.callout .callout-title-icon svg {
+	width: 16px;
+	height: 16px;
+}
+
+.callout .callout-title-inner,
+.callout .callout-info > .callout-title {
+	font-weight: 700;
+	font-size: 0.95em;
+	line-height: 1.35;
+	color: var(--callout-accent);
+}
+
+.callout .callout-content {
+	padding: 6px 14px 12px;
+	color: #333333;
+}
+
+.callout .callout-content > :first-child {
+	margin-top: 0;
+}
+
+.callout .callout-content > :last-child {
+	margin-bottom: 0;
+}
+
+.obsidian-wikilink {
+	color: #7c3aed;
+	text-decoration: underline;
+}
+
+.obsidian-wikilink-embed {
+	display: inline-block;
+	padding: 2px 8px;
+	border: 1px dashed #d0d7de;
+	border-radius: 4px;
+	color: #7c3aed;
+}
+
+.obsidian-tag {
+	color: #7c3aed;
+	background: rgba(124, 58, 237, 0.12);
+	border-radius: 4px;
+	padding: 0 4px;
+}
+
+mark {
+	background: rgba(154, 103, 0, 0.35);
+	color: inherit;
+	padding: 0 2px;
+	border-radius: 2px;
+}
+
+[data-type="yaml-front-matter"] {
+	margin: 0 0 16px;
+}
+
+.vditor-properties {
+	border: 1px solid #d0d7de;
+	border-radius: 8px;
+	background: #f6f8fa;
+	overflow: hidden;
+}
+
+.vditor-properties__heading {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border-bottom: 1px solid #d0d7de;
+	background: #f3f4f6;
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: #6b7280;
+}
+
+.vditor-properties__heading-icon::before {
+	content: "☰";
+	opacity: 0.75;
+}
+
+.vditor-properties__table {
+	display: flex;
+	flex-direction: column;
+}
+
+.vditor-properties__row {
+	display: grid;
+	grid-template-columns: minmax(120px, 34%) 1fr;
+	gap: 8px 12px;
+	align-items: start;
+	padding: 8px 12px;
+	border-top: 1px solid rgba(208, 215, 222, 0.45);
+}
+
+.vditor-properties__row:first-child {
+	border-top: none;
+}
+
+.vditor-properties__key {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	min-width: 0;
+	color: #6b7280;
+	font-size: 0.85rem;
+}
+
+.vditor-properties__key-icon {
+	flex-shrink: 0;
+	width: 14px;
+	height: 14px;
+	opacity: 0.72;
+	text-align: center;
+}
+
+.vditor-properties__key-icon[data-icon="tag"]::before { content: "#"; }
+.vditor-properties__key-icon[data-icon="alias"]::before { content: "⛓"; }
+.vditor-properties__key-icon[data-icon="date"]::before { content: "📅"; }
+.vditor-properties__key-icon[data-icon="toggle"]::before { content: "◉"; }
+.vditor-properties__key-icon[data-icon="number"]::before { content: "#"; }
+.vditor-properties__key-icon[data-icon="list"]::before { content: "≡"; }
+.vditor-properties__key-icon[data-icon="text"]::before { content: "T"; }
+
+.vditor-properties__key-label {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.vditor-properties__value {
+	min-width: 0;
+	font-size: 0.92rem;
+	color: #333333;
+	word-break: break-word;
+}
+
+.vditor-properties__value--tags,
+.vditor-properties__value--aliases {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.vditor-properties__value--aliases {
+	gap: 6px;
+}
+
+.vditor-properties__list {
+	margin: 0;
+	padding-left: 1.1rem;
+}
+
+.vditor-properties__checkbox {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-right: 6px;
+	border: 1px solid #d0d7de;
+	border-radius: 3px;
+	vertical-align: -2px;
+	background: #ffffff;
+}
+
+.vditor-properties__checkbox[is-checked="true"] {
+	background: #7c3aed;
+	border-color: #7c3aed;
+	box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.vditor-properties__empty {
+	opacity: 0.45;
+}
+
+</style>
+
+<style>
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+.table-of-contents li{
+	list-style-type: initial;
+}
+
+</style>
+
+<style>
+@font-face{font-display:block;font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_AMS-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_AMS-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_AMS-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Caligraphic-Bold.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Caligraphic-Bold.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Caligraphic-Bold.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Caligraphic-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Caligraphic-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Caligraphic-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Fraktur-Bold.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Fraktur-Bold.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Fraktur-Bold.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Fraktur-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Fraktur-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Fraktur-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Bold.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Bold.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Bold.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-BoldItalic.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-BoldItalic.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-BoldItalic.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Italic.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Italic.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Italic.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Main-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Math-BoldItalic.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Math-BoldItalic.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Math-BoldItalic.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Math-Italic.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Math-Italic.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Math-Italic.ttf") format("truetype")}@font-face{font-display:block;font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Bold.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Bold.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Bold.ttf") format("truetype")}@font-face{font-display:block;font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Italic.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Italic.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Italic.ttf") format("truetype")}@font-face{font-display:block;font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_SansSerif-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Script-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Script-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Script-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size1-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size1-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size1-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size2-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size2-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size2-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size3-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size3-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size3-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size4-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size4-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Size4-Regular.ttf") format("truetype")}@font-face{font-display:block;font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Typewriter-Regular.woff2") format("woff2"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Typewriter-Regular.woff") format("woff"),url("https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/fonts/KaTeX_Typewriter-Regular.ttf") format("truetype")}.katex{font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;position:relative;text-indent:0;text-rendering:auto}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.16.47"}.katex .katex-mathml{border:0;-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathboldfrak,.katex .textboldfrak{font-family:KaTeX_Fraktur;font-weight:700}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .mathsfit,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{align-items:baseline;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .smash{display:inline;line-height:0}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.2777777778em;margin-right:-.5555555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.1666666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.3333333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.6666666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.4566666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.1466666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.7142857143em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.8571428571em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.1428571429em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.2857142857em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.4285714286em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.7142857143em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.0571428571em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.4685714286em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.9628571429em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.5542857143em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.5555555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.6666666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.7777777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.8888888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.1111111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.3333333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.3044444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.7644444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.4166666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.5833333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.6666666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.7283333333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.0733333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.3472222222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.4166666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.4861111111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.5555555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.6944444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.4402777778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.7277777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.2893518519em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.3472222222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.4050925926em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.462962963em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.5208333333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.6944444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.8333333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.2002314815em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.4398148148em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.2410800386em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.2892960463em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.337512054em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.3857280617em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.4339440694em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.4821600771em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.5785920926em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.6943105111em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.8331726133em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.1996142719em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.2009646302em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.2411575563em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.2813504823em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.3215434084em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.3617363344em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.4019292605em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.4823151125em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.578778135em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.6945337621em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.8336012862em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex svg{fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-box;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+
+</style>
+<style>
+body {
+    padding-top: 25px;
+}
+</style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1 id="plano-de-execu%C3%A7%C3%A3o-%E2%80%94-estcaso_lide_pred.ipynb" tabindex="-1">Plano de Execução — <code>estcaso_lide_pred.ipynb</code></h1>
+<p><strong>Estudo de Caso 3: Identificação da Litigância Abusiva Predatória nos 14 Juizados Especiais Cíveis de Natal/RN</strong></p>
+<p><strong>Autora da monografia:</strong> Hadja Rayanne Holanda de Alencar
+<strong>Notebook a ser criado por:</strong> Claude Sonnet 4.6
+<strong>Modelo de referência:</strong> <code>EstudoCaso1_RafaelCosta/rafaelcc_ed1.ipynb</code> e seus módulos em <code>EstudoCaso1_RafaelCosta/src/</code></p>
+<hr>
+<h2 id="0.-contexto-e-fontes" tabindex="-1">0. Contexto e Fontes</h2>
+<h3 id="0.1-documentos-fonte-da-pesquisa" tabindex="-1">0.1 Documentos-fonte da pesquisa</h3>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Conteúdo relevante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>txt/ProjetoHadja_FinalCorrigidoBanca_9mar2026.docx</code></td>
+<td>Projeto de pesquisa aprovado pela banca — hipóteses, variáveis (Apêndice B), exploração piloto (Apêndices C e D), quadro de variáveis original</td>
+</tr>
+<tr>
+<td><code>txt/26_08_MonografiaFinal_Hadja.docx</code></td>
+<td>Monografia final — <strong>Cap. 3</strong> (Metodologia: desenho amostral, construção das variáveis, fases I-III) e <strong>Cap. 4</strong> (Resultados: gráficos 1-12, tabelas 5-17, testes inferenciais e modelos). <strong>Todos os outputs analíticos a replicar estão nos capítulos 3 e 4.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="0.2-dados" tabindex="-1">0.2 Dados</h3>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Aba</th>
+<th>Linhas × Colunas</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dat/estcaso_lide_pred/PlanilhaPreenchidaVariaveisCorrigida_CN_JE_S1422934_Mestrado_03_02.xlsx</code></td>
+<td><strong><code>AMOSTRA</code></strong></td>
+<td>595 × 34</td>
+<td><strong>Base principal.</strong> Cada linha é um processo amostrado. 34 colunas: identificação (nº processo, unidade, ano, classe), 6 variáveis Fase I (F1_A…F1_F), conclusão Fase I, 17 variáveis Fase II (F2_01…F2_17), conclusão Fase II, 3 variáveis Fase III (F3_18…F3_20), observações. Valores: &quot;Sim&quot;/&quot;Não&quot;/&quot;sim&quot;/&quot;não&quot; (case-insensitive).</td>
+</tr>
+<tr>
+<td>(mesmo arquivo)</td>
+<td><code>Base consolidada</code></td>
+<td>50.320 × 34</td>
+<td>População após depuração (sem duplicatas, sem execuções extrajudiciais, sem processos sem advogado).</td>
+</tr>
+<tr>
+<td>(mesmo arquivo)</td>
+<td><code>TJRN</code></td>
+<td>86.964 × 30</td>
+<td>Dados brutos originais fornecidos pelo TJRN.</td>
+</tr>
+<tr>
+<td>(mesmo arquivo)</td>
+<td><code>Quadro variáveis</code></td>
+<td>~25 × 11</td>
+<td>Dicionário de variáveis.</td>
+</tr>
+<tr>
+<td>(mesmo arquivo)</td>
+<td><code>Amostragem (Fórmula)</code></td>
+<td>~2.470 × 33</td>
+<td>Fórmulas de amostragem (RANDBETWEEN + VLOOKUP).</td>
+</tr>
+<tr>
+<td><code>dat/estcaso_lide_pred/casos_novos_JEC_Natal_chamado_S1392344_21.05.2025.xlsx</code></td>
+<td>—</td>
+<td>—</td>
+<td>Dados complementares (casos novos).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="0.3-vari%C3%A1veis-da-aba-amostra-(34-colunas)" tabindex="-1">0.3 Variáveis da aba <code>AMOSTRA</code> (34 colunas)</h3>
+<pre class='hljs'><code><div>Col  0: Amostra selecionada (ID numérico)
+Col  1: Número do Processo
+Col  2: Unidade Judiciária (ex.: &quot;10º JUIZADO ESPECIAL CÍVEL&quot;)
+Col  3: Ano da distribuição (2022, 2023, 2024)
+Col  4: Classe (ex.: &quot;PROCEDIMENTO DO JUIZADO ESPECIAL CÍVEL&quot;)
+Col  5: F1_A - Ações de pessoa física no polo passivo
+Col  6: F1_B - Ausência de grande litigante no polo passivo
+Col  7: F1_C - Processo de conhecimento em curso
+Col  8: F1_D - Processos suspensos
+Col  9: F1_E - Distribuição incorreta
+Col 10: F1_F - Parte_PJ
+Col 11: Conclusão FASE I (fórmula: &quot;Parou na Fase I&quot; / &quot;Seguiu para Fase II&quot; / ...)
+Col 12: F2_01 - Petição vaga/genérica
+Col 13: F2_02 - Ausência de documentos essenciais
+Col 14: F2_03 - Documentos sem relação com a causa de pedir
+Col 15: F2_04 - Pedido de dispensa de audiência
+Col 16: F2_05 - Foro inadequado
+Col 17: F2_06 - Documentos incompletos/ilegíveis
+Col 18: F2_07 - Pedidos vagos/hipotéticos
+Col 19: F2_08 - Demanda idêntica não declarada
+Col 20: F2_09 - Procuração incompleta
+Col 21: F2_10 - Procuração irregular (assinatura digital)
+Col 22: F2_11 - Advogado fora da comarca
+Col 23: F2_12 - Valor da causa inadequado
+Col 24: F2_13 - Classe ou assunto incorreto
+Col 25: F2_14 - Desistência/abandono após indeferimento de liminar
+Col 26: F2_15 - Desistência/abandono após notificação
+Col 27: F2_16 - Desistência/abandono após contestação
+Col 28: F2_17 - Contrato de honorários abusivo
+Col 29: Conclusão FASE II
+Col 30: F3_18 - Multiplicidade de ações
+Col 31: F3_19 - Petições idênticas
+Col 32: F3_20 - Volume elevado de demandas
+Col 33: obs
+</div></code></pre>
+<hr>
+<h2 id="1.-estrutura-de-pastas-e-arquivos-a-criar" tabindex="-1">1. Estrutura de Pastas e Arquivos a Criar</h2>
+<pre class='hljs'><code><div>./  (raiz do projeto)
+├── estcaso_lide_pred.ipynb              ← notebook principal (gerado por build)
+├── src/
+│   └── estcaso_lide_pred/
+│       ├── __init__.py
+│       ├── build_notebook.py            ← gera o .ipynb a partir dos módulos
+│       ├── secao01_ambiente.py          ← preparação do ambiente e paleta
+│       ├── secao02_curadoria.py         ← leitura, limpeza, tipagem, esquema
+│       ├── secao03_populacao.py         ← análise da população (Tab. 1)
+│       ├── secao04_amostra.py           ← desenho amostral (Tab. 2, Tab. 3)
+│       ├── secao05_descritiva.py        ← fluxo funil (Gráf. 1-2), estimativas (Tab. 5),
+│       │                                   combinações F3 (Tab. 6, Gráf. 3-4),
+│       │                                   incidência por ano (Tab. 7, Gráf. 5),
+│       │                                   incidência por unidade (Tab. 8, Gráf. 6)
+│       ├── secao06_frequencias.py       ← frequências F1 (Tab. 9), F2 (Gráf. 7, Tab. 10)
+│       ├── secao07_inferencial.py       ← qui-quadrado por ano (Tab. 11, Gráf. 8),
+│       │                                   qui-quadrado por unidade (Tab. 12),
+│       │                                   associação bivariada F2 × classificação
+│       │                                   (Tab. 13, Gráf. 9 forest plot)
+│       ├── secao08_regressao.py         ← regressão logística (Tab. 14, Gráf. 10 ROC),
+│       │                                   frequência F2_14-F2_17 (Tab. 15)
+│       ├── secao09_correlacao.py        ← coeficiente phi (Gráf. 11 heatmap,
+│       │                                   Gráf. 12 barras, Tab. 16, Tab. 17)
+│       └── secao10_sintese.py           ← resumo, limitações, próximos passos
+└── dat/
+    └── estcaso_lide_pred/               ← já existe
+        ├── PlanilhaPreenchida...xlsx     ← já existe
+        └── casos_novos...xlsx           ← já existe
+</div></code></pre>
+<p><strong>Observação sobre a arquitetura:</strong> Seguir o padrão do modelo <code>EstudoCaso1_RafaelCosta</code>, onde:</p>
+<ul>
+<li>Cada seção é um arquivo <code>.py</code> que usa as funções <code>md()</code>, <code>code()</code> e <code>interp()</code> do builder;</li>
+<li>O <code>build_notebook.py</code> importa e executa cada seção para montar o <code>.ipynb</code>;</li>
+<li>O notebook gerado é autocontido (pode ser executado standalone).</li>
+</ul>
+<hr>
+<h2 id="2.-invent%C3%A1rio-completo-dos-outputs-a-replicar" tabindex="-1">2. Inventário Completo dos Outputs a Replicar</h2>
+<h3 id="2.1-do-cap%C3%ADtulo-3-(metodologia)" tabindex="-1">2.1 Do Capítulo 3 (Metodologia)</h3>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Seção</th>
+<th>Descrição</th>
+<th>Dados-fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tabela 1</td>
+<td>Tabela</td>
+<td>3.2.1</td>
+<td>Processos distribuídos nos 14 JEC (2022-2024), por unidade e ano</td>
+<td>Aba <code>TJRN</code> ou <code>Base consolidada</code></td>
+</tr>
+<tr>
+<td>Tabela 2</td>
+<td>Tabela</td>
+<td>3.2.2</td>
+<td>Distribuição da amostra por unidade judiciária e ano (n=595)</td>
+<td>Aba <code>AMOSTRA</code></td>
+</tr>
+<tr>
+<td>Tabela 3</td>
+<td>Tabela</td>
+<td>3.2.3</td>
+<td>Distribuição da amostra por classe processual</td>
+<td>Aba <code>AMOSTRA</code></td>
+</tr>
+<tr>
+<td>Quadro 3</td>
+<td>Tabela</td>
+<td>3.2</td>
+<td>Variáveis utilizadas no estudo (25 variáveis, 3 fases)</td>
+<td>Aba <code>Quadro variáveis</code></td>
+</tr>
+<tr>
+<td>Tabela 4</td>
+<td>Tabela</td>
+<td>3.3</td>
+<td>Quadro consolidado das 25 variáveis observacionais</td>
+<td>Aba <code>Quadro variáveis</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2.2-do-cap%C3%ADtulo-4-(resultados)" tabindex="-1">2.2 Do Capítulo 4 (Resultados)</h3>
+<h4 id="2.2.1-resultados-descritivos-gerais-(se%C3%A7%C3%A3o-4.1)" tabindex="-1">2.2.1 Resultados descritivos gerais (seção 4.1)</h4>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Seção</th>
+<th>Descrição</th>
+<th>Método</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gráfico 1</strong></td>
+<td>Gráfico de funil</td>
+<td>4.1.1</td>
+<td>Funil de classificação: 595 → 444 → 233 → 105/30</td>
+<td>Barras horizontais/verticais decrescentes</td>
+</tr>
+<tr>
+<td><strong>Gráfico 2</strong></td>
+<td>Barras empilhadas</td>
+<td>4.1.1</td>
+<td>Composição percentual da amostra: excluídos F1, sem indicativo F2, demais F3, indício, certeza</td>
+<td>Barras empilhadas a 100%</td>
+</tr>
+<tr>
+<td><strong>Tabela 5</strong></td>
+<td>Tabela</td>
+<td>4.1.2</td>
+<td>Indicadores estatísticos: proporção, IC 95% (Wilson), projeção para população</td>
+<td>Binomial, Wilson CI</td>
+</tr>
+<tr>
+<td><strong>Tabela 6</strong></td>
+<td>Tabela</td>
+<td>4.1.3</td>
+<td>Combinações das 3 variáveis F3 (8 combinações possíveis) entre os 233 processos</td>
+<td>Crosstab F3_18 × F3_19 × F3_20</td>
+</tr>
+<tr>
+<td><strong>Gráfico 3</strong></td>
+<td>Barras</td>
+<td>4.1.3</td>
+<td>Combinações de variáveis F3 (visualização da Tab. 6)</td>
+<td>Barras por combinação</td>
+</tr>
+<tr>
+<td><strong>Gráfico 4</strong></td>
+<td>Barras</td>
+<td>4.1.3</td>
+<td>Frequência absoluta das variáveis F3 isoladas</td>
+<td>Barras F3_18, F3_19, F3_20</td>
+</tr>
+<tr>
+<td><strong>Tabela 7</strong></td>
+<td>Tabela</td>
+<td>4.1.4</td>
+<td>Distribuição da classificação (indício/certeza) por ano</td>
+<td>Crosstab ano × classificação</td>
+</tr>
+<tr>
+<td><strong>Gráfico 5</strong></td>
+<td>Barras agrupadas</td>
+<td>4.1.4</td>
+<td>Indício e certeza por ano</td>
+<td>Barras agrupadas/empilhadas</td>
+</tr>
+<tr>
+<td><strong>Tabela 8</strong></td>
+<td>Tabela</td>
+<td>4.1.5</td>
+<td>Indício e certeza por unidade judiciária (14 JECs)</td>
+<td>Crosstab unidade × classificação</td>
+</tr>
+<tr>
+<td><strong>Gráfico 6</strong></td>
+<td>Barras</td>
+<td>4.1.5</td>
+<td>Percentual de indício e certeza por unidade, com linha de média</td>
+<td>Barras com referência</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2.2.2-frequ%C3%AAncia-das-vari%C3%A1veis-(se%C3%A7%C3%A3o-4.2)" tabindex="-1">2.2.2 Frequência das variáveis (seção 4.2)</h4>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Seção</th>
+<th>Descrição</th>
+<th>Método</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabela 9</strong></td>
+<td>Tabela</td>
+<td>4.2.1</td>
+<td>Frequência das variáveis da Fase I (n=595)</td>
+<td>Contagem Sim/Não por F1</td>
+</tr>
+<tr>
+<td><strong>Gráfico 7</strong></td>
+<td>Barras horizontais</td>
+<td>4.2.2</td>
+<td>Frequência das variáveis da Fase II (n=595)</td>
+<td>Barras ordenadas por freq.</td>
+</tr>
+<tr>
+<td><strong>Tabela 10</strong></td>
+<td>Tabela</td>
+<td>4.2.2</td>
+<td>Indício e certeza por classe processual</td>
+<td>Crosstab classe × classif.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2.2.3-testes-inferenciais-(se%C3%A7%C3%A3o-4.3)" tabindex="-1">2.2.3 Testes inferenciais (seção 4.3)</h4>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Tipo</th>
+<th>Seção</th>
+<th>Descrição</th>
+<th>Método estatístico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabela 11</strong></td>
+<td>Tabela</td>
+<td>4.3.1</td>
+<td>Indício e certeza por ano com IC de Wilson</td>
+<td>IC Wilson, χ² de homogeneidade (χ²=1,87; gl=2; p=0,393), testes z pareados</td>
+</tr>
+<tr>
+<td><strong>Gráfico 8</strong></td>
+<td>Barras com IC</td>
+<td>4.3.1</td>
+<td>Proporções por ano com barras de erro (Wilson 95%)</td>
+<td>Barras + errorbar</td>
+</tr>
+<tr>
+<td><strong>Teste χ² certeza por ano</strong></td>
+<td>Texto</td>
+<td>4.3.1</td>
+<td>χ²=4,36; gl=2; p=0,113</td>
+<td>χ² de homogeneidade</td>
+</tr>
+<tr>
+<td><strong>Teste χ² por unidade</strong></td>
+<td>Texto</td>
+<td>4.3.2</td>
+<td>χ²=20,83; gl=13; p=0,076</td>
+<td>χ² de homogeneidade 14×2</td>
+</tr>
+<tr>
+<td><strong>Tabela 12</strong></td>
+<td>Tabela</td>
+<td>4.3.2</td>
+<td>Comparações pareadas entre unidades (teste z de proporções)</td>
+<td>z-test de proporções, post-hoc</td>
+</tr>
+<tr>
+<td><strong>Tabela 13</strong></td>
+<td>Tabela</td>
+<td>4.3.3</td>
+<td>Associação bivariada F2 × classificação: OR, Fisher, IC 95%</td>
+<td>Fisher exato, odds ratio</td>
+</tr>
+<tr>
+<td><strong>Gráfico 9</strong></td>
+<td>Forest plot</td>
+<td>4.3.3</td>
+<td>Odds Ratios das variáveis F2 com IC</td>
+<td>Forest plot horizontal</td>
+</tr>
+<tr>
+<td><strong>Tabela 14</strong></td>
+<td>Tabela</td>
+<td>4.3.4</td>
+<td>Modelo logístico reduzido (F2_01, F2_02, F2_11): OR, IC, p</td>
+<td><code>statsmodels.Logit</code>, pseudo-R² McFadden=0,482</td>
+</tr>
+<tr>
+<td><strong>Gráfico 10</strong></td>
+<td>Curva ROC</td>
+<td>4.3.4</td>
+<td>ROC do modelo logístico reduzido (AUC=0,908)</td>
+<td>ROC + AUC</td>
+</tr>
+<tr>
+<td><strong>Matriz de confusão</strong></td>
+<td>Texto</td>
+<td>4.3.4</td>
+<td>VP=85, VN=117, FP=11, FN=20; acurácia=86,7%</td>
+<td>Confusion matrix</td>
+</tr>
+<tr>
+<td><strong>Tabela 15</strong></td>
+<td>Tabela</td>
+<td>4.3.4.1</td>
+<td>Frequência das variáveis F2_14 a F2_17 entre classificados</td>
+<td>Contagem condicional</td>
+</tr>
+<tr>
+<td><strong>Teste χ² F2_14</strong></td>
+<td>Texto</td>
+<td>4.3.4.1</td>
+<td>χ²=23,44; gl=1; p&lt;0,001</td>
+<td>χ² de associação</td>
+</tr>
+<tr>
+<td><strong>Gráfico 11</strong></td>
+<td>Heatmap</td>
+<td>4.3.4.4</td>
+<td>Matriz de correlação φ entre 23 variáveis + 2 classificações</td>
+<td>Phi (=Pearson para binárias), heatmap</td>
+</tr>
+<tr>
+<td><strong>Gráfico 12</strong></td>
+<td>Barras horizontais</td>
+<td>4.3.4.4</td>
+<td>Correlações φ com Indício e Certeza, ordenadas</td>
+<td>Barras duplas</td>
+</tr>
+<tr>
+<td><strong>Tabela 16</strong></td>
+<td>Tabela</td>
+<td>4.3.4.4</td>
+<td>Coeficientes φ com p-valores do χ² de associação</td>
+<td>Phi + χ²</td>
+</tr>
+<tr>
+<td><strong>Tabela 17</strong></td>
+<td>Tabela</td>
+<td>4.3.4.4</td>
+<td>Pares de variáveis preditoras com</td>
+<td>φ</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3.-pipeline-detalhado-por-se%C3%A7%C3%A3o-do-notebook" tabindex="-1">3. Pipeline Detalhado por Seção do Notebook</h2>
+<h3 id="se%C3%A7%C3%A3o-1-%E2%80%94-prepara%C3%A7%C3%A3o-do-ambiente-(secao01_ambiente.py)" tabindex="-1">Seção 1 — Preparação do Ambiente (<code>secao01_ambiente.py</code>)</h3>
+<p><strong>Conteúdo:</strong></p>
+<ul>
+<li>Markdown introdutório (título, autora, pipeline geral)</li>
+<li>Importações: <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>scipy.stats</code>, <code>statsmodels</code> (Logit, proportion_confint, chi2_contingency, fisher_exact), <code>sklearn.metrics</code> (roc_curve, auc, confusion_matrix)</li>
+<li>Paleta de cores fixa (seguir o mesmo esquema do modelo, com validação para daltonismo)</li>
+<li>Configuração de <code>plt.rcParams</code> e <code>pd.set_option</code></li>
+<li>Semente aleatória fixa (<code>RNG = np.random.default_rng(2026)</code>)</li>
+<li>Localização dos dados (<code>PASTA_DADOS</code>)</li>
+<li>Impressão das versões dos pacotes</li>
+</ul>
+<p><strong>Dependências do <code>pyproject.toml</code> a verificar/adicionar:</strong></p>
+<ul>
+<li><code>openpyxl</code>, <code>scipy</code>, <code>statsmodels</code>, <code>seaborn</code>, <code>scikit-learn</code>, <code>matplotlib</code></li>
+</ul>
+<h3 id="se%C3%A7%C3%A3o-2-%E2%80%94-curadoria-dos-dados-(secao02_curadoria.py)" tabindex="-1">Seção 2 — Curadoria dos Dados (<code>secao02_curadoria.py</code>)</h3>
+<p><strong>Conteúdo:</strong></p>
+<ol>
+<li><strong>Leitura</strong> da aba <code>AMOSTRA</code> (595 linhas) com <code>pd.read_excel(..., sheet_name='AMOSTRA')</code></li>
+<li><strong>Leitura</strong> da aba <code>Quadro variáveis</code> → dicionário</li>
+<li><strong>Leitura</strong> da aba <code>Base consolidada</code> (50.320 linhas) → população</li>
+<li><strong>Padronização de nomes</strong> das colunas: remover espaços, criar identificadores Python</li>
+<li><strong>Normalização dos valores Sim/Não</strong>: converter &quot;sim&quot;/&quot;Sim&quot;/&quot;SIM&quot; → <code>True</code>, &quot;não&quot;/&quot;Não&quot;/&quot;NÃO&quot; → <code>False</code>, usando dtype <code>boolean</code></li>
+<li><strong>Tratamento da col. 11 (Conclusão FASE I)</strong>: se contém fórmula, recalcular a partir das F1 booleanas</li>
+<li><strong>Variáveis derivadas:</strong>
+<ul>
+<li><code>Excluido_F1</code>: <code>bool</code> = qualquer F1 == True</li>
+<li><code>Alguma_F2</code>: <code>bool</code> = qualquer F2 == True (entre F2_01…F2_17)</li>
+<li><code>Avancou_F3</code>: <code>bool</code> = <code>Alguma_F2</code> == True (233 processos)</li>
+<li><code>Indicio</code>: <code>bool</code> = <code>F3_19</code> &amp; <code>F3_20</code> (inclui certeza)</li>
+<li><code>Certeza</code>: <code>bool</code> = <code>F3_18</code> &amp; <code>F3_19</code> &amp; <code>F3_20</code></li>
+<li><code>Classificacao</code>: category com 5 níveis = {&quot;Excluído na Fase I&quot;, &quot;Sem indicativo na Fase II&quot;, &quot;Demais processos na Fase III&quot;, &quot;Indício (sem certeza)&quot;, &quot;Certeza&quot;}</li>
+<li><code>JEC_numero</code>: int extraído de &quot;Xº JUIZADO ESPECIAL CÍVEL&quot;</li>
+</ul>
+</li>
+<li><strong>Esquema de tipos</strong> e <code>assert</code> de coerência (n=595, variáveis booleanas sem NA, etc.)</li>
+<li><strong>Exportação</strong> do DataFrame curado em <code>dat/estcaso_lide_pred/processado/hadja_amostra_limpa.pkl</code></li>
+<li><strong>Exibição</strong> do dicionário de variáveis (Quadro 3 / Tabela 4)</li>
+</ol>
+<p><strong>Regras de validação (com <code>assert</code>):</strong></p>
+<ul>
+<li>595 linhas na amostra</li>
+<li>151 excluídos na Fase I + 444 seguiram = 595</li>
+<li>211 sem indicativo + 233 avançaram à Fase III = 444</li>
+<li>105 com indício (incluindo 30 com certeza)</li>
+<li>Nenhum NA nas variáveis F1/F2/F3</li>
+</ul>
+<h3 id="se%C3%A7%C3%A3o-3-%E2%80%94-popula%C3%A7%C3%A3o-de-refer%C3%AAncia-(secao03_populacao.py)" tabindex="-1">Seção 3 — População de Referência (<code>secao03_populacao.py</code>)</h3>
+<p><strong>Output: Tabela 1</strong></p>
+<ul>
+<li>Ler aba <code>Base consolidada</code> ou <code>TJRN</code></li>
+<li>Agregar por <code>UNIDADE</code> × <code>Ano de início</code></li>
+<li>Produzir tabela com 14 linhas (JECs) × 3 colunas (2022, 2023, 2024) + Total</li>
+<li>Exibir como <code>display()</code> estilizado</li>
+</ul>
+<h3 id="se%C3%A7%C3%A3o-4-%E2%80%94-desenho-amostral-(secao04_amostra.py)" tabindex="-1">Seção 4 — Desenho Amostral (<code>secao04_amostra.py</code>)</h3>
+<p><strong>Outputs: Tabela 2, Tabela 3</strong></p>
+<p><strong>Tabela 2:</strong> Distribuição da amostra por unidade e ano</p>
+<ul>
+<li><code>pd.crosstab(dados['Unidade'], dados['Ano'], margins=True)</code></li>
+<li>Conferir: 194 em 2022, 211 em 2023, 190 em 2024, total 595</li>
+</ul>
+<p><strong>Tabela 3:</strong> Distribuição por classe processual</p>
+<ul>
+<li><code>dados['Classe'].value_counts()</code></li>
+<li>Quase todos &quot;PROCEDIMENTO DO JUIZADO ESPECIAL CÍVEL&quot;; classes residuais agrupadas</li>
+</ul>
+<p><strong>Cálculo do erro amostral efetivo:</strong></p>
+<ul>
+<li>Fórmula da correção para população finita: <code>e = z * sqrt(p*(1-p)/n) * sqrt((N-n)/(N-1))</code></li>
+<li>Resultado esperado: ±4,0 p.p.</li>
+</ul>
+<h3 id="se%C3%A7%C3%A3o-5-%E2%80%94-resultados-descritivos-gerais-(secao05_descritiva.py)" tabindex="-1">Seção 5 — Resultados Descritivos Gerais (<code>secao05_descritiva.py</code>)</h3>
+<p><strong>Outputs: Gráficos 1-6, Tabelas 5-8</strong></p>
+<h4 id="5.1-fluxo-pelas-fases-(gr%C3%A1fico-1-%E2%80%94-funil)" tabindex="-1">5.1 Fluxo pelas fases (Gráfico 1 — Funil)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Dados do funil:</span>
+<span class="hljs-comment"># 595 → 444 (Fase II) → 233 (Fase III) → 105 (Indício) / 30 (Certeza)</span>
+<span class="hljs-comment"># Usar barras horizontais decrescentes ou diagrama de funil</span>
+</div></code></pre>
+<h4 id="5.2-composi%C3%A7%C3%A3o-da-amostra-(gr%C3%A1fico-2-%E2%80%94-barras-empilhadas)" tabindex="-1">5.2 Composição da amostra (Gráfico 2 — Barras empilhadas)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># 5 categorias (sem dupla contagem):</span>
+<span class="hljs-comment"># Excluídos F1: 151</span>
+<span class="hljs-comment"># Sem indicativo F2: 211</span>
+<span class="hljs-comment"># Demais processos F3: 128</span>
+<span class="hljs-comment"># Indício (sem certeza): 75</span>
+<span class="hljs-comment"># Certeza: 30</span>
+<span class="hljs-comment"># Total = 595</span>
+</div></code></pre>
+<h4 id="5.3-estimativa-para-a-popula%C3%A7%C3%A3o-(tabela-5)" tabindex="-1">5.3 Estimativa para a população (Tabela 5)</h4>
+<pre class='hljs'><code><div><span class="hljs-keyword">from</span> statsmodels.stats.proportion <span class="hljs-keyword">import</span> proportion_confint
+
+<span class="hljs-comment"># Indício (incl. certeza): k=105, n=595</span>
+<span class="hljs-comment"># IC Wilson 95%</span>
+<span class="hljs-comment"># Projeção: proporção × N_populacao (83.139 ou 50.320)</span>
+</div></code></pre>
+<h4 id="5.4-combina%C3%A7%C3%B5es-f3-(tabela-6%2C-gr%C3%A1ficos-3-4)" tabindex="-1">5.4 Combinações F3 (Tabela 6, Gráficos 3-4)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Crosstab das 8 combinações possíveis de (F3_18, F3_19, F3_20)</span>
+<span class="hljs-comment"># entre os 233 processos da Fase III</span>
+combos = dados_f3.groupby([<span class="hljs-string">&#x27;F3_18&#x27;</span>, <span class="hljs-string">&#x27;F3_19&#x27;</span>, <span class="hljs-string">&#x27;F3_20&#x27;</span>]).size()
+</div></code></pre>
+<h4 id="5.5-por-ano-(tabela-7%2C-gr%C3%A1fico-5)" tabindex="-1">5.5 Por ano (Tabela 7, Gráfico 5)</h4>
+<pre class='hljs'><code><div>pd.crosstab(dados[<span class="hljs-string">&#x27;Ano&#x27;</span>], dados[<span class="hljs-string">&#x27;Classificacao_resumida&#x27;</span>])
+<span class="hljs-comment"># Classificacao_resumida: {Sem indício, Indício, Certeza}</span>
+</div></code></pre>
+<h4 id="5.6-por-unidade-(tabela-8%2C-gr%C3%A1fico-6)" tabindex="-1">5.6 Por unidade (Tabela 8, Gráfico 6)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Crosstab JEC × classificação</span>
+<span class="hljs-comment"># Gráfico: barras por JEC + linha tracejada na média (17,6%)</span>
+</div></code></pre>
+<h3 id="se%C3%A7%C3%A3o-6-%E2%80%94-frequ%C3%AAncia-das-vari%C3%A1veis-(secao06_frequencias.py)" tabindex="-1">Seção 6 — Frequência das Variáveis (<code>secao06_frequencias.py</code>)</h3>
+<p><strong>Outputs: Tabela 9, Gráfico 7, Tabela 10</strong></p>
+<h4 id="tabela-9-%E2%80%94-fase-i-(n%3D595)" tabindex="-1">Tabela 9 — Fase I (n=595)</h4>
+<pre class='hljs'><code><div>freq_f1 = dados[cols_f1].<span class="hljs-built_in">sum</span>()  <span class="hljs-comment"># booleanas: sum() = contagem de True</span>
+</div></code></pre>
+<h4 id="gr%C3%A1fico-7-%E2%80%94-fase-ii-(n%3D595)" tabindex="-1">Gráfico 7 — Fase II (n=595)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Barras horizontais ordenadas por frequência</span>
+<span class="hljs-comment"># 17 variáveis F2; 4 com zero ocorrências (F2_07, F2_12, F2_15, F2_16)</span>
+</div></code></pre>
+<h4 id="tabela-10-%E2%80%94-ind%C3%ADcio%2Fcerteza-por-classe-processual" tabindex="-1">Tabela 10 — Indício/certeza por classe processual</h4>
+<pre class='hljs'><code><div>pd.crosstab(dados[<span class="hljs-string">&#x27;Classe_resumida&#x27;</span>], dados[<span class="hljs-string">&#x27;Classificacao_resumida&#x27;</span>])
+</div></code></pre>
+<h3 id="se%C3%A7%C3%A3o-7-%E2%80%94-testes-inferenciais%3A-homogeneidade-e-associa%C3%A7%C3%A3o-bivariada-(secao07_inferencial.py)" tabindex="-1">Seção 7 — Testes Inferenciais: Homogeneidade e Associação Bivariada (<code>secao07_inferencial.py</code>)</h3>
+<p><strong>Outputs: Tabela 11, Gráfico 8, Tabela 12, Tabela 13, Gráfico 9</strong></p>
+<h4 id="7.1-homogeneidade-entre-anos-(tabela-11%2C-gr%C3%A1fico-8)" tabindex="-1">7.1 Homogeneidade entre anos (Tabela 11, Gráfico 8)</h4>
+<pre class='hljs'><code><div><span class="hljs-keyword">from</span> scipy.stats <span class="hljs-keyword">import</span> chi2_contingency
+<span class="hljs-keyword">from</span> statsmodels.stats.proportion <span class="hljs-keyword">import</span> proportion_confint, proportions_ztest
+
+<span class="hljs-comment"># Tabela 3×2: ano × (indício_ou_certeza / demais)</span>
+tabela_ano = pd.crosstab(dados[<span class="hljs-string">&#x27;Ano&#x27;</span>], dados[<span class="hljs-string">&#x27;Indicio&#x27;</span>])
+chi2, p, gl, esperada = chi2_contingency(tabela_ano, correction=<span class="hljs-literal">False</span>)
+<span class="hljs-comment"># Esperado: χ²=1,87; gl=2; p=0,393</span>
+
+<span class="hljs-comment"># Testes z pareados: 2022 vs 2023, 2022 vs 2024, 2023 vs 2024</span>
+<span class="hljs-comment"># IC Wilson por ano</span>
+
+<span class="hljs-comment"># Gráfico 8: barras com errorbar (IC Wilson)</span>
+</div></code></pre>
+<h4 id="7.2-homogeneidade-entre-unidades-(tabela-12)" tabindex="-1">7.2 Homogeneidade entre unidades (Tabela 12)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Tabela 14×2: JEC × (indício / não)</span>
+<span class="hljs-comment"># χ²=20,83; gl=13; p=0,076</span>
+
+<span class="hljs-comment"># Comparações pareadas: 7º JEC vs demais, 7º vs 13º, etc.</span>
+<span class="hljs-comment"># Teste z de proporções com significância</span>
+</div></code></pre>
+<h4 id="7.3-associa%C3%A7%C3%A3o-bivariada-f2-%C3%97-classifica%C3%A7%C3%A3o-final-(tabela-13%2C-gr%C3%A1fico-9)" tabindex="-1">7.3 Associação bivariada F2 × classificação final (Tabela 13, Gráfico 9)</h4>
+<pre class='hljs'><code><div><span class="hljs-keyword">from</span> scipy.stats <span class="hljs-keyword">import</span> fisher_exact
+
+<span class="hljs-comment"># Para cada F2 (com ocorrências &gt; 0), entre os 233 da Fase III:</span>
+<span class="hljs-comment"># - Odds Ratio</span>
+<span class="hljs-comment"># - IC 95% do OR</span>
+<span class="hljs-comment"># - p-valor (Fisher exato)</span>
+<span class="hljs-comment"># - Proporção condicional (% indício|F2=Sim vs % indício|F2=Não)</span>
+
+<span class="hljs-comment"># Gráfico 9: Forest plot horizontal</span>
+<span class="hljs-comment"># - Eixo x: OR em escala log</span>
+<span class="hljs-comment"># - Cada linha: uma variável F2</span>
+<span class="hljs-comment"># - Marcador: OR pontual; barra: IC 95%</span>
+<span class="hljs-comment"># - Linha tracejada em OR=1</span>
+<span class="hljs-comment"># - Destaque em vermelho para p &lt; 0,001</span>
+</div></code></pre>
+<p><strong>Referência do modelo:</strong> A função <code>grafico_floresta()</code> de <code>secao15_etapa1.py</code> (linhas do Cox) deve ser adaptada para os OR.</p>
+<h3 id="se%C3%A7%C3%A3o-8-%E2%80%94-regress%C3%A3o-log%C3%ADstica-(secao08_regressao.py)" tabindex="-1">Seção 8 — Regressão Logística (<code>secao08_regressao.py</code>)</h3>
+<p><strong>Outputs: Tabela 14, Gráfico 10, Tabela 15, Matriz de confusão</strong></p>
+<h4 id="8.1-modelo-log%C3%ADstico-(tabela-14)" tabindex="-1">8.1 Modelo logístico (Tabela 14)</h4>
+<pre class='hljs'><code><div><span class="hljs-keyword">import</span> statsmodels.api <span class="hljs-keyword">as</span> sm
+
+<span class="hljs-comment"># Base: 233 processos da Fase III</span>
+<span class="hljs-comment"># Y = Indicio (bool)</span>
+<span class="hljs-comment"># X = F2_01, F2_02, F2_04, F2_06, F2_09, F2_10, F2_11, F2_13</span>
+<span class="hljs-comment">#     (variáveis com ≥ 10 ocorrências na Fase III)</span>
+
+<span class="hljs-comment"># Modelo completo → pseudo-R² McFadden = 0,496</span>
+<span class="hljs-comment"># Modelo reduzido (F2_01, F2_02, F2_11) → pseudo-R² = 0,482</span>
+
+X_red = sm.add_constant(dados_f3[[<span class="hljs-string">&#x27;F2_01&#x27;</span>, <span class="hljs-string">&#x27;F2_02&#x27;</span>, <span class="hljs-string">&#x27;F2_11&#x27;</span>]].astype(<span class="hljs-built_in">float</span>))
+y = dados_f3[<span class="hljs-string">&#x27;Indicio&#x27;</span>].astype(<span class="hljs-built_in">int</span>)
+logit = sm.Logit(y, X_red).fit(disp=<span class="hljs-literal">False</span>)
+
+<span class="hljs-comment"># Tabela 14: coef, OR=exp(coef), IC 95%, p-valor</span>
+<span class="hljs-comment"># AIC=174,13; log-verossimilhança=-83,06</span>
+</div></code></pre>
+<h4 id="8.2-curva-roc-(gr%C3%A1fico-10)" tabindex="-1">8.2 Curva ROC (Gráfico 10)</h4>
+<pre class='hljs'><code><div><span class="hljs-keyword">from</span> sklearn.metrics <span class="hljs-keyword">import</span> roc_curve, auc, confusion_matrix
+
+prob = logit.predict()
+fpr, tpr, _ = roc_curve(y, prob)
+roc_auc = auc(fpr, tpr)  <span class="hljs-comment"># Esperado: 0,908</span>
+
+<span class="hljs-comment"># Matriz de confusão (corte=0,5):</span>
+<span class="hljs-comment"># VP=85, VN=117, FP=11, FN=20</span>
+<span class="hljs-comment"># Acurácia=86,7%, Sensibilidade=80,9%, Especificidade=91,4%</span>
+</div></code></pre>
+<h4 id="8.3-vari%C3%A1veis-f2_14-a-f2_17-(tabela-15)" tabindex="-1">8.3 Variáveis F2_14 a F2_17 (Tabela 15)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Frequência de F2_14 a F2_17 entre os classificados (indício/certeza)</span>
+<span class="hljs-comment"># F2_15 e F2_16: zero ocorrências em toda a amostra</span>
+<span class="hljs-comment"># F2_14: teste χ² de associação (χ²=23,44; gl=1; p&lt;0,001)</span>
+</div></code></pre>
+<h3 id="se%C3%A7%C3%A3o-9-%E2%80%94-an%C3%A1lise-de-correla%C3%A7%C3%A3o-phi-(secao09_correlacao.py)" tabindex="-1">Seção 9 — Análise de Correlação Phi (<code>secao09_correlacao.py</code>)</h3>
+<p><strong>Outputs: Gráfico 11, Gráfico 12, Tabela 16, Tabela 17</strong></p>
+<h4 id="9.1-matriz-de-correla%C3%A7%C3%A3o-%CF%86-(gr%C3%A1fico-11)" tabindex="-1">9.1 Matriz de correlação φ (Gráfico 11)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># 23 variáveis (5 F1 + 13 F2 com ocorrências + 3 F3 + 2 classificações)</span>
+<span class="hljs-comment"># Excluir F2_07, F2_12, F2_15, F2_16 (zero ocorrências)</span>
+<span class="hljs-comment"># φ = correlação de Pearson entre variáveis binárias 0/1</span>
+
+<span class="hljs-comment"># Heatmap: triangular inferior</span>
+<span class="hljs-comment"># Cores quentes = correlação positiva; cores frias = negativa</span>
+<span class="hljs-comment"># Exibir numericamente apenas |φ| ≥ 0,10</span>
+
+<span class="hljs-keyword">import</span> seaborn <span class="hljs-keyword">as</span> sns
+mask = np.triu(np.ones_like(corr_matrix, dtype=<span class="hljs-built_in">bool</span>))
+sns.heatmap(corr_matrix, mask=mask, cmap=mapa_divergente,
+            center=<span class="hljs-number">0</span>, vmin=-<span class="hljs-number">1</span>, vmax=<span class="hljs-number">1</span>, annot=<span class="hljs-literal">True</span>, fmt=<span class="hljs-string">&#x27;.2f&#x27;</span>)
+</div></code></pre>
+<h4 id="9.2-barras-de-correla%C3%A7%C3%A3o-(gr%C3%A1fico-12)" tabindex="-1">9.2 Barras de correlação (Gráfico 12)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Duas colunas da matriz: correlação com Indício e com Certeza</span>
+<span class="hljs-comment"># Barras horizontais, ordenadas por |φ| com Indício</span>
+</div></code></pre>
+<h4 id="9.3-tabela-de-coeficientes-(tabela-16)" tabindex="-1">9.3 Tabela de coeficientes (Tabela 16)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Para cada variável:</span>
+<span class="hljs-comment"># - φ com Indício, p-valor (χ²)</span>
+<span class="hljs-comment"># - φ com Certeza, p-valor (χ²)</span>
+<span class="hljs-comment"># Ordenada por φ com Indício (decrescente)</span>
+</div></code></pre>
+<h4 id="9.4-pares-com-correla%C3%A7%C3%A3o-forte-(tabela-17)" tabindex="-1">9.4 Pares com correlação forte (Tabela 17)</h4>
+<pre class='hljs'><code><div><span class="hljs-comment"># Filtrar pares com |φ| ≥ 0,4</span>
+<span class="hljs-comment"># Destaques esperados:</span>
+<span class="hljs-comment"># - F2_01 × F2_02: φ ≈ 0,98</span>
+<span class="hljs-comment"># - F2_02 × F2_11: φ ≈ 0,45</span>
+<span class="hljs-comment"># - F2_01 × F2_06: ...</span>
+</div></code></pre>
+<h3 id="se%C3%A7%C3%A3o-10-%E2%80%94-s%C3%ADntese-(secao10_sintese.py)" tabindex="-1">Seção 10 — Síntese (<code>secao10_sintese.py</code>)</h3>
+<p><strong>Conteúdo (Markdown):</strong></p>
+<ol>
+<li>Resumo dos achados principais (5 padrões da seção 4.3.4.4)</li>
+<li>Comparação com a Nota Técnica 01/2022 do CIJMG (hipótese H2: &gt;30%)</li>
+<li>Limitações da pesquisa</li>
+<li>Próximos passos</li>
+</ol>
+<hr>
+<h2 id="4.-correspond%C3%AAncia-modelo-%E2%86%94-notebook-hadja" tabindex="-1">4. Correspondência Modelo ↔ Notebook Hadja</h2>
+<table>
+<thead>
+<tr>
+<th>Recurso do modelo (rafaelcc_ed1)</th>
+<th>Equivalente no estudo Hadja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leitura de ApêndiceA/B (xlsx)</td>
+<td>Leitura das abas AMOSTRA, Quadro variáveis, Base consolidada</td>
+</tr>
+<tr>
+<td>Partições e normalização categórica</td>
+<td>Normalização Sim/Não → boolean; extração JEC_numero</td>
+</tr>
+<tr>
+<td><code>verificar_particao()</code> com assert</td>
+<td>Verificar contagens: 595=151+444, 444=211+233, etc.</td>
+</tr>
+<tr>
+<td>Teste binomial exato</td>
+<td>Estimativa pontual e IC Wilson (Tabela 5)</td>
+</tr>
+<tr>
+<td>Qui-quadrado, Fisher, post-hoc</td>
+<td>Homogeneidade por ano/unidade (Tab. 11-12), associação bivariada (Tab. 13)</td>
+</tr>
+<tr>
+<td>Forest plot do Cox</td>
+<td>Forest plot dos OR (Gráfico 9)</td>
+</tr>
+<tr>
+<td>Regressão logística (indiciamento)</td>
+<td>Regressão logística (classificação final) (Tab. 14)</td>
+</tr>
+<tr>
+<td>Curva ROC</td>
+<td>Curva ROC (Gráfico 10)</td>
+</tr>
+<tr>
+<td>— (novo)</td>
+<td>Coeficiente phi e heatmap (Gráf. 11-12, Tab. 16-17)</td>
+</tr>
+<tr>
+<td>Boxplot por grupos</td>
+<td>— (variáveis são todas binárias; não há variável contínua)</td>
+</tr>
+<tr>
+<td>Kaplan-Meier, Cox, AFT</td>
+<td>— (não há análise de sobrevivência neste estudo)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5.-valores-de-refer%C3%AAncia-para-valida%C3%A7%C3%A3o" tabindex="-1">5. Valores de Referência para Validação</h2>
+<p>Os <code>assert</code> e testes de regressão devem conferir os valores publicados na monografia:</p>
+<table>
+<thead>
+<tr>
+<th>Verificação</th>
+<th>Valor esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len(amostra)</code></td>
+<td>595</td>
+</tr>
+<tr>
+<td><code>amostra['Excluido_F1'].sum()</code></td>
+<td>151</td>
+</tr>
+<tr>
+<td><code>amostra['Alguma_F2'].sum()</code> (entre os 444)</td>
+<td>233</td>
+</tr>
+<tr>
+<td><code>amostra['Indicio'].sum()</code></td>
+<td>105</td>
+</tr>
+<tr>
+<td><code>amostra['Certeza'].sum()</code></td>
+<td>30</td>
+</tr>
+<tr>
+<td>Proporção indício (incl. certeza)</td>
+<td>17,65% → IC [14,59%; 20,70%]</td>
+</tr>
+<tr>
+<td>Proporção certeza</td>
+<td>5,04% → IC [3,29%; 6,79%]</td>
+</tr>
+<tr>
+<td>χ² homogeneidade por ano</td>
+<td>1,87 (gl=2; p=0,393)</td>
+</tr>
+<tr>
+<td>χ² homogeneidade por unidade</td>
+<td>20,83 (gl=13; p=0,076)</td>
+</tr>
+<tr>
+<td>OR F2_02 (bivariada)</td>
+<td>45,2 (p&lt;0,001)</td>
+</tr>
+<tr>
+<td>OR F2_01 (bivariada)</td>
+<td>~39,8 (p&lt;0,001)</td>
+</tr>
+<tr>
+<td>OR F2_11 (bivariada)</td>
+<td>~11,4 (p&lt;0,001)</td>
+</tr>
+<tr>
+<td>Pseudo-R² modelo reduzido</td>
+<td>0,482</td>
+</tr>
+<tr>
+<td>AUC ROC</td>
+<td>0,908</td>
+</tr>
+<tr>
+<td>Acurácia (corte 0,5)</td>
+<td>86,7%</td>
+</tr>
+<tr>
+<td>φ(F2_01, F2_02)</td>
+<td>≈ 0,98</td>
+</tr>
+<tr>
+<td>φ(F2_02, Indício)</td>
+<td>0,82</td>
+</tr>
+<tr>
+<td>χ² F2_14 × classificação</td>
+<td>23,44 (gl=1; p&lt;0,001)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6.-observa%C3%A7%C3%B5es-t%C3%A9cnicas-para-o-claude-sonnet-4.6" tabindex="-1">6. Observações Técnicas para o Claude Sonnet 4.6</h2>
+<h3 id="6.1-encoding" tabindex="-1">6.1 Encoding</h3>
+<ul>
+<li>O arquivo <code>.docx</code> usa encoding com caracteres CJK/Latin que o Python pode ler com <code>python-docx</code>, mas a saída no terminal Windows requer <code>chcp 65001</code> ou <code>sys.stdout</code> com UTF-8.</li>
+<li>A planilha Excel tem valores &quot;Sim&quot;/&quot;sim&quot;/&quot;Não&quot;/&quot;não&quot; → normalizar com <code>.str.strip().str.lower()</code> antes de converter.</li>
+</ul>
+<h3 id="6.2-f%C3%B3rmulas-na-planilha" tabindex="-1">6.2 Fórmulas na planilha</h3>
+<ul>
+<li>A coluna 11 (Conclusão FASE I) e coluna 29 (Conclusão FASE II) podem conter <strong>fórmulas Excel</strong> em vez de valores. Usar <code>openpyxl</code> com <code>data_only=True</code> ou, preferencialmente, <strong>recalcular</strong> as conclusões a partir das variáveis F1/F2/F3 booleanas.</li>
+</ul>
+<h3 id="6.3-escala-do-problema" tabindex="-1">6.3 Escala do problema</h3>
+<ul>
+<li>A amostra tem apenas 595 processos e 25 variáveis binárias → cabe inteiramente na memória.</li>
+<li>A população (<code>Base consolidada</code>, 50.320 linhas) é usada apenas para a Tabela 1 e para projeções.</li>
+<li>A aba <code>TJRN</code> (86.964 linhas) é a base bruta original e pode ser usada para conferência.</li>
+</ul>
+<h3 id="6.4-testes-estat%C3%ADsticos-%E2%80%94-cuidados" tabindex="-1">6.4 Testes estatísticos — cuidados</h3>
+<ul>
+<li><strong>Fisher exato</strong> é preferível ao χ² quando há caselas com frequência esperada &lt; 5 (especialmente nas variáveis F2 raras).</li>
+<li><strong>IC Wilson</strong> para proporções (não o de Wald), conforme adotado na monografia.</li>
+<li><strong>Regressão logística:</strong> atentar para separação perfeita ou quasi-perfeita em variáveis com OR muito alto (F2_02, OR=30+). Se <code>statsmodels.Logit</code> falhar na convergência, usar penalização (Firth) ou regularização (<code>method='bfgs'</code>, <code>maxiter=1000</code>).</li>
+<li><strong>Coeficiente phi (φ):</strong> é o Pearson entre binárias; pode ser calculado como <code>np.corrcoef()</code> ou via <code>scipy.stats.pearsonr()</code>. Excluir variáveis constantes (zero ocorrências).</li>
+</ul>
+<h3 id="6.5-gr%C3%A1ficos-%E2%80%94-padr%C3%A3o-visual" tabindex="-1">6.5 Gráficos — padrão visual</h3>
+<ul>
+<li>Seguir a paleta e o estilo do modelo (<code>COR_PRINCIPAL</code>, <code>COR_DESTAQUE</code>, <code>TINTA</code>, <code>GRADE</code>).</li>
+<li>Funções utilitárias do modelo a replicar/adaptar:
+<ul>
+<li><code>quebrar(rotulo, largura)</code> — quebra rótulos longos em múltiplas linhas</li>
+<li><code>serie_exibicao()</code> — converte booleanos para rótulos legíveis</li>
+<li><code>barras_verticais_empilhadas()</code> — barras a 100%</li>
+<li><code>grafico_floresta()</code> — forest plot dos OR/HR</li>
+</ul>
+</li>
+<li>Cada gráfico deve ter título com o nome do teste e o p-valor.</li>
+</ul>
+<h3 id="6.6-ordem-de-execu%C3%A7%C3%A3o" tabindex="-1">6.6 Ordem de execução</h3>
+<ol>
+<li>Ler <code>secao01_ambiente.py</code> → <code>secao02_curadoria.py</code> → demais seções.</li>
+<li>Cada seção depende do DataFrame <code>dados</code> criado na seção 2.</li>
+<li>A seção 7 (inferencial) depende do subconjunto <code>dados_f3</code> (233 processos) criado na seção 5.</li>
+<li>Todas as seções usam as constantes e funções utilitárias definidas na seção 1.</li>
+</ol>
+<hr>
+<h2 id="7.-sequ%C3%AAncia-de-prompts-sugerida-para-o-claude-sonnet-4.6" tabindex="-1">7. Sequência de Prompts Sugerida para o Claude Sonnet 4.6</h2>
+<table>
+<thead>
+<tr>
+<th>Prompt</th>
+<th>Ação</th>
+<th>Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Criar <code>src/estcaso_lide_pred/__init__.py</code> e <code>secao01_ambiente.py</code></td>
+<td>Executar célula de imports sem erro</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Criar <code>secao02_curadoria.py</code></td>
+<td><code>assert len(dados)==595</code>, variáveis booleanas, contagens batem</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Criar <code>secao03_populacao.py</code> + <code>secao04_amostra.py</code></td>
+<td>Tabelas 1-4 reproduzidas</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Criar <code>secao05_descritiva.py</code></td>
+<td>Gráficos 1-6, Tabelas 5-8 reproduzidas, contagens conferem</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Criar <code>secao06_frequencias.py</code></td>
+<td>Tabela 9, Gráfico 7, Tabela 10</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Criar <code>secao07_inferencial.py</code></td>
+<td>χ²=1,87; χ²=20,83; OR de F2_02=45,2; forest plot</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Criar <code>secao08_regressao.py</code></td>
+<td>pseudo-R²=0,482; AUC=0,908; matriz de confusão</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Criar <code>secao09_correlacao.py</code></td>
+<td>Heatmap phi; φ(F2_01,F2_02)≈0,98</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Criar <code>secao10_sintese.py</code> + <code>build_notebook.py</code></td>
+<td>Gerar <code>estcaso_lide_pred.ipynb</code> e executar end-to-end</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="8.-checklist-final" tabindex="-1">8. Checklist Final</h2>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">Notebook executa do início ao fim sem erro</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">12 gráficos reproduzidos (Gráficos 1–12)</label></li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2">17 tabelas reproduzidas (Tabelas 1–4, 5–17 + Quadro 3)</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">Todos os testes estatísticos conferem com os valores publicados</label></li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">Nenhum dado é inventado: tudo vem da planilha ou é calculado</label></li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">Paleta visual consistente e acessível</label></li>
+<li><input type="checkbox" id="checkbox6"><label for="checkbox6">Células de markdown com interpretação dos resultados</label></li>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">README do estudo de caso (análogo ao modelo)</label></li>
+</ul>
+
+    </div>
+</body>
+</html>
