@@ -16,8 +16,9 @@ Uma ilustação ainda mais técnica e precisa vem a seguir:
 
 ![1792075197534](image/estcaso_3_roteiro_atividades_alunos/1792075197534.jpg)
 
-
 4. **Conjunto de Hipóteses** como uma Partição do Espaço Amostral. Construir um exemplo com um par de hipóteses testáveis: $H_0 \times H_a$.
+
+![1792474644814](image/estcaso_3_roteiro_atividades_rafael/1792474644814.jpg)
 
 * **Probabilidade a Priori** dessas hipóteses atribuídas subjetivamente como um produto do conhecimento do Estado da Arte revelado pela Revisão de Escopo feita pela Hadja Rayanne: como um *Relevant Background Information*.
 * **Conceito de *Likelihood* ou Verossimilhança** dessas mesmas hipóteses à luz de novos dados coletados, como, por exemplo: os desfechos (extinção, acordo ou sentença) dos $n = 595$ processos a partir de dados raspados do Datajus do CNJ.
