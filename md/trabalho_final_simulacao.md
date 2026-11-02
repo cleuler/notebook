@@ -1,8 +1,9 @@
 # CDE DPP - 2026.2
-**Data:** 01/11/2026  
+
+**Data:** 01/11/2026
 **Disciplina/Projeto:** Trabalho Final: Simulação
 
----
+**Autor:** Prof. Cleuler Barbosa das Neves  
 
 ## Contexto: O País de Zircônia
 
@@ -12,7 +13,7 @@ Estima-se que na Zircônia vive uma população atual de 100 milhões de habitan
 
 O sistema público de saúde da Zircônia, o ZUS, promove em média 26,9 milhões de atendimentos gerais por semana. O número médio de internações hospitalares por semana é estimado em 104,2 mil.
 
-O gasto público per capita anual com o ZUS encontra-se no seguinte intervalo de confiança: $750 \le x \le \$1000$ Zircônias (a moeda corrente do país, considere que $1Z = R\$ 2,40$), com nível de confiança de 95%, o que representa cerca de 4,2% do PIB do país.
+O gasto público per capita anual com o ZUS encontra-se no seguinte intervalo de confiança: $750 \le x \le \$1000$ Zircônias (a moeda corrente do país, considere que $1\$ USA = Z\$ 2,40$), com nível de confiança de 95%, o que representa cerca de 4,2% do PIB do país.
 
 Em razão de constantes e demoradas filas para internações hospitalares no ZUS, cerca de 50% da população de baixa renda busca a Defensoria Pública da Zircônia para garantir seu acesso à saúde. Isso ocorre seja pelo sistema de regulação do ZUS, seja na rede privada (neste caso, custeado por recursos públicos por meio de sequestro de verba pública que, segundo entendimento da Corte Superior da Zircônia, deveria seguir a tabela de custos do ZUS).
 
@@ -21,10 +22,9 @@ Em razão de constantes e demoradas filas para internações hospitalares no ZUS
 ## Problemas de Pesquisa
 
 1. **Acesso à Saúde e Justiça:** Uma pesquisa pretende estudar se há diferenças no acesso à saúde entre a parcela da população carente com e sem acesso ao sistema de justiça por meio da Defensoria Pública (que não se encontra capilarizada entre as 20 regiões e 5.000 municípios da Zircônia).
-   * **Indicador:** Um dos indicadores que poderia ser mobilizado seria a proporção da população carente com e sem esses acessos, estratificado segundo variáveis como: domicílio, idade, sexo, renda familiar per capita, grau de instrução escolar e cor da pele (branca, parda, preta, amarela e indígena), que são periodicamente levantadas por amostras colhidas por Pesquisas Nacionais Domiciliares Contínuas da Zircônia.
 
+   * **Indicador:** Um dos indicadores que poderia ser mobilizado seria a proporção da população carente com e sem esses acessos, estratificados segundo variáveis como: domicílio, idade, sexo, renda familiar per capita, grau de instrução escolar e cor da pele (branca, parda, preta, amarela e indígena), que são periodicamente levantadas por amostras colhidas por Pesquisas Nacionais Domiciliares Contínuas da Zircônia.
 2. **Controvérsia da Tabela de Custos:** Outro ponto controvertido é a pretensão dos Hospitais da rede particular junto ao judiciário da Zircônia ao pagamento da diferença entre a tabela de custos do ZUS e a tabela do governo para os Planos Privados de Saúde, quando seus beneficiários usam a rede pública, que é estimada em Z$ 12 bilhões por ano.
-
 3. **Corte Orçamentário:** Um terceiro aspecto relevante é a decisão do governo zirconês de aplicar um corte orçamentário de Z$ 6 bilhões para os próximos 12 meses. A pesquisa pretende propor um indicador de impacto desse corte orçamentário sobre a parcela da população carente (com e sem os acessos à saúde pública e ao sistema de justiça), segundo os mesmos estratos já apontados anteriormente.
 
 ---
@@ -45,25 +45,31 @@ O objetivo deste Trabalho Final é descrever as populações a serem pesquisadas
 O principal objetivo do presente roteiro metodológico é servir de modelo a ser utilizado como guia para cada aluno realizar uma simulação adequada de dados aplicada ao seu projeto de pesquisa.
 
 **O que lhe é exigido:**
+
 * Conceber seu Quadro de Variáveis e Dicionário de Dados adequados ao seu problema de pesquisa já bem delimitado;
 * Refletir sobre variáveis ocultas ou não observadas no contexto de sua pesquisa;
 * Criar critérios de escolha realísticos sobre os modelos que serão utilizados para simular dados adequados ao fenômeno pesquisado.
 
 ## 3. Arquitetura e Estrutura de Dados
-Seguir a Arquitetura e Estrutura de coleta, tratamento, curadoria e checagem dos dados coletados a partir desse processo cuidadoso e realístico de simulação, tomando por base os Estudos Dirigidos n. 2 e 3.
+
+Seguir a Arquitetura e Estrutura de coleta, tratamento, curadoria e checagem dos dados coletados a partir desse processo cuidadoso e realístico de simulação, tomando por base os Estudos Dirigidos n. 2 e 3, já desenvolvidos ao longo do curso.
 
 ## 4. Aprofundamento do Trabalho Final
+
 Aprofundar o detalhamento do seu Trabalho Final com relação às seguintes seções previstas no pipeline do seu PLANO customizado para a sua pesquisa junto ao PPGDP:
-* Testes de Hipóteses adequados;
-* Hipóteses da Modelagem, a partir dos dados;
-* Critérios de escolha entre Modelos;
+
+* Testes de Hipóteses adequados para as Hipóteses da sua pesquisa;
+* Modelagem a partir dos dados colhidos (simulação);
+* Critérios de escolha entre Modelos adequados;
 * Análise dos Resíduos;
 * Testes de Hipóteses adequados para apoiar as escolhas nesse processo de Modelagem dos dados;
 * Determinação do Tamanho da Amostra considerando erro tipo I, poder e o tamanho do efeito a ser detectado;
-* Um inventário inicial dos outputs a serem produzidos pela sua pesquisa empírica.
+* Um inventário inicial dos *outputs* a serem produzidos pela sua pesquisa empírica nas usas etapas de: AED, geração de tabelas, gráficos e medidas resumo adequados; testes de hipóteses paramétricos e não paramétricos aplicáveis mais adequados aos tipos de variáveis observadas, com indicação de fontes bibliograficas para aprofundamento e com exemplos ilustrativos; intervalos de confiança mais adequados; modelagem dos dados; análise dos resíduos; critérios de escolha entre modelos; um modo de testar o modelo selecionado com novos dados simulados ou mesmo uma nova amostra com dados coletados em bases da dados aberta; determinação do tamanho da amostra etc.
 
 ## 5. Delineamento da Pesquisa
+
 Ao final, pretende-se que cada aluno alcance, em seu Trabalho Final, uma composição do seu Delineamento da Pesquisa e seu Desenho Amostral, detalhados numa sequência de etapas e com um grau de aprofundamento que servirão como base para incrementar a validade interna e externa dos conceitos e construtos que foram mobilizados no seu Projeto de Pesquisa.
 
 ## 6. Depósito em Repositório
+
 Permitir que esse Protocolo customizado e aprofundado da sua Pesquisa Empírica seja depositado em um Repositório reconhecido para garantir uma coleta de dados válidos, fidedignos e replicáveis, antes de iniciar qualquer coleta de campo.
