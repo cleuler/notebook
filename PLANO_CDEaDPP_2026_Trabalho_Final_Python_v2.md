@@ -186,3 +186,7 @@ Em cada iteração, executar somente as verificações necessárias para o módu
 - [ ] Gráficos, tabelas, modelos, testes, IC e interpretações estão coerentes com os dados efetivamente gerados.
 - [ ] Todos os asserts listados por seção passam; o notebook base permanece intacto.
 - [ ] Markdown acadêmico em português diferencia associação, causalidade, validade interna e externa e explicita as limitações do estudo observacional retrospectivo.
+
+## 6. Registro de execução
+
+**Iteração 2 — concluída em 01/11/2026.** Foram criados `src/cdedpp_2026_v2/__init__.py`, `build_notebook.py`, `secao01_protocolo.py` e `secao02_dicionario.py`. O builder gerou `out/cdedpp_2026_v2/protocolo_parcial.ipynb` com cinco células alternadas (Markdown, código, Markdown, código, Markdown), em `nbformat` 4 e sem outputs persistidos. A execução em kernel limpo percorreu as duas células de código, incluindo os asserts do ambiente e do dicionário, sem erro. A tabela Markdown e os caracteres em português foram conferidos no arquivo gerado. O notebook base permaneceu intacto. A próxima entrega é a **iteração 3: simulação e piloto de 30 observações**.
