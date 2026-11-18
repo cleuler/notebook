@@ -1,0 +1,272 @@
+{
+ "coletado_em": "2026-11-13 02:42:13",
+ "codigos": {
+  "sem_merito": [
+   11377,
+   456,
+   218,
+   11376,
+   454,
+   458,
+   235,
+   459,
+   460,
+   461,
+   463,
+   11378,
+   11379,
+   11375,
+   12256
+  ],
+  "homologacao": [
+   466,
+   14099
+  ],
+  "merito": [
+   385,
+   220,
+   221,
+   219,
+   237,
+   238,
+   239,
+   11406,
+   11407,
+   11408,
+   11409,
+   11403,
+   471,
+   11405,
+   11795,
+   12451,
+   12452,
+   12453
+  ]
+ },
+ "orgaos": {
+  "13286": {
+   "2025": {
+    "n": 844,
+    "homologacao": 106,
+    "merito": 567,
+    "sem_merito": 219,
+    "sentenca": 827
+   },
+   "2026": {
+    "n": 889,
+    "homologacao": 70,
+    "merito": 595,
+    "sem_merito": 182,
+    "sentenca": 823
+   }
+  },
+  "13284": {
+   "2025": {
+    "n": 839,
+    "homologacao": 116,
+    "merito": 573,
+    "sem_merito": 261,
+    "sentenca": 836
+   },
+   "2026": {
+    "n": 898,
+    "homologacao": 95,
+    "merito": 588,
+    "sem_merito": 250,
+    "sentenca": 871
+   }
+  },
+  "13293": {
+   "2025": {
+    "n": 859,
+    "homologacao": 130,
+    "merito": 584,
+    "sem_merito": 233,
+    "sentenca": 853
+   },
+   "2026": {
+    "n": 895,
+    "homologacao": 109,
+    "merito": 613,
+    "sem_merito": 167,
+    "sentenca": 845
+   }
+  },
+  "83097": {
+   "2025": {
+    "n": 846,
+    "homologacao": 110,
+    "merito": 611,
+    "sem_merito": 162,
+    "sentenca": 825
+   },
+   "2026": {
+    "n": 893,
+    "homologacao": 91,
+    "merito": 621,
+    "sem_merito": 134,
+    "sentenca": 819
+   }
+  },
+  "13292": {
+   "2025": {
+    "n": 837,
+    "homologacao": 114,
+    "merito": 609,
+    "sem_merito": 203,
+    "sentenca": 832
+   },
+   "2026": {
+    "n": 920,
+    "homologacao": 95,
+    "merito": 642,
+    "sem_merito": 192,
+    "sentenca": 892
+   }
+  },
+  "77266": {
+   "2025": {
+    "n": 840,
+    "homologacao": 113,
+    "merito": 613,
+    "sem_merito": 186,
+    "sentenca": 820
+   },
+   "2026": {
+    "n": 899,
+    "homologacao": 81,
+    "merito": 585,
+    "sem_merito": 199,
+    "sentenca": 829
+   }
+  },
+  "5153": {
+   "2025": {
+    "n": 864,
+    "homologacao": 107,
+    "merito": 594,
+    "sem_merito": 225,
+    "sentenca": 855
+   },
+   "2026": {
+    "n": 905,
+    "homologacao": 96,
+    "merito": 666,
+    "sem_merito": 129,
+    "sentenca": 843
+   }
+  },
+  "13282": {
+   "2025": {
+    "n": 862,
+    "homologacao": 112,
+    "merito": 622,
+    "sem_merito": 201,
+    "sentenca": 849
+   },
+   "2026": {
+    "n": 896,
+    "homologacao": 100,
+    "merito": 620,
+    "sem_merito": 151,
+    "sentenca": 816
+   }
+  },
+  "13289": {
+   "2025": {
+    "n": 849,
+    "homologacao": 121,
+    "merito": 556,
+    "sem_merito": 189,
+    "sentenca": 806
+   },
+   "2026": {
+    "n": 909,
+    "homologacao": 90,
+    "merito": 642,
+    "sem_merito": 151,
+    "sentenca": 842
+   }
+  },
+  "13288": {
+   "2025": {
+    "n": 838,
+    "homologacao": 101,
+    "merito": 567,
+    "sem_merito": 200,
+    "sentenca": 819
+   },
+   "2026": {
+    "n": 910,
+    "homologacao": 83,
+    "merito": 596,
+    "sem_merito": 168,
+    "sentenca": 821
+   }
+  },
+  "13290": {
+   "2025": {
+    "n": 887,
+    "homologacao": 101,
+    "merito": 603,
+    "sem_merito": 184,
+    "sentenca": 863
+   },
+   "2026": {
+    "n": 907,
+    "homologacao": 72,
+    "merito": 545,
+    "sem_merito": 148,
+    "sentenca": 748
+   }
+  },
+  "13285": {
+   "2025": {
+    "n": 821,
+    "homologacao": 110,
+    "merito": 502,
+    "sem_merito": 298,
+    "sentenca": 817
+   },
+   "2026": {
+    "n": 898,
+    "homologacao": 85,
+    "merito": 427,
+    "sem_merito": 300,
+    "sentenca": 793
+   }
+  },
+  "13283": {
+   "2025": {
+    "n": 841,
+    "homologacao": 103,
+    "merito": 488,
+    "sem_merito": 330,
+    "sentenca": 836
+   },
+   "2026": {
+    "n": 909,
+    "homologacao": 75,
+    "merito": 571,
+    "sem_merito": 252,
+    "sentenca": 856
+   }
+  },
+  "13291": {
+   "2025": {
+    "n": 852,
+    "homologacao": 109,
+    "merito": 554,
+    "sem_merito": 236,
+    "sentenca": 844
+   },
+   "2026": {
+    "n": 895,
+    "homologacao": 98,
+    "merito": 500,
+    "sem_merito": 197,
+    "sentenca": 773
+   }
+  }
+ }
+}

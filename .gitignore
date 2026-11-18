@@ -10,6 +10,8 @@ DadosMestrado/
 dados/
 dados_brutos/
 dados_processados/
+*.7z
+*.zip
 *.xlsx
 *.xls
 *.xlsm

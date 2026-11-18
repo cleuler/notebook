@@ -1,0 +1,1978 @@
+{
+ "970": {
+  "nome": "Audiência",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "situacao_da_audiencia": [
+    "antecipada",
+    "cancelada",
+    "convertida em diligência",
+    "designada",
+    "Em continuação",
+    "não-realizada",
+    "realizada",
+    "redesignada"
+   ],
+   "tipo_de_audiencia": [
+    "admonitória",
+    "conciliação",
+    "de acolhimento",
+    "de custódia",
+    "de interrogatório",
+    "de justificação",
+    "do art. 16 da Lei 11.340",
+    "em execução",
+    "inicial",
+    "instrução",
+    "instrução e julgamento",
+    "julgamento",
+    "mediação",
+    "preliminar",
+    "Pública"
+   ],
+   "data_hora": [],
+   "local": [],
+   "dirigida_por": [
+    "Conciliador(a)",
+    "Facilitador",
+    "Juiz(a)",
+    "Juiz(a) leigo(a)",
+    "Mediador(a)"
+   ]
+  },
+  "glossario": "Indica as diversas situações relacionadas com a audiência, esta em suas diversas formas. Tipos de Audiência: Admonitória, Conciliação, De interrogatório, De justificação, Execução, Inicial, Instrução, Instrução e Julgamento, Julgamento, Preliminar, Una, sine die, entre outras. Situação da Audiência: designada, redesignada, cancelada, antecipada, realizada, não-realizada, convertida em diligência."
+ },
+ "26": {
+  "nome": "Distribuição",
+  "pai": 18,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "tipo_de_distribuicao_redistribuicao": [
+    "competência exclusiva",
+    "dependência",
+    "itinerância",
+    "prevenção",
+    "Previsão ou Encaminhamento Eleitoral",
+    "sorteio",
+    "sorteio manual"
+   ]
+  },
+  "glossario": "Registra o momento em que o processo foi atribuído a determinado Juízo, após os procedimentos de protocolo, de cadastramento, de autuação e de distribuição. É posterior ao movimento Recebido..."
+ },
+ "18": {
+  "nome": "Distribuidor",
+  "pai": 14,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "14": {
+  "nome": "Serventuário",
+  "pai": null,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "51": {
+  "nome": "Conclusão",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "tipo_de_conclusao": [
+    "ao revisor",
+    "para admissibilidade recursal",
+    "para decisão",
+    "para despacho",
+    "para julgamento",
+    "para voto vista"
+   ]
+  },
+  "glossario": "Registra a apresentação dos autos ao Juiz para que produza sua decisão (despacho, decisão, sentença, voto)."
+ },
+ "48": {
+  "nome": "Escrivão/Diretor de Secretaria/Secretário Jurídico",
+  "pai": 14,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Equivalente à Cisão."
+ },
+ "11377": {
+  "nome": "Inadmissibilidade do procedimento sumaríssimo",
+  "pai": 456,
+  "norma": "9.099/95",
+  "artigo": "51, II",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 51. Extingue-se o processo, além dos casos previstos em lei: II - quando inadmissível o procedimento instituído por esta Lei ou seu prosseguimento, após a conciliação; Aprovado na reunião do comitê gestor de tabelas dos dias 17 e 18/09/2009."
+ },
+ "456": {
+  "nome": "Extinção",
+  "pai": 218,
+  "norma": "CPC",
+  "artigo": "267",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "218": {
+  "nome": "Sem Resolução de Mérito",
+  "pai": 193,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "193": {
+  "nome": "Julgamento",
+  "pai": 1,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "1": {
+  "nome": "Magistrado",
+  "pai": null,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Atos praticados pelo magistrado no exercício de jurisdição no processo a movimentar."
+ },
+ "60": {
+  "nome": "Expedição de documento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "tipo_de_documento": []
+  },
+  "glossario": "Registra o momento em que o documento se considera pronto e é encaminhado para produzir a sua finalidade, inclusive certidões. Cada tribunal pode criar tabela complementar de documentos a serem expedidos ou juntados. São obrigatórios os tipos de documentos constantes do complemento \"tipo de documento\" da Tabela de movimentos."
+ },
+ "85": {
+  "nome": "Petição",
+  "pai": 67,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "tipo_de_documento": []
+  },
+  "glossario": "Registra a juntada aos autos de determinada petição, classificada conforme tabela de petições. Importante o registro corresponder à efetiva data da juntada. Cada tribunal deve criar a sua tabela de petição. São obrigatórios os tipos de recurso para todos os tribunais. Para a Justiça do Trabalho e Juizados Especiais, por não obrigatórias na tabela de classes, devem ser registradas as seguintes peti"
+ },
+ "67": {
+  "nome": "Juntada",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Ato de juntar ao processo petição ou documento"
+ },
+ "848": {
+  "nome": "Trânsito em julgado",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "data": []
+  },
+  "glossario": "Deve ser incluída a data do trânsito em julgado, para possibilitar a contagem do prazo para propositura de ação rescisória."
+ },
+ "246": {
+  "nome": "Definitivo",
+  "pai": 861,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Indica a ação de arquivamento definitivo do processo, nas situações em que não há expectativa de prosseguimento por situações normais. Inclui as hipóteses de omissão do vencedor da demanda de conhecimento em exercitar a execução."
+ },
+ "861": {
+  "nome": "Arquivamento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_de_volumes_e_apensos": []
+  },
+  "glossario": ""
+ },
+ "1061": {
+  "nome": "Disponibilização no Diário da Justiça Eletrônico",
+  "pai": 48,
+  "norma": "L 11.419/2006",
+  "artigo": "4º, § 3º",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "data": []
+  },
+  "glossario": "Indica a data em que o ato se tornou disponível no Diário da Justiça Eletrônico. Considera-se data de publicação o primeiro dia útil após a disponibilização. Não se confunde com Publicação, porque há diferença na contagem de prazo."
+ },
+ "92": {
+  "nome": "Publicação",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "ato_publicado": [],
+   "data": []
+  },
+  "glossario": "Publicação dos expedientes tipo: despacho, acórdão, pauta, intimação de contra-razões, intimação de embargos infringentes, de divergência, etc. É obrigatória a inclusão da data da publicação. Não se confunde com disponibilização no Diário da Justiça Eletrônico da L 11.419/2006."
+ },
+ "272": {
+  "nome": "A depender do julgamento de outra causa, de outro juízo ou declaração incidente",
+  "pai": 25,
+  "norma": "CPC 2015; CPP",
+  "artigo": "313, V; 92 e 93",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_unico_do_processo": []
+  },
+  "glossario": "CPC Art. 313. Suspende-se o processo: ................................................................................................................................. V - quando a sentença de mérito: a) depender do julgamento de outra causa ou da declaração de existência ou de inexistência de relação jurídica que constitua o objeto principal de outro processo pendente; b) tiver de ser proferida s"
+ },
+ "25": {
+  "nome": "Suspensão ou Sobrestamento",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "3": {
+  "nome": "Decisão",
+  "pai": 1,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Art. 162. Os atos do juiz consistirão em sentenças, decisões interlocutórias e despachos. § 1o [...] § 2o Decisão interlocutória é o ato pelo qual o juiz, no curso do processo, resolve questão incidente. [...]"
+ },
+ "12066": {
+  "nome": "Cumprimento de Levantamento da Suspensão ",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Cumprimento de decisão ou despacho que determina o levantamento da suspensão ou o dessobrestamento de processo."
+ },
+ "265": {
+  "nome": "Recurso Extraordinário com repercussão geral",
+  "pai": 25,
+  "norma": "CPC",
+  "artigo": "1.035, § 5º",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_tema_RG": []
+  },
+  "glossario": "Suspensão do processo enquanto a parte da lide sob exame do Supremo Tribunal Federal, por repercussão geral, estiver pendente de julgamento naquele tribunal."
+ },
+ "12164": {
+  "nome": "Outras Decisões",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Somente deve ser utilizada nos casos em que não é possível utilizar os demais movimentos constantes do movimento-pai 3 (Decisão)"
+ },
+ "14975": {
+  "nome": "Suspensão/Sobrestamento por Recurso Extraordinário com Repercussão Geral",
+  "pai": 14974,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_tema_RG": []
+  },
+  "glossario": "Trata-se de uma nova pasta na tabela de movimentos de serventuário, ao qual ficarão associados os respectivos movimentos de resolução de causa de suspensão ou sobrestamento para hipóteses de determinação de suspensão e sobrestamento indicadas na hierarquia de movimentos de Magistrado - Decisão - Suspensão ou Sobrestamento."
+ },
+ "14974": {
+  "nome": "Levantamento da Causa Suspensiva ou de Sobrestamento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Trata-se de uma nova pasta na tabela de movimentos de serventuário, ao qual ficarão associados os respectivos movimentos de resolução de causa de suspensão ou sobrestamento para hipóteses de determinação de suspensão e sobrestamento indicadas na hierarquia de movimentos de Magistrado - Decisão - Suspensão ou Sobrestamento."
+ },
+ "11010": {
+  "nome": "Mero expediente",
+  "pai": 11009,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Inclusão determinada na reunião de 04 e 05/06/2009 do Comitê Gestor. Movimento a ser utilizado quando proferido despacho que não tenha movimento mais específico."
+ },
+ "11009": {
+  "nome": "Despacho",
+  "pai": 1,
+  "norma": "CPC",
+  "artigo": "162, § 3º",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Engloga todos os atos que não são decisão ou sentença. Criado na reunião de 04 e 05/06/2009 do Comitê Gestor. Art. 162. Os atos do juiz consistirão em sentenças, decisões interlocutórias e despachos. [...} § 3o São despachos todos os demais atos do juiz praticados no processo, de ofício ou a requerimento da parte, a cujo respeito a lei não estabelece outra forma."
+ },
+ "1051": {
+  "nome": "Decurso de Prazo",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": [],
+   "data": []
+  },
+  "glossario": "Abrange todas as hipóteses de decurso de prazo, exceto aquelas que ensejam o trânsito em julgado. Para este caso, utilizar movimento trânsito em julgado."
+ },
+ "581": {
+  "nome": "Documento",
+  "pai": 67,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "tipo_de_documento": []
+  },
+  "glossario": "Registra a juntada aos autos de documento que não seja petição. Tipos de documentos são os constantes da tabela de documentos expedidos. Documentos obrigatórios: mandados e cartas (precatórias, de ordem e rogatória), telegramas e Avisos de Recebimento (AR). Também é obrigatório o documento \"projeto de sentença\", para registro dos projetos de juízes leigos (art. 40 da Lei 9.099/95)."
+ },
+ "106": {
+  "nome": "Mandado",
+  "pai": 105,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "resultado": [
+    "entregue ao destinatário",
+    "não entregue ao destinatário"
+   ]
+  },
+  "glossario": "Registra a devolução pelo Oficial de Justiça ou Central de Mandados do mandado, em qualquer situação. Exemplo das situações da diligência: cumprida, não cumprida, cumprida em parte, etc."
+ },
+ "105": {
+  "nome": "Devolução",
+  "pai": 104,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "104": {
+  "nome": "Oficial de Justiça",
+  "pai": 14,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "12740": {
+  "nome": "de Conciliação",
+  "pai": 970,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "situacao_da_audiencia": [
+    "antecipada",
+    "cancelada",
+    "convertida em diligência",
+    "designada",
+    "Em continuação",
+    "não-realizada",
+    "realizada",
+    "redesignada"
+   ],
+   "data_hora": [],
+   "dirigida_por": [
+    "Conciliador(a)",
+    "Facilitador",
+    "Juiz(a)",
+    "Juiz(a) leigo(a)",
+    "Mediador(a)"
+   ],
+   "local": []
+  },
+  "glossario": "Indica as diversas situações relacionadas com a audiência, esta em suas diversas formas. Tipos de Audiência: Admonitória, Conciliação, De interrogatório, De justificação, Execução, Inicial, Instrução, Instrução e Julgamento, Julgamento, Preliminar, Una, sine die, entre outras. Situação da Audiência: designada, redesignada, cancelada, antecipada, realizada, não-realizada, convertida em diligência."
+ },
+ "466": {
+  "nome": "Homologação de Transação",
+  "pai": 385,
+  "norma": "CPC",
+  "artigo": "269, III",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Aplica-se aos casos em que a transação homologada efetivamente põe fim à demanda."
+ },
+ "385": {
+  "nome": "Com Resolução do Mérito",
+  "pai": 193,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "220": {
+  "nome": "Improcedência",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Registra a solução do processo NO JUÍZO ORIGINÁRIO. Inclui a hipótese do art. 285-A do CPC. Tratando-se de juízo recursal, registrar em Conhecido o recurso de parte e não-provido. Casos de extinção sem resolução de mérito devem ser registrados no grupo próprio e não aqui."
+ },
+ "123": {
+  "nome": "Remessa",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "destino": [],
+   "motivo_da_remessa": [
+    "ao Juiz da Instrução",
+    "ao Juiz de Garantias",
+    "cumpridos",
+    "cumpridos parcialmente",
+    "declaração de competência para órgão vinculado a Tribunal diferente",
+    "em diligência",
+    "em grau de recurso",
+    "Em razão de criação de novo Tribunal",
+    "em razão de migração para outro sistema processual",
+    "encerradas atribuições CEJUSC",
+    "itinerância",
+    "não cumpridos",
+    "outros motivos",
+    "por declínio de competência entre instâncias do mesmo tribunal",
+    "por devolução ao deprecante",
+    "por julgamento definitivo do recurso"
+   ]
+  },
+  "glossario": "Indica remessa interna (contadoria, oficial de justiça, etc) ou externa (fora do órgão jurisdicional, outras varas, tribunais, etc.) de autos. Não deve ser confundida com carga/vista, ou com conclusão ao magistrado. Marca a transferência de responsabilidade pelos autos do escrivão ao próximo portador."
+ },
+ "132": {
+  "nome": "Recebimento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Registra o recebimento dos autos provindos de qualquer origem (outro órgão jurisdicional, tribunal, distribuição, contadoria, ou de carga/vista a advogados ou Ministério Público). Marca o início da responsabilidade do Escrivão pelos autos."
+ },
+ "12291": {
+  "nome": "Movimentação processual",
+  "pai": 12289,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "movimento_cancelado": []
+  },
+  "glossario": "Indica o cancelamento de movimento processual do sistema. Fase com complemento identificador para indicar o movimento cancelado."
+ },
+ "12289": {
+  "nome": "Cancelamento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "12270": {
+  "nome": "Documento",
+  "pai": 12269,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Indica quando for desentranhado documento do processo, quando este não for petição."
+ },
+ "12269": {
+  "nome": "Desentranhamento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "221": {
+  "nome": "Procedência em Parte",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Registra a solução do processo NO JUÍZO ORIGINÁRIO. Tratando-se de juízo recursal, registrar em Conhecido o recurso de parte e provido em parte."
+ },
+ "12548": {
+  "nome": "Expedição de alvará de levantamento",
+  "pai": 11009,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser usado na determinação de expedição de levantamento em processos que não sejam propostos unicamente com o objetivo desta expedição. Nestes últimos devem ser usados movimentos que tendem a finalizar a tramitação processual. Para a efetiva expedição do alvará deve ser usado o movimento “60 – Expedição de Documento”, com o complemento tipo de documento “alvará”."
+ },
+ "11376": {
+  "nome": "Ausência do autor à audiência",
+  "pai": 456,
+  "norma": "9.099/95",
+  "artigo": "51, I",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 51. Extingue-se o processo, além dos casos previstos em lei: I - quando o autor deixar de comparecer a qualquer das audiências do processo; (...) § 1º A extinção do processo independerá, em qualquer hipótese, de prévia intimação pessoal das partes. § 2º No caso do inciso I deste artigo, quando comprovar que a ausência decorre de força maior, a parte poderá ser isentada, pelo Juiz, do pagament"
+ },
+ "792": {
+  "nome": "Liminar",
+  "pai": 968,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Indica a decisão que não concede liminarmente a ordem cautelar. Não confundir com Decisão\\Não-Concessão\\Antecipação de tutela. Registrar conforme a deliberação do magistrado."
+ },
+ "968": {
+  "nome": "Não-Concessão",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "15162": {
+  "nome": "Acolhimento de Embargos de Declaração",
+  "pai": 3,
+  "norma": "CPC; CPP; CLT; CPPM ",
+  "artigo": "1.022 (CPC); 620 (CPP); 897-A (CLT); 542 (CPPM)",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado para indicar o acolhimento dos embargos de declaração contra decisão, conforme previsto nos arts. 1.022 do CPC, 620 do CPP, 897-A da CLT e 542 do CPPM."
+ },
+ "785": {
+  "nome": "Tutela Provisória",
+  "pai": 968,
+  "norma": "CPC",
+  "artigo": "294 a 311",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Indica a decisão que não concede a ordem antecipativa. Não confundir com Decisão \\Não-Concessão\\Liminar. Registrar conforme a deliberação do magistrado."
+ },
+ "15164": {
+  "nome": "Não Acolhimento de Embargos de Declaração",
+  "pai": 3,
+  "norma": "CPC; CPP; CLT; CPPM",
+  "artigo": "1.022 (CPC); 620 (CPP); 897-A (CLT); 542 (CPPM)",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Caso em que os embargos de declaração são resolvidos não proferindo qualquer das declarações requeridas pelo embargante. Pode incluir alguns pedidos não conhecidos."
+ },
+ "849": {
+  "nome": "Reativação",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado somente para os seguintes casos: 1) quando os autos saírem da situação de arquivamento definitivo ou baixa definitiva resultando em nova tramitação dos autos na mesma instância processual em que tramitava antes do arquivamento/baixa ou 2) quando os autos retornarem da outra instância para tramitar na mesma instância processual em que estavam tramitando antes da remessa pa"
+ },
+ "36": {
+  "nome": "Redistribuição",
+  "pai": 18,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "motivo_da_redistribuicao": [
+    "alteração de competência do órgão",
+    "ao Juiz da Instrução",
+    "ao Juiz de Garantias",
+    "criação de unidade judiciária",
+    "desaforamento",
+    "erro material",
+    "extinção de unidade judiciária",
+    "impedimento",
+    "incompetência",
+    "Previsão Normativa Eleitoral",
+    "recusa de prevenção/dependência",
+    "remessa de execução cível (CPC, 475-P, par. ún.)",
+    "reunião de execuções",
+    "sucessão",
+    "suspeição"
+   ],
+   "tipo_de_distribuicao_redistribuicao": [
+    "competência exclusiva",
+    "dependência",
+    "itinerância",
+    "prevenção",
+    "Previsão ou Encaminhamento Eleitoral",
+    "sorteio",
+    "sorteio manual"
+   ]
+  },
+  "glossario": "A redistribuição ocorre quando o juiz se declara impedido; quando verifica a prevenção de outra vara, órgão julgador ou relator. Redistribuição por sucessão - para o 2º grau, nas hipóteses de mudança de mesa diretora, promoção, aposentadoria."
+ },
+ "12750": {
+  "nome": "de Instrução e Julgamento",
+  "pai": 970,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "situacao_da_audiencia": [
+    "antecipada",
+    "cancelada",
+    "convertida em diligência",
+    "designada",
+    "Em continuação",
+    "não-realizada",
+    "realizada",
+    "redesignada"
+   ],
+   "local": [],
+   "dirigida_por": [
+    "Conciliador(a)",
+    "Facilitador",
+    "Juiz(a)",
+    "Juiz(a) leigo(a)",
+    "Mediador(a)"
+   ],
+   "data_hora": []
+  },
+  "glossario": "Indica as diversas situações relacionadas com a audiência, esta em suas diversas formas. Tipos de Audiência: Admonitória, Conciliação, De interrogatório, De justificação, Execução, Inicial, Instrução, Instrução e Julgamento, Julgamento, Preliminar, Una, sine die, entre outras. Situação da Audiência: designada, redesignada, cancelada, antecipada, realizada, não-realizada, convertida em diligência."
+ },
+ "14739": {
+  "nome": "Evolução da Classe Processual",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "classe_anterior": [],
+   "classe_nova": []
+  },
+  "glossario": "Este movimento deve ser usao nas evoluções naturais de um processo judicial, por exemplo, quando do início da fase de cumprimento de sentença, e em todos os casos que não esteja caracterizado um erro material de autuação, como em uma desclassificação ou na reclassificação para embargos de declaração na segunda instância. É vedado seu uso para retificação de classe erroneamente registrada, devendo "
+ },
+ "219": {
+  "nome": "Procedência",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Registra a solução do processo NO JUÍZO ORIGINÁRIO. Tratando-se de juízo recursal, registrar em Conhecido o recurso de parte e provido."
+ },
+ "454": {
+  "nome": "Indeferimento da petição inicial",
+  "pai": 456,
+  "norma": "CPC",
+  "artigo": "267, I; 295",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "São hipóteses de indeferimento da petição inicial as previstas no art. 295, do CPC: Art. 295. A petição inicial será indeferida: I - quando for inepta; II - quando a parte for manifestamente ilegítima; III - quando o autor carecer de interesse processual; IV - quando o juiz verificar, desde logo, a decadência ou a prescrição (art. 219, § 5o); V - quando o tipo de procedimento, escolhido pelo autor"
+ },
+ "11022": {
+  "nome": "Julgamento em Diligência",
+  "pai": 11021,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Situações em que o processo se encontra concluso para sentença, e o magistrado delibera serem necessárias providências suplementares antes do julgamento, ainda que decorrentes de atos praticados após a conclusão para sentença. Aplicável para juízo originário ou recursal. Também é aplicável aos julgamentos colegiados de primeiro grau das Justiças Militares."
+ },
+ "11021": {
+  "nome": "Conversão",
+  "pai": 11009,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "196": {
+  "nome": "Extinção da execução ou do cumprimento da sentença",
+  "pai": 385,
+  "norma": "CPC",
+  "artigo": "475-I a 475-J, 794",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Indica a sentença que põe fim ao processo de execução, seja na forma autônoma, seja na forma de cumprimento de sentença."
+ },
+ "12255": {
+  "nome": "Redistribuição por prevenção",
+  "pai": 1013,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento próprio para cadastramento de decisão que determine a redistribuição dos autos por existir juízo prevento"
+ },
+ "1013": {
+  "nome": "Determinação",
+  "pai": 3,
+  "norma": "L 7.210/1984",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Aplicável em execução penal."
+ },
+ "11383": {
+  "nome": "Ato ordinatório",
+  "pai": 48,
+  "norma": "162",
+  "artigo": "§ 4º",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 162 § 4o Os atos meramente ordinatórios, como a juntada e a vista obrigatória, independem de despacho, devendo ser praticados de ofício pelo servidor e revistos pelo juiz quando necessários. (Incluído pela Lei nº 8.952, de 13.12.1994) Aprovado na reunião do comitê gestor de tabelas dos dias 17 e 18/09/2009."
+ },
+ "458": {
+  "nome": "Abandono da causa",
+  "pai": 456,
+  "norma": "CPC",
+  "artigo": "485, III",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "CPC, Art. 485. O juiz não resolverá o mérito quando : [...] III - por não promover os atos e as diligências que lhe incumbir, o autor abandonar a causa por mais de 30 (trinta) dias"
+ },
+ "198": {
+  "nome": "Acolhimento de Embargos de Declaração",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Caso em que todos os pedidos de declaração são conhecidos e é efetivada a declaração requerida. Há Embargos de Declaração Acolhidos em Parte, para os casos em que somente parte dos pedidos de declaração são deferidos."
+ },
+ "200": {
+  "nome": "Não-Acolhimento de Embargos de Declaração",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Caso em que os embargos de declaração são resolvidos não proferindo qualquer das declarações requeridas pelo embargante. Pode incluir alguns pedidos não conhecidos. Em caso de não serem conhecidos ou não serem admitidos, registrar em Não conhecido recurso de parte. Há hipótese de Acolhidos em parte os Embargos de Declaração."
+ },
+ "235": {
+  "nome": "Não Conhecimento de recurso",
+  "pai": 218,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {
+   "nome_da_parte": [],
+   "tipo_de_documento": []
+  },
+  "glossario": "Aplica-se a todos os recurso, exceto Embargos de Declaração. Não se confunde com Recurso Prejudicado."
+ },
+ "237": {
+  "nome": "Provimento",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Exclusivo para julgamentos em INSTÂNCIA RECURSAL. Solução no juízo originário deve ser registrada em Julgada procedente a ação."
+ },
+ "238": {
+  "nome": "Provimento em Parte",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Exclusivo para julgamentos em INSTÂNCIA RECURSAL. Solução no juízo originário deve ser registrada em Julgada procedente em parte a ação."
+ },
+ "239": {
+  "nome": "Não-Provimento",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Exclusivo para julgamentos em INSTÂNCIA RECURSAL. Solução no juízo originário deve ser registrada em Improcedência. Casos de não conhecimento total ou de extinção não se enquadram neste movimento: há movimentos específicos para esse fim, no grupo sem resolução de mérito."
+ },
+ "245": {
+  "nome": "Provisório",
+  "pai": 861,
+  "norma": "lei 6830/80",
+  "artigo": "40, § 2º",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Usado principalmente nos casos de execução frustrada, ou seja, quando não localizados bens do devedor. Às vezes denominado arquivamento sem baixa. Não é exclusivo da execução fiscal."
+ },
+ "332": {
+  "nome": "Tutela Provisória",
+  "pai": 817,
+  "norma": "CPC",
+  "artigo": "294 a 311",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Indica a decisão que concede a ordem de antecipação. Não confundir com Decisão ou Despacho;Concessão;Liminar, registrar conforme a deliberação do magistrado."
+ },
+ "817": {
+  "nome": "Concessão",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "334": {
+  "nome": "Gratuidade da Justiça",
+  "pai": 968,
+  "norma": "CPC",
+  "artigo": "98",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Movimento a ser usado quando da não concessão da gratuidade da justiça. Na justiça do trabalho, o deferimento da justiça gratuita poderá ser lançada quando da publicação da sentença, na janela da decisão, e permanecerá como registro no sistema, mas não precisará aparecer como um movimento processual."
+ },
+ "339": {
+  "nome": "Liminar",
+  "pai": 817,
+  "norma": "CPC",
+  "artigo": "273, § 1º; 804",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Indica a decisão que concede liminarmente a ordem cautelar. Não confundir com Decisão\\Concessão\\Antecipação de tutela. Registrar conforme a deliberação do magistrado."
+ },
+ "432": {
+  "nome": "Recurso Extraordinário",
+  "pai": 207,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Registra a decisão de não admissão do Recurso Extraordinário nos Tribunais."
+ },
+ "207": {
+  "nome": "Não-Admissão",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Indica a decisão que não admite o recurso de terceiro nível. Outros recursos devem ser registrados em Decisão ou Despacho;Recebimento ou Decisão ou Despacho;Não-Recebimento."
+ },
+ "459": {
+  "nome": "Ausência de pressupostos processuais",
+  "pai": 456,
+  "norma": "CPC",
+  "artigo": "267, IV; 618, I a III.",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "CPC, Art. 267. Extingue-se o processo, sem resolução de mérito: IV - quando se verificar a ausência de pressupostos de constituição e de desenvolvimento válido e regular do processo; CPC, Art. 618. É nula a execução: I - se o título executivo não for líquido, certo e exigível (art. 586); I - se o título executivo extrajudicial não corresponder a obrigação certa, líquida e exigível (art. 586); (Red"
+ },
+ "460": {
+  "nome": "Perempção, litispendência ou coisa julgada",
+  "pai": 456,
+  "norma": "CPC",
+  "artigo": "267, V",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "CPC, Art. 267. Extingue-se o processo, sem resolução de mérito: V - quando o juiz acolher a alegação de perempção, litispendência ou de coisa julgada;"
+ },
+ "461": {
+  "nome": "Ausência das condições da ação",
+  "pai": 456,
+  "norma": "CPC",
+  "artigo": "267, VI",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "CPC, Art. 267. Extingue-se o processo, sem resolução de mérito:[...] Vl - quando não concorrer qualquer das condições da ação, como a possibilidade jurídica, a legitimidade das partes e o interesse processual;"
+ },
+ "463": {
+  "nome": "Desistência",
+  "pai": 456,
+  "norma": "CPC",
+  "artigo": "267",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "787": {
+  "nome": "Gratuidade da Justiça",
+  "pai": 817,
+  "norma": "CPC",
+  "artigo": "98",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Art. 98. A pessoa natural ou jurídica, brasileira ou estrangeira, com insuficiência de recursos para pagar as custas, as despesas processuais e os honorários advocatícios tem direito à gratuidade da justiça, na forma da lei. § 1º A gratuidade da justiça compreende: I - as taxas ou as custas judiciais; II - os selos postais; III - as despesas com publicação na imprensa oficial, dispensando-se a pub"
+ },
+ "871": {
+  "nome": "Acolhimento em parte de Embargos de Declaração",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Solução específica para os embargos de declaração, para os casos em que são parcialmente acolhidos os pedidos de declaração, ou os casos em que são parcialmente conhecidos e na parte conhecida são acolhidos parte ou todos os pedidos de declaração remanescentes. Não conhecimento total de embargos de declaração deve ser registrado em Não conhecido o recurso de parte."
+ },
+ "892": {
+  "nome": "Liminar",
+  "pai": 888,
+  "norma": "CPC",
+  "artigo": "273, § 7º; 804",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Indica a decisão que concede liminarmente parte da ordem cautelar requerida. Não confundir com Decisão ou Despacho;Concessão em Parte;Antecipação de tutela, registrar conforme a deliberação do magistrado."
+ },
+ "888": {
+  "nome": "Concessão em parte",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "893": {
+  "nome": "Desarquivamento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado em duas situações: 1) quando os autos saírem da situação de arquivamento provisório ou 2) quando os autos saírem da situação de arquivamento definitivo sem resultar em tramitação processual dos autos, por exemplo, nos casos de desarquivamento para mera consulta processual, expedição de certidões ou mera juntada de procuração. Neste último caso, o desarquivamento é um movi"
+ },
+ "941": {
+  "nome": "Incompetência",
+  "pai": 11,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Quando o juiz declara não deter competência para julgar o processo. Deve determinar a remessa dos autos ao Juízo competente."
+ },
+ "11": {
+  "nome": "Declaração",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "944": {
+  "nome": "Desistência de Recurso",
+  "pai": 378,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Aplicável tanto no juízo de origem quanto no juízo recursal. Caso de desistência da ação registrar em Julgamento;Sem resolução do mérito;extinção;desistência"
+ },
+ "378": {
+  "nome": "Homologação",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "961": {
+  "nome": "Suscitação de Conflito de Competência",
+  "pai": 3,
+  "norma": "CPC; CPP; CPPM",
+  "artigo": "118, I; 115; 113",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Decisão que envia a questão de competência a exame do Tribunal responsável pela solução. CPC Art. 118. O conflito será suscitado ao presidente do tribunal: I - pelo juiz, por ofício; II - pela parte e pelo Ministério Público, por petição. Parágrafo único. O ofício e a petição serão instruídos com os documentos necessários à prova do conflito. CPP Art. 115. O conflito poderá ser suscitado: I - pela"
+ },
+ "1059": {
+  "nome": "Sem efeito suspensivo",
+  "pai": 1060,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Recursos recebidos no efeito meramente devolutivo. O recurso recebido será identificado pelo movimento anterior."
+ },
+ "1060": {
+  "nome": "Recurso",
+  "pai": 160,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "O recurso recebido será identificado pelo movimento anterior. Deve referir a data em que a decisão se torna pública, para automatização da contagem de prazos. Os recursos extraordinário, especial e de revista estão tratados como admissão e não-admissão, e a decisão respectiva deve ser registrada por esses movimentos."
+ },
+ "160": {
+  "nome": "Recebimento",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "11012": {
+  "nome": "Conflito de Competência",
+  "pai": 11025,
+  "norma": "CPC 2015; CPPM",
+  "artigo": "955; 115",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "CPC Art. 955. O relator poderá, de ofício ou a requerimento de qualquer das partes, determinar, quando o conflito for positivo, o sobrestamento do processo e, nesse caso, bem como no de conflito negativo, designará um dos juízes para resolver, em caráter provisório, as medidas urgentes. CPPM Art. 115. Tratando-se de conflito positivo, o relator do feito poderá ordenar, desde logo, que se suspenda "
+ },
+ "11025": {
+  "nome": "Suspensão ou Sobrestamento",
+  "pai": 11009,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Ordem do Juiz a qualquer pessoa para que preste informações relevantes para a solução do processo. Pode ser instrumentalizada por ofício, mandado, intimação eletrônica, carta precatória, ou qualquer outro meio de comunicação."
+ },
+ "11020": {
+  "nome": "Requisição de Informações",
+  "pai": 11009,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Ordem do Juiz a qualquer pessoa para que preste informações relevantes para a solução do processo. Pode ser instrumentalizada por ofício, mandado, intimação eletrônica, carta precatória, ou qualquer outro meio de comunicação."
+ },
+ "11378": {
+  "nome": "Incompetência territorial",
+  "pai": 456,
+  "norma": "9.099/95",
+  "artigo": "51, III",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 51. Extingue-se o processo, além dos casos previstos em lei: III - quando for reconhecida a incompetência territorial; Aprovado na reunião do comitê gestor de tabelas dos dias 17 e 18/09/2009."
+ },
+ "11379": {
+  "nome": "Incompetência em razão da pessoa",
+  "pai": 456,
+  "norma": "9.099/95",
+  "artigo": "51, iv",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 51. Extingue-se o processo, além dos casos previstos em lei: IV - quando sobrevier qualquer dos impedimentos previstos no art. 8º desta Lei; Aprovado na reunião do comitê gestor de tabelas dos dias 17 e 18/09/2009."
+ },
+ "11406": {
+  "nome": "Procedência em parte do pedido e improcedência do pedido contraposto",
+  "pai": 385,
+  "norma": "CPC; Lei 9.099/95",
+  "artigo": "278, § 1º; 31",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado exclusivamente no procedimento sumário, no procedimento sumaríssimo (Juizados Especiais) e nas ações de natureza dúplice. Art. 278. Não obtida a conciliação, oferecerá o réu, na própria audiência, resposta escrita ou oral, acompanhada de documentos e rol de testemunhas e, se requerer perícia, formulará seus quesitos desde logo, podendo indicar assistente técnico. (Redação"
+ },
+ "11407": {
+  "nome": "Improcedência do pedido e procedência do pedido contraposto",
+  "pai": 385,
+  "norma": "CPC; Lei 9.099/95",
+  "artigo": "278, § 1º; 31",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado exclusivamente no procedimento sumário, no procedimento sumaríssimo (Juizados Especiais) e nas ações de natureza dúplice. Art. 278. Não obtida a conciliação, oferecerá o réu, na própria audiência, resposta escrita ou oral, acompanhada de documentos e rol de testemunhas e, se requerer perícia, formulará seus quesitos desde logo, podendo indicar assistente técnico. (Redação"
+ },
+ "11408": {
+  "nome": "Improcedência do pedido e procedência em parte do pedido contraposto",
+  "pai": 385,
+  "norma": "CPC; Lei 9.099/95",
+  "artigo": "278, § 1º; 31",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado exclusivamente no procedimento sumário, no procedimento sumaríssimo (Juizados Especiais) e nas ações de natureza dúplice. Art. 278. Não obtida a conciliação, oferecerá o réu, na própria audiência, resposta escrita ou oral, acompanhada de documentos e rol de testemunhas e, se requerer perícia, formulará seus quesitos desde logo, podendo indicar assistente técnico. (Redação"
+ },
+ "11409": {
+  "nome": "Improcedência do pedido e improcedência do pedido contraposto",
+  "pai": 385,
+  "norma": "CPC; Lei 9.099/95",
+  "artigo": "278, § 1º; 31",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado exclusivamente no procedimento sumário, no procedimento sumaríssimo (Juizados Especiais) e nas ações de natureza dúplice. Art. 278. Não obtida a conciliação, oferecerá o réu, na própria audiência, resposta escrita ou oral, acompanhada de documentos e rol de testemunhas e, se requerer perícia, formulará seus quesitos desde logo, podendo indicar assistente técnico. (Redação"
+ },
+ "11975": {
+  "nome": "Recurso Especial repetitivo",
+  "pai": 25,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_tema_repetitivo": []
+  },
+  "glossario": "Suspensão do processo enquanto a parte da lide sob exame do Superior Tribunal de Justiçal, pela sistemática do recurso especial repetitivo, estiver pendente de julgamento naquele tribunal."
+ },
+ "11983": {
+  "nome": "Retificação de movimento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "movimento_retificado": []
+  },
+  "glossario": "Movimento a ser lançado para registrar a retificação de um movimento anterior consignado indevidamente. Deve ser necessariamente seguido do lançamento do movimento correto. É vedado o lançamento do movimento correto com data retroativa."
+ },
+ "12115": {
+  "nome": "Para Julgamento",
+  "pai": 12104,
+  "norma": "CPC 2015",
+  "artigo": "358 e 934",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 358. No dia e na hora designados, o juiz declarará aberta a audiência de instrução e julgamento e mandará apregoar as partes e os respectivos advogados, bem como outras pessoas que dela devam participar. .............................................................. Art. 934. Em seguida, os autos serão apresentados ao presidente, que designará dia para julgamento, ordenando, em todas as hipót"
+ },
+ "12104": {
+  "nome": "Inclusão em pauta",
+  "pai": 12103,
+  "norma": "CPC 2015",
+  "artigo": "357, V, § 9º; 934 e 935",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 357 ............................................................................ V - designar, se necessário, audiência de instrução e julgamento. .......................................................... § 9 o As pautas deverão ser preparadas com intervalo mínimo de 1 (uma) hora entre as audiências. ........................................................... Art. 934. Em seguida, os autos s"
+ },
+ "12103": {
+  "nome": "Pauta",
+  "pai": 48,
+  "norma": "CPC 2015",
+  "artigo": "357, § 9º; 365, parágrafo único; 933, § 2º; 934; 935; 940; 1.021, § 2º; 1.024, § 1º; 1.038, § 2º; e, 1.067. ",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento referente às pautas de Sessões de Julgamentoe de Audiências."
+ },
+ "12150": {
+  "nome": "Impedimento",
+  "pai": 11,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_do_magistrado": []
+  },
+  "glossario": "Quando o juiz declara ex oficio o seu impedimento."
+ },
+ "12151": {
+  "nome": "Suspeição",
+  "pai": 11,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_do_magistrado": []
+  },
+  "glossario": "Quando o juiz declara ex oficio a sua suspeição."
+ },
+ "12200": {
+  "nome": "Mérito",
+  "pai": 12199,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Movimento utilizado para quando houver julgamento de liminar em Sessão."
+ },
+ "12199": {
+  "nome": "Julgado",
+  "pai": 12198,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Movimento utilizado para quando houver qualquer tipo de julgamento em Sessão."
+ },
+ "12198": {
+  "nome": "Deliberado em Sessão",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Movimento utilizado para quando houver qualquer deliberação dos autos em Sessão de Julgamento,"
+ },
+ "12203": {
+  "nome": "Adiado",
+  "pai": 12198,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Movimento a ser usado quando houver deliberação efetiva de adiamento na sessão."
+ },
+ "12309": {
+  "nome": "Retirada",
+  "pai": 12103,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento referente à retirada de pauta de processo anteriormente pautado para julgamento colegiado ou audiência."
+ },
+ "12311": {
+  "nome": "Pedido de inclusão",
+  "pai": 12310,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento referente a pedido de inclusão em pauta pelo magistrado."
+ },
+ "12310": {
+  "nome": "Pauta",
+  "pai": 11009,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Movimento referente a despachos do magistrado sobre pauta"
+ },
+ "12313": {
+  "nome": "Pedido de Inclusão em Pauta de Sessão Virtual",
+  "pai": 12310,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado quando o julgamento se der em sessão virtual, assim entendida como aquela em que as votações são realizadas exclusivamente pelo sistema, a exemplo do “plenário virtual” do STF. Se o julgamento se der em sessão presencial/telepresencial, utilizar movimento “1204 – Inclusão em pauta”, “897 - Retirada de pauta” e “12311 Pedido de Inclusão”."
+ },
+ "12614": {
+  "nome": "Remessa para o CEJUSC ou Centros de Conciliação/Mediação",
+  "pai": 48,
+  "norma": "Res. CNJ 125/2010",
+  "artigo": "Art. 8º, §8º",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "destino": []
+  },
+  "glossario": "Movimento a ser lançado por ocasião da remessa do processo para mediação/conciliação em CEJUSC ou Centros de Conciliação/Mediação. Marca a transferência de responsabilidade pelos autos do escrivão ao próximo portador."
+ },
+ "12619": {
+  "nome": "Recebimento do CEJUSC ou Centros de Conciliação/Mediação",
+  "pai": 48,
+  "norma": "Res. 125/2010",
+  "artigo": "art. 8º, §8º",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Registra o recebimento dos autos provindos do CEJUSC ou Centro de Conciliação/Mediação. Marca o início da responsabilidade do Escrivão pelos autos."
+ },
+ "12621": {
+  "nome": "Recebimento no CEJUSC ou Centros de Conciliação/Mediação",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento que marca a transferência da responsabilidade pelo processo da Vara para o CEJUSC ou Centro de Conciliação/Mediação."
+ },
+ "14099": {
+  "nome": "Homologação de Acordo em Execução ou em Cumprimento de Sentença",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Registra a decisão do Juiz que homologa o acordo. A execução somente se extinguirá com sentença, a ser registrada em Julgamento;Com resolução de mérito;Extinção da execução ou cumprimento de sentença. Não se confunde com Julgamento;Com resolução de mérito;Homologação de transação, que é aplicável aos processos de conhecimento."
+ },
+ "14738": {
+  "nome": "Retificação de Classe Processual",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "classe_anterior": [],
+   "classe_nova": []
+  },
+  "glossario": "Movimento que deve ser usado para os casos de registro errado da classe processual, não devendo ser usado para evolução natural do processo, caso em que deve ser usada o movimento \"Evolução da Classe Processual\"."
+ },
+ "15185": {
+  "nome": "Cooperação Judiciária",
+  "pai": 1,
+  "norma": "CPC e Resolução CNJ nº 350/2020",
+  "artigo": "67 a 69 (CPC); 1º a 24 (Res 350, CNJ)",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "A cooperação judiciária permite a interação entre juízos ou entre órgão judiciário e instituição externa, pública ou privada, para a prática de atos processuais e/ou de administração da justiça, nos termos dos arts. 67 a 69 do CPC e da Resolução n. 350/2020 do Conselho Nacional de Justiça. O movimento processual “Cooperação Judiciária” deve ser utilizado de forma complementar, associado ao movimen"
+ },
+ "15216": {
+  "nome": "Determinação de Citação",
+  "pai": 11009,
+  "norma": "CPC",
+  "artigo": "238",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Automatizar a citação - permitir que, em uma decisão, com o movimento processual acima, gere o gatilho para automações (a exemplo de despacho de citação). Na Justiça do Trabalho, este movimento será lançado apenas na fase de cumprimento de sentença. Na fase de conhecimento, a citação será registrada a partir de outros movimentos, considerando a prática forense de sua realização por meio de ato ord"
+ },
+ "15408": {
+  "nome": "Não Conhecimento de Embargos de Declaração",
+  "pai": 218,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento para ser registrado quando não forem conhecidos os embargos de declaração opostos em decisões terminativas. Em caso de não conhecimento de embargos de decaração opostos em decisões não terminativas deve-se usar o movimento \"15409 - Não Conhecimento de Embargos de Declaração\"."
+ },
+ "15409": {
+  "nome": "Não Conhecimento de Embargos de Declaração",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento para registrar o não conhecimento de embargos de declaração opostos em decisão não terminativa. Para não conhecimento de embargos opostos em decisões terminativas deve-se usar o movimento \"15408 - Não Conhecimento de Embargos de Declaração\"."
+ },
+ "15589": {
+  "nome": "Homologação de Cálculos",
+  "pai": 378,
+  "norma": "CPC",
+  "artigo": "509, § 2º, 513 a 519, 524, 534 e 535",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado pelo magistrado na decisão que homologa os cálculos apresentados pelas partes, contadoria judicial ou perito, no âmbito da liquidação de sentença, cumprimento de sentença ou execução."
+ },
+ "371": {
+  "nome": "Incompetência",
+  "pai": 133,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Solução da exceção de incompetência que a reconhece, quando formulada nos próprios autos principais. Normalmente se refere aos casos de incompetência absoluta (em razão da pessoa ou da matéria). Nos casos em que se forma incidente em autos apartados, a solução deve ser registrada no grupo Julgamento;Com resolução do mérito. Quando o juiz afirma a competência, registrar como Decisão ou Despacho;Rej"
+ },
+ "133": {
+  "nome": "Acolhimento de exceção",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Marca a decisão que resolve a exceção deduzida SEM A FORMAÇÃO DE AUTOS SUPLEMENTARES. São os casos de decisão nos próprios autos."
+ },
+ "889": {
+  "nome": "Tutela Provisória",
+  "pai": 888,
+  "norma": "CPC",
+  "artigo": "294 a 311",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Indica a decisão que concede liminarmente parte da ordem antecipativa requerida. Não confundir com Decisão ou Despacho;Concessão em Parte;Liminar, registrar conforme a deliberação do magistrado."
+ },
+ "11403": {
+  "nome": "Procedência do pedido e improcedência do pedido contraposto",
+  "pai": 385,
+  "norma": "CPC; Lei 9.099/95",
+  "artigo": "278, § 1º; 31",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado exclusivamente no procedimento sumário, no procedimento sumaríssimo (Juizados Especiais) e nas ações de natureza dúplice. Art. 278. Não obtida a conciliação, oferecerá o réu, na própria audiência, resposta escrita ou oral, acompanhada de documentos e rol de testemunhas e, se requerer perícia, formulará seus quesitos desde logo, podendo indicar assistente técnico. (Redação"
+ },
+ "12320": {
+  "nome": "Denegação de prevenção",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento utilizado para o não reconhecimento de prevenção de competência pelo magistrado."
+ },
+ "12359": {
+  "nome": "Liminar Prejudicada",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento que deve ser usado quando a análise do pedido liminar é prejudicado, em razão de ter sido proferido decisão sobre o mérito do pedido."
+ },
+ "12457": {
+  "nome": "Expedição de precatório/rpv",
+  "pai": 1013,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "14976": {
+  "nome": "Suspensão/Sobrestamento por Recurso Especial Repetitivo",
+  "pai": 14974,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_tema_repetitivo": []
+  },
+  "glossario": "Trata-se de uma nova pasta na tabela de movimentos de serventuário, ao qual ficarão associados os respectivos movimentos de resolução de causa de suspensão ou sobrestamento para hipóteses de determinação de suspensão e sobrestamento indicadas na hierarquia de movimentos de Magistrado - Decisão - Suspensão ou Sobrestamento."
+ },
+ "15085": {
+  "nome": "Emenda à Inicial",
+  "pai": 1013,
+  "norma": "CPC",
+  "artigo": "303, § 6º; 700, § 5º",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 303, § 6º Caso entenda que não há elementos para a concessão de tutela antecipada, o órgão jurisdicional determinará a emenda da petição inicial em até 5 (cinco) dias, sob pena de ser indeferida e de o processo ser extinto sem resolução de mérito."
+ },
+ "135": {
+  "nome": "Apensamento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_do_processo": [],
+   "numero_de_volumes_e_apensos": []
+  },
+  "glossario": "Esse movimento deve ficar registrado nos dois processos (processo apensado e processo que recebeu o apenso)."
+ },
+ "137": {
+  "nome": "Desapensamento",
+  "pai": 48,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "numero_do_processo": [],
+   "numero_de_volumes_e_apensos": []
+  },
+  "glossario": "Esse movimento deve ficar registrado nos dois processos (processo apensado e processo que recebeu o apenso)."
+ },
+ "268": {
+  "nome": "Morte ou perda da capacidade",
+  "pai": 25,
+  "norma": "CPC 2015",
+  "artigo": "313, I c/c §§ 1º. 2º e 3º e art. 689",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "CPC/2015. Art. 313. Suspende-se o processo: I - pela morte ou pela perda da capacidade processual de qualquer das partes, de seu representante legal ou de seu procurador; ................................................................................................................................. § 1º Na hipótese do inciso I, o juiz suspenderá o processo, nos termos do art. 689 . § 2º Não ajuiz"
+ },
+ "277": {
+  "nome": "Convenção das Partes para Satisfação Voluntária da Obrigação em Execução ou Cumprimento de Sentença",
+  "pai": 25,
+  "norma": "CPC",
+  "artigo": "922, caput",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 922. Convindo as partes, o juiz declarará suspensa a execução durante o prazo concedido pelo exequente para que o executado cumpra voluntariamente a obrigação."
+ },
+ "335": {
+  "nome": "de pré-executividade",
+  "pai": 133,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Deve ser usado apenas quando não gera a extinção da execução. Se gerar, usar extinção da execução, em julgamento. Também tem registro na doutrina como exceção de executividade."
+ },
+ "347": {
+  "nome": "Tutela Provisória",
+  "pai": 157,
+  "norma": "CPC",
+  "artigo": "296",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "157": {
+  "nome": "Revogação",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "tipo_de_medida_cautelar_diversa_da_prisao": [
+    "comparecimento periódico em juízo",
+    "fiança",
+    "internação provisória",
+    "monitoração eletrônica",
+    "proibição de acesso ou frequência a determinados lugares",
+    "proibição de ausentar da Comarca",
+    "proibição de ausentar do País",
+    "proibição de manter contato com pessoa determinada",
+    "recolhimento domiciliar no período noturno e nos dias de folga",
+    "suspensão do exercício de função pública ou de atividade de natureza econômica ou financeira"
+   ]
+  },
+  "glossario": "Decisões que interrompem a eficácia de decisões anteriores."
+ },
+ "383": {
+  "nome": "Impugnação ao cumprimento de sentença",
+  "pai": 151,
+  "norma": "CPC 2015",
+  "artigo": "525",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Neste caso a impugnação será resolvida nos próprios autos do cumprimento de sentença, paralisando-a. Art. 525. Transcorrido o prazo previsto no art. 523 sem o pagamento voluntário, inicia-se o prazo de 15 (quinze) dias para que o executado, independentemente de penhora ou nova intimação, apresente, nos próprios autos, sua impugnação. [V. art. 518, 803, parágrafo único, e 917, § 1.º, relacionados]"
+ },
+ "151": {
+  "nome": "Concessão de efeito suspensivo",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Suspensão da execução por interposição de embargos à execução deve ser registrada em Processo Suspenso ou Sobrestado por Recebimento de Embargos de Execução."
+ },
+ "394": {
+  "nome": "Com efeito suspensivo",
+  "pai": 1060,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Recurso recebido nos efeitos devolutivo e suspensivo. Se a suspensão for outorgada em decisão apartada, registrar essa nova decisão em Decisão\\Concessão de efeito suspensivo\\Recurso. O recurso recebido será identificado pelo movimento anterior."
+ },
+ "471": {
+  "nome": "Pronúncia de Decadência ou Prescrição",
+  "pai": 385,
+  "norma": "CPC",
+  "artigo": "269, IV",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Hipótese específica de extinção do processo com resolução de mérito, aplicável nos casos em que essa seja a solução global da questão. Caso seja parte da decisão, remanescendo algo para o exame de mérito objetivamente, registrar em procedente, Julgada improcedente a ação se o remanescente for improcedente, ou em Julgada procedente em parte a ação, se o remanescente for total ou parcialmente proced"
+ },
+ "788": {
+  "nome": "Exceção de pré-executividade",
+  "pai": 138,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Registra a decisão que resolve a questão posta na exceção, no curso de execução ou de cumprimento de sentença. A doutrina também registra exceção de executividade."
+ },
+ "138": {
+  "nome": "Rejeição",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "804": {
+  "nome": "Recurso",
+  "pai": 163,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Indica decisão que não recebeu o recurso. Deve referir a data em que a decisão se torna pública, para automatização da contagem de prazos. Os recursos extraordinário, especial e de revista estão tratados como admissão e não-admissão, e a decisão respectiva deve ser registrada por esses movimentos."
+ },
+ "163": {
+  "nome": "Não-Recebimento",
+  "pai": 3,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "898": {
+  "nome": "Por decisão judicial",
+  "pai": 25,
+  "norma": "CPC 2015",
+  "artigo": "313, VIII, IX e X",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Hipóteses de suspensão ou sobrestamento por expressa e específica decisão judicial, seja pelo magistrado que preside o processo, seja por decisão em outro processo, em hipóteses legais não contempladas em movimentos específicos e, em especial, com fundamento nos dispositivos legais abaixo mencionados: Art. 313. Suspende-se o processo: ..............................................................."
+ },
+ "11019": {
+  "nome": "Ordenação de entrega de autos",
+  "pai": 11009,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Aplicável às hipóteses em que há entrega definitiva de autos para a parte (Ex. notificação, protesto judicial etc)."
+ },
+ "11375": {
+  "nome": "Inexistência de bens penhoráveis",
+  "pai": 456,
+  "norma": "9.099/95",
+  "artigo": "53, § 4º, parte final",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 53. A execução de título executivo extrajudicial, no valor de até quarenta salários mínimos, obedecerá ao disposto no Código de Processo Civil, com as modificações introduzidas por esta Lei. (...) § 4º Não encontrado o devedor ou inexistindo bens penhoráveis, o processo será imediatamente extinto, devolvendo-se os documentos ao autor. Aprovado na reunião do comitê gestor de tabelas dos dias 1"
+ },
+ "11405": {
+  "nome": "Procedência em parte do pedido e procedência em parte do pedido contraposto",
+  "pai": 385,
+  "norma": "CPC; Lei 9.099/95",
+  "artigo": "278, § 1º; 31",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado exclusivamente no procedimento sumário, no procedimento sumaríssimo (Juizados Especiais) e nas ações de natureza dúplice. Art. 278. Não obtida a conciliação, oferecerá o réu, na própria audiência, resposta escrita ou oral, acompanhada de documentos e rol de testemunhas e, se requerer perícia, formulará seus quesitos desde logo, podendo indicar assistente técnico. (Redação"
+ },
+ "11795": {
+  "nome": "Procedência do Pedido - Reconhecimento pelo réu",
+  "pai": 385,
+  "norma": "CPC",
+  "artigo": "art. 269, II",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Movimento a ser utilizado na hipótese de procedência decorrer do reconhecimento, pelo réu, do pedido autoral, nos termos do art. 269, II, do CPC. Determinada a criação na reunião de 21/03/2011."
+ },
+ "12256": {
+  "nome": "Continência",
+  "pai": 456,
+  "norma": "CPC",
+  "artigo": "267",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "12387": {
+  "nome": "Decisão de Saneamento e Organização",
+  "pai": 3,
+  "norma": "CPC",
+  "artigo": "357",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Art. 357. Não ocorrendo nenhuma das hipóteses deste Capítulo, deverá o juiz, em decisão de saneamento e de organização do processo: I - resolver as questões processuais pendentes, se houver; II - delimitar as questões de fato sobre as quais recairá a atividade probatória, especificando os meios de prova admitidos; III - definir a distribuição do ônus da prova, observado o art. 373 ; IV - delimitar"
+ },
+ "12430": {
+  "nome": "Arquivamento",
+  "pai": 1013,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "“Movimento a ser lançado quando o magistrado determina o arquivamento definitivo do processo após o encerramento da prestação jurisdicional, à exceção arquivamento de procedimentos investigatórios, quando deve ser utilizado o movimento 1063 (Determinação de Arquivamento de Procedimentos Investigatórios)."
+ },
+ "12451": {
+  "nome": "Procedência",
+  "pai": 12450,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": ""
+ },
+ "12450": {
+  "nome": "impugnação à execução",
+  "pai": 385,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {},
+  "glossario": ""
+ },
+ "12452": {
+  "nome": "procedência parcial",
+  "pai": 12450,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": ""
+ },
+ "12453": {
+  "nome": "improcedência",
+  "pai": 12450,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": ""
+ },
+ "12467": {
+  "nome": "Desistência de pedido",
+  "pai": 378,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "N",
+  "complementos": {
+   "nome_da_parte": []
+  },
+  "glossario": "Registra a decisão do Juiz que homologa a desistência do pedido."
+ },
+ "12474": {
+  "nome": "Distribuição",
+  "pai": 1013,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": ""
+ },
+ "12749": {
+  "nome": "de Instrução",
+  "pai": 970,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "situacao_da_audiencia": [
+    "antecipada",
+    "cancelada",
+    "convertida em diligência",
+    "designada",
+    "Em continuação",
+    "não-realizada",
+    "realizada",
+    "redesignada"
+   ],
+   "data_hora": [],
+   "dirigida_por": [
+    "Conciliador(a)",
+    "Facilitador",
+    "Juiz(a)",
+    "Juiz(a) leigo(a)",
+    "Mediador(a)"
+   ],
+   "local": []
+  },
+  "glossario": "Indica as diversas situações relacionadas com a audiência, esta em suas diversas formas. Tipos de Audiência: Admonitória, Conciliação, De interrogatório, De justificação, Execução, Inicial, Instrução, Instrução e Julgamento, Julgamento, Preliminar, Una, sine die, entre outras. Situação da Audiência: designada, redesignada, cancelada, antecipada, realizada, não-realizada, convertida em diligência."
+ },
+ "12753": {
+  "nome": "Preliminar",
+  "pai": 970,
+  "norma": "",
+  "artigo": "",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {
+   "situacao_da_audiencia": [
+    "antecipada",
+    "cancelada",
+    "convertida em diligência",
+    "designada",
+    "Em continuação",
+    "não-realizada",
+    "realizada",
+    "redesignada"
+   ],
+   "data_hora": [],
+   "dirigida_por": [
+    "Conciliador(a)",
+    "Facilitador",
+    "Juiz(a)",
+    "Juiz(a) leigo(a)",
+    "Mediador(a)"
+   ],
+   "local": []
+  },
+  "glossario": "Indica as diversas situações relacionadas com a audiência, esta em suas diversas formas. Tipos de Audiência: Admonitória, Conciliação, De interrogatório, De justificação, Execução, Inicial, Instrução, Instrução e Julgamento, Julgamento, Preliminar, Una, sine die, entre outras. Situação da Audiência: designada, redesignada, cancelada, antecipada, realizada, não-realizada, convertida em diligência."
+ },
+ "15163": {
+  "nome": "Acolhimento em Parte de Embargos de Declaração",
+  "pai": 3,
+  "norma": "CPC; CPP; CLT; CPPM",
+  "artigo": "1.022 (CPC); 620 (CPP); 897-A (CLT); 542 (CPPM)",
+  "situacao": "A",
+  "jec": "S",
+  "complementos": {},
+  "glossario": "Solução específica para os embargos de declaração, para os casos em que são parcialmente acolhidos os pedidos de declaração, ou os casos em que são parcialmente conhecidos e na parte conhecida são acolhidos parte ou todos os pedidos de declaração remanescentes."
+ }
+}
